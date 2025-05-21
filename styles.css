@@ -1,0 +1,68 @@
+html,a {
+  background-color: #111111;
+  color: #fff;
+  text-decoration: none;
+}
+#navbar {
+  position: fixed;
+  top: 10px;
+  display: block;
+  padding-left:27%;
+  padding-right: 27%;
+}
+#welcome-section {
+  display: block;
+  text-align: center;
+  padding-top: 50px;
+}
+.author {
+  position: relative;
+  top: -18px;
+}
+.welcometext {
+  animation: welcome 7s infinite linear;
+}
+.projectsheader {
+   display: block;
+}
+.img{
+  height: 450px;
+  width: 100%;
+}
+
+.project-link{
+  color: #00A0FF;
+}
+
+#social {
+  position: fixed;
+  top: 35px;
+  padding-left: 27%;
+}
+#profile-link {
+  color: #00Ff11
+}
+.profile-link1 {
+  color: #00FF11;
+}
+
+@keyframes welcome {
+  0% {
+    color: #aa0000;
+  }
+
+  25% {
+    color: #00aa00
+  }
+
+  75% {
+    color: #0000aa;
+  }
+  100% {
+    color: #aa0000;
+  }
+}
+
+@media (min-width:300px) {
+  overflow: hidden;
+}
