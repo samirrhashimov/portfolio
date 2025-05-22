@@ -1,51 +1,185 @@
-html,a {
+html {
   background-color: #111111;
   color: #fff;
-  text-decoration: none;
 }
-#navbar {
-  position: fixed;
-  top: 10px;
+.blank {
   display: block;
-  padding-left:27%;
-  padding-right: 27%;
+  height: 100px;
+  width: 90%;
 }
-#welcome-section {
+.span {
+  position: relative;
+  border-radius: 5px;
+  background-color: #555555;
+  height: 2px;
+  width: 100%;
+}
+/*Welcome Section*/
+.welcomediv {
   display: block;
+  position: static;
+  height: 700px;
+  width: 100%;
   text-align: center;
-  padding-top: 50px;
+  justify-content: center;
+  background-color: white;
+  color: black;
 }
 .author {
+  display: block;
   position: relative;
-  top: -18px;
+  top: 278px;
+  font-style: italic;
+  font-family: "Outfit", Sans-Serif;
+  font-size: 13px;
 }
 .welcometext {
+  position: relative;
+  top: 300px;
+  margin: 20px;
+  display: block;
+  text-align: center;
+  font-family: Outfit;
+  justify-content: center;
   animation: welcome 7s infinite linear;
 }
+
+/* Navbar section */
+#navbar {
+  position: fixed;
+  font-weight: bold;
+  text-align: center;
+  background: #000000;
+  top: 0px;
+  width: 100%;
+  height: 40px;
+  justify-content: center;
+}
+.link {
+  border: 2px solid #333;
+  border-radius: 13px;
+  padding: 2px;
+  font-family: "Verdana", serif;
+  font-size: 1.1rem;
+  color: #ffffff;
+  text-decoration: none;
+  line-height: 40px;
+  margin: 7px;
+}
+.link:hover {
+  border: 2px solid #dddddd;
+  animation: navbar 0.3s ease-out;
+  animation-fill-mode: forwards;
+}
+
+/* Projects Section */
 .projectsheader {
    display: block;
+   font-family: "Outfit", Sans-Serif;
 }
 .img{
-  height: 450px;
+  height: auto;
   width: 100%;
 }
 
 .project-link{
   color: #00A0FF;
+  text-decoration: none;
 }
 
+/* Social Media Section */
 #social {
-  position: fixed;
-  top: 35px;
-  padding-left: 27%;
+  background: linear-gradient(
+  180deg,
+  #111111 0%,
+  #ffffff 15%,
+  #ffffff 50%,
+  #cccccc 85%,
+  #ccc 100%);
+  display: block;
+  position: relative;
+  height: 370px;
+  width: 100%;
+  text-align: center;
+  justify-content: center;
 }
-#profile-link {
-  color: #00Ff11
+#socialtitle {
+  position: relative;
+  top: 90px;
+  color: #000000;
+  font-family: Serif;
 }
-.profile-link1 {
-  color: #00FF11;
+.profile-link {
+  position: relative;
+  top: 90px;
+  text-decoration: none;
+  margin: 15px;
+  color: #000000;
+  font-weight: bold;
 }
-
+#span1 {
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  top: 120px;
+}
+.contactus {
+  position: relative;
+  font-family: Serif;
+  top: 140px;
+  color: #000000;
+}
+#mailcollector {
+  position: relative;
+  top: 140px;
+  background-color: #ffffff;
+  color: #000000;
+  border-radius: 10px;
+  height: 30px;
+  width: 250px;
+}
+#submitbutton {
+  position: relative;
+  top: 140px;
+  height: 35px;
+  border-radius: 10px;
+  width: 60px;
+  color: #fff;
+  background-color: #0060cc;
+  border-top-color: #00aaff;
+  border-right-color: #0050f0;
+  border-bottom-color: #0050f0;
+  border-left-color: #00aaff;
+}
+#bookmark {
+  position: absolute;
+  width: 25px;
+  height: 70px;
+  background: linear-gradient( 
+  180deg,
+  #111111 0%,
+  #222 3%,
+  #ffc700cc 20%,
+  #ffc700cc 50%,
+  #ffcf00ff 70%,
+  #ffcf00ff 90%,
+  #ffffff 100%);
+  top: 0px;
+  right: 30px;
+}
+.footer {
+  display: block;
+  height: 100px;
+  width: 100%;
+}
+#copyright {
+  position: relative;
+  text-align: center;
+  justify-content: center;
+  top: 80px;
+  color: #ffffff88;
+}
+/* Keyframes */
 @keyframes welcome {
   0% {
     color: #aa0000;
@@ -62,7 +196,11 @@ html,a {
     color: #aa0000;
   }
 }
-
-@media (min-width:300px) {
-  overflow: hidden;
+@keyframes navbar {
+  0% {
+    font-size: 1.1rem;
+  }
+  100% {
+    font-size: 1.30rem;
+  }
 }
