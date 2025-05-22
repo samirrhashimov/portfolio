@@ -2,30 +2,56 @@
 <html lang="en">
   <head>
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width initial-scale=1.0">
+  <meta name="viewport" content="width=device-width initial-scale=1,0">
   <title>Portfolio</title>
   <link rel="stylesheet" href="styles.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Geist+Mono:wght@100..900&family=Outfit:wght@100..900&display=swap" rel="stylesheet">
   </head>
+  <main>
+      <navbar id="navbar">
+      <a class="link" href="#wtext">Main</a>
+      <a class="link" href="#projects">Projects</a>
+      <a class="link" href="#certifications">Certifications</a>
+      <a class="link" href="#social">Social Media</a>
+    </navbar>
+  </main>
   <body>
     <div id="wtext" class="welcomediv">
       <h1 class="welcometext">Welcome to</h1>
       <p class="author">Samir Hashimov's Portfolio</p>
     </div>
+    <div class="arrow"></div>
+     <div class="arrowp1"></div>
+     <div class="arrowp2"></div>
     <section id="projects">
-      <div class="project-tile">
-        <h1 class="projectsheader">Projects:</h1>
-        <img src="https://noteifynet.netlify.app/img/mainlogosingle.png" class="img">
-        <p class="projecttext">Noteify- Simple Cloud Notepad</p>
+    <h1 class="projectsheader">Projects:</h1>
+      <div class="projects-grid">
+       <div class="project-tile">
+         <a href="https://github.com/samirrhashimov/noteify">
+        <img src="https://noteifynet.netlify.app/img/mainlogosingle.png" class="img" alt="Noteify"></a>
+        <p class="projecttext"><b>Noteify</b> - Simple Cloud Notepad</p>
         <a class="project-link" href="https://github.com/samirrhashimov/noteify">Learn More...</a>
+       </div>
+      </div>
+    </section>
+        <div class="blank-medium"></div>
+    <section id="certifications">
+      <h1 class="projectsheader">Certificates:</h1>
+      <div class="projects-grid">
+        <div class="project-tile">
+         <a href="https://www.freecodecamp.org/certification/samirrhashimov/responsive-web-design">
+        <img src="sertificate1.jpg" class="img" alt="sertification"></a>
+        <p class="projecttext"><b>freeCodeCamp</b> Responsive Web Design</p>
+        <a class="project-link" href="https://www.freecodecamp.org/certification/samirrhashimov/responsive-web-design">Verify this Sertification</a>
+       </div>
       </div>
     </section>
     <div class="blank"></div>
     <section id="social">
       <div id="bookmark"></div>
-      <h1 id="socialtitle">Follow/ContactUs</h1>
+      <h1 id="socialtitle">Follow/Contact Me</h1>
       <a target="_blank" class="profile-link" href="https://www.linkedin.com/in/samirrhashimov">LinkedIn<a>
       <a class="profile-link" href="https://github.com/samirrhashimov">GitHub</a>
       <a class="profile-link" href="https://beacons.ai/samirrhashimov">Other Links</a>
@@ -41,9 +67,4 @@
       <p id="copyright">©2025 - Samir Hashimov</p>
     </div>
     </body>
-    <navbar id="navbar">
-      <a class="link" href="#wtext">Main</a>
-      <a class="link" href="#projects">Projects</a>
-      <a class="link" href="#social">Social Media</a>
-    </navbar>
   </html>

@@ -1,11 +1,21 @@
+html, body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 html {
   background-color: #111111;
   color: #fff;
 }
 .blank {
   display: block;
-  height: 100px;
-  width: 90%;
+  height: 200px;
+  width: 100%;
+}
+.blank-medium {
+  display: block;
+  height: 50px;
+  width: 100%;
 }
 .span {
   position: relative;
@@ -43,6 +53,35 @@ html {
   justify-content: center;
   animation: welcome 7s infinite linear;
 }
+.arrow {
+  position: absolute;
+  background-color: black;
+  height: 80px;
+  width: 6px;
+  top:450px;
+  left: 50%;
+  animation: arrows 2s infinite linear;
+}
+.arrowp1 {
+  position: absolute;
+  background-color: black;
+  transform: rotate(45deg);
+  height: 40px;
+  width: 6px;
+  top:494px;
+  left: 54%;
+  animation: arrows2 2s infinite linear;
+}
+.arrowp2 {
+  position: absolute;
+  background-color: black;
+  transform: rotate(-45deg);
+  height: 40px;
+  width: 6px;
+  top:494px;
+  left: 46%;
+  animation: arrows2 2s infinite linear;
+}
 
 /* Navbar section */
 #navbar {
@@ -54,17 +93,19 @@ html {
   width: 100%;
   height: 40px;
   justify-content: center;
+  overflow:hidden;
+  border-radius: 0 0 10px 10px;
 }
 .link {
   border: 2px solid #333;
   border-radius: 13px;
-  padding: 2px;
+  padding: 4px;
   font-family: "Verdana", serif;
-  font-size: 1.1rem;
+  font-size: 0.9rem;
   color: #ffffff;
   text-decoration: none;
   line-height: 40px;
-  margin: 7px;
+  margin: 1px;
 }
 .link:hover {
   border: 2px solid #dddddd;
@@ -77,6 +118,16 @@ html {
    display: block;
    font-family: "Outfit", Sans-Serif;
 }
+.projects-grid{
+  position: static;
+  display: grid;
+  grid-template-columns: 50%, 50%;
+  
+  grid-template-rows: 500;
+  grid-auto-flow: column;
+  grid-column-gap: 3px;
+}
+
 .img{
   height: auto;
   width: 100%;
@@ -85,6 +136,9 @@ html {
 .project-link{
   color: #00A0FF;
   text-decoration: none;
+}
+.project-text {
+  font-family: arial;
 }
 
 /* Social Media Section */
@@ -107,7 +161,7 @@ html {
   position: relative;
   top: 90px;
   color: #000000;
-  font-family: Serif;
+  font-family: "Outfit", Serif;
 }
 .profile-link {
   position: relative;
@@ -115,7 +169,7 @@ html {
   text-decoration: none;
   margin: 15px;
   color: #000000;
-  font-weight: bold;
+  font-family: "Outfit", Serif;
 }
 #span1 {
   display: flex;
@@ -125,7 +179,7 @@ html {
 }
 .contactus {
   position: relative;
-  font-family: Serif;
+  font-family: "Outfit", Serif;
   top: 140px;
   color: #000000;
 }
@@ -150,6 +204,7 @@ html {
   border-right-color: #0050f0;
   border-bottom-color: #0050f0;
   border-left-color: #00aaff;
+  font-family: "Outfit", Arial;
 }
 #bookmark {
   position: absolute;
@@ -198,9 +253,33 @@ html {
 }
 @keyframes navbar {
   0% {
-    font-size: 1.1rem;
+    font-size: 0.9rem;
   }
   100% {
-    font-size: 1.30rem;
+    font-size: 1.20rem;
+  }
+}
+@keyframes arrows {
+  0% {
+    background: linear-gradient(
+    #faffaf99,
+    #000000);
+  }
+  100% {
+    background: linear-gradient(
+    #000000,
+    #faffaf);
+  }
+}
+@keyframes arrows2 {
+  0% {
+    background: linear-gradient(
+    #000000,
+    #000000);
+  }
+  100% {
+    background: linear-gradient(
+    #000000,
+    #faffaf);
   }
 }
