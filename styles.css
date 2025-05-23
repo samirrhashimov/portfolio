@@ -51,36 +51,44 @@ html {
   text-align: center;
   font-family: Outfit;
   justify-content: center;
-  animation: welcome 7s infinite linear;
+  animation: welcome 6s infinite linear;
 }
 .arrow {
-  position: absolute;
+  position: relative;
   background-color: black;
   height: 80px;
   width: 6px;
-  top:450px;
+  top:380px;
   left: 50%;
-  animation: arrows 2s infinite linear;
+  animation: arrows 2.3s infinite ease-out;
 }
 .arrowp1 {
-  position: absolute;
+  position: relative;
   background-color: black;
   transform: rotate(45deg);
   height: 40px;
   width: 6px;
-  top:494px;
-  left: 54%;
-  animation: arrows2 2s infinite linear;
+  top:44px;
+  left: 15px;
+  animation: arrows2 2.3s infinite ease-out;
 }
 .arrowp2 {
-  position: absolute;
+  position: relative;
   background-color: black;
   transform: rotate(-45deg);
   height: 40px;
   width: 6px;
-  top:494px;
-  left: 46%;
-  animation: arrows2 2s infinite linear;
+  top:4px;
+  left: -15px;
+  animation: arrows2 2.3s infinite ease-out;
+}
+/* About Me section */
+.abouttext {
+  margin: 6px;
+  fony-family: "Sans-Serif", Arial;
+}
+#skills {
+  color: #bf0000;
 }
 
 /* Navbar section */
@@ -95,12 +103,13 @@ html {
   justify-content: center;
   overflow:hidden;
   border-radius: 0 0 10px 10px;
+  z-index: 999;
 }
 .link {
   border: 2px solid #333;
   border-radius: 13px;
   padding: 4px;
-  font-family: "Verdana", serif;
+  font-family: "Verdana", Sans-Serif;
   font-size: 0.9rem;
   color: #ffffff;
   text-decoration: none;
@@ -113,21 +122,25 @@ html {
   animation-fill-mode: forwards;
 }
 
-/* Projects Section */
+/* Projects/Sertification Section */
 .projectsheader {
    display: block;
    font-family: "Outfit", Sans-Serif;
+   margin: 5px;
 }
 .projects-grid{
   position: static;
   display: grid;
   grid-template-columns: 50%, 50%;
-  
   grid-template-rows: 500;
   grid-auto-flow: column;
   grid-column-gap: 3px;
 }
-
+.project-tile {
+  display: grid;
+  grid-template-columns: 50%, 50%;
+  
+}
 .img{
   height: auto;
   width: 100%;
@@ -138,7 +151,7 @@ html {
   text-decoration: none;
 }
 .project-text {
-  font-family: arial;
+  font-family: "Arial", Sans-Serif;
 }
 
 /* Social Media Section */
@@ -160,7 +173,7 @@ html {
 #socialtitle {
   position: relative;
   top: 90px;
-  color: #000000;
+  color: #000;
   font-family: "Outfit", Serif;
 }
 .profile-link {
@@ -168,8 +181,8 @@ html {
   top: 90px;
   text-decoration: none;
   margin: 15px;
-  color: #000000;
-  font-family: "Outfit", Serif;
+  color: #434;
+  font-family: "Outfit", Sans-Serif;
 }
 #span1 {
   display: flex;
@@ -232,7 +245,8 @@ html {
   text-align: center;
   justify-content: center;
   top: 80px;
-  color: #ffffff88;
+  color: #ffffff77;
+  font-size: 12px;
 }
 /* Keyframes */
 @keyframes welcome {
@@ -262,24 +276,91 @@ html {
 @keyframes arrows {
   0% {
     background: linear-gradient(
-    #faffaf99,
-    #000000);
+    #000000,
+    #000);
   }
+  12% {
+    background: linear-gradient(
+    #000000,
+    #000);
+  }
+  25% {
+    background: linear-gradient(
+    #000000,
+    #faffaf99);
+  }
+  37% {
+    background: linear-gradient(
+    #000000,
+    #faffafcc);}
+  50% {
+    background: linear-gradient(
+    #000000,
+    #faffafcc);
+  }
+  72% {
+    background: linear-gradient(
+    #000000,
+    #faffafdd);}
+    
+  86% {
+    background: linear-gradient(
+    #000000,
+    #faff8f);}
+    
   100% {
     background: linear-gradient(
     #000000,
-    #faffaf);
+    #000);
   }
 }
 @keyframes arrows2 {
   0% {
     background: linear-gradient(
     #000000,
-    #000000);
+    #000);
   }
+  12% {
+    background: linear-gradient(
+    #000000,
+    #000);
+  }
+  25% {
+    background: linear-gradient(
+    #000000,
+    #faffaf99);
+  }
+  37% {
+    background: linear-gradient(
+    #000000,
+    #faffafcc);}
+  50% {
+    background: linear-gradient(
+    #000000,
+    #faffafdd);
+  }
+  72% {
+    background: linear-gradient(
+    #000000,
+    #faffafee);}
+    
+  86% {
+    background: linear-gradient(
+    #000000,
+    #faff8f);}
+    
   100% {
     background: linear-gradient(
     #000000,
-    #faffaf);
+    #000);
   }
+}
+/* Media */
+@media (max-width:600px) {
+  .project-tile {
+    min-width: 50%;
+  }
+}
+@media (min-width:600px) {
+  .img {max-width: 300px;}
 }
