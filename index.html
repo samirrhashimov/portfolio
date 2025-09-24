@@ -8,24 +8,26 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Geist+Mono:wght@100..900&family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&family=Outfit:wght@100..900&display=swap" rel="stylesheet">
-  </head>
+<link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap" rel="stylesheet">
+</head>
   <main>
       <navbar id="navbar">
       <a class="link" href="#about">About</a>
+      <a class="link" href="#skills">Skills</a>
       <a class="link" href="#projects">Projects</a>
       <a class="link" href="#certifications">Certifications</a>
       <p id="profile">Samir Hashimov</p>
     </navbar>
   </main>
   <body>
-    <div id="wtext" class="welcomediv">
-      <h1 class="welcometext">Welcome to</h1>
-      <p class="author">Samir Hashimov's Portfolio</p>
-       <div class="arrow">
-     <div class="arrowp1"></div>
-     <div class="arrowp2"></div>
-      </div>
-     </div>
+    <div class="blank-medium"></div>
+    <section id="header">
+      <div class="blank-mini"></div>
+      <img src="./assets/samirr.jpg" id="profileImg" alt="Profile Picture">
+    <div class="blank-mini"></div>
+      <h1 class="headertext">samirrhashimov</h1>
+      <p class="subheadertext">Junior UI/UX Designer | Front-End Developer | Graphic Designer</p>
+    </section>
     <div class="blank-medium"></div>
     <section id="about">
     <h1 class="projectsheader">About Me:</h1>
@@ -33,14 +35,30 @@
      <p class="abouttext"> I focus on UI/UX, frontend development, and mobile app design, constantly improving my skills through new projects.</p>
      <p class="abouttext">My goal is to deliver functional, visually pleasing, and effective digital experiences.</p>
      <div class="blank-mini"></div>
+
+     <div class="skillsBadges">
+     <img src="https://img.shields.io/badge/-HTML-E34F26?style=flat-square&logo=html5&logoColor=white">
+     <img src="https://img.shields.io/badge/CSS-%230000aa?style=flat-square&logo=CSS&logoColor=white">
+     <img src="https://img.shields.io/badge/-JavaScript-F7DF1E?style=flat-square&logo=javascript&logoColor=black">
+     <img src="https://img.shields.io/badge/-Python-3776AB?style=flat-square&logo=python&logoColor=white">
+     <img src="https://img.shields.io/badge/Git-black?style=flat-square&logo=git&logoColor=white&color=black
+">
+     <img src="https://img.shields.io/badge/Firebase-white?style=flat-square&logo=firebase&logoColor=orange
+">
+     <img src="https://img.shields.io/badge/Netlify-%23000?style=flat-square&logo=netlify&logoColor=%2332E7E2
+">
+     <img src="https://img.shields.io/badge/n8n-%23fff?style=flat-square&logo=n8n&logoColor=%23EA4B71
+">
+     </div>
+
      <div class="socialmedia">
-       <a href="https://www.linkedin.com/in/samirrhashimov"><img src="linkedin.png" class="sm" alt="LinkedIn"></a>
-       <a href="https://github.com/samirrhashimov"><img src="github.png" class="sm" alt="GitHub"></a>
-       <a href="https://www.behance.net/samirhasimov"><img src="behance.png" class="sm" alt="Behance"></a>
-       <a href="https://beacons.ai/samirrhashimov"><img src="link.png" class="sm" alt="Beacons.ai"></a>
+       <a href="https://www.linkedin.com/in/samirrhashimov"><img src="./assets/linkedin.png" class="sm" alt="LinkedIn"></a>
+       <a href="https://github.com/samirrhashimov"><img src="./assets/github.png" class="sm" alt="GitHub"></a>
+       <a href="https://www.behance.net/samirhasimov"><img src="./assets/behance.png" class="sm" alt="Behance"></a>
+       <a href="https://beacons.ai/samirrhashimov"><img src="./assets/link.png" class="sm" alt="Beacons.ai"></a>
      </div>
       <div class="blank-medium"></div>
-      <div class="skillsdiv">
+      <div id="skills" class="skillsdiv">
      <div class="dev_div">
      <p class="skillstext2"><b>Front-End Developer Skills: </b></p>
      <ul>
@@ -80,8 +98,15 @@
       <div class="projects-grid">
        <div class="project-tile">
          <a href="https://github.com/samirrhashimov/noteify">
-        <img src="https://noteifynet.netlify.app/img/mainlogosingle.png" class="img" alt="Noteify"></a>
+        <img src="./assets/projects/noteify.png" class="img" alt="Noteify"></a>
         <p class="projecttext"><b>Noteify</b> - Simple Cloud Notepad</p>
+        <a class="project-link" href="https://github.com/samirrhashimov/noteify">Learn More...</a>
+       </div>
+
+       <div class="project-tile">
+         <a href="https://github.com/samirrhashimov/whispen">
+        <img src="./assets/projects/whispen.png" class="img" alt="Whispen"></a>
+        <p class="projecttext"><b>Whispen</b> - PDF reader App</p>
         <a class="project-link" href="https://github.com/samirrhashimov/noteify">Learn More...</a>
        </div>
       </div>
@@ -92,9 +117,9 @@
       <div class="projects-grid">
         <div class="project-tile">
          <a href="https://www.freecodecamp.org/certification/samirrhashimov/responsive-web-design">
-        <img src="sertificate1.jpg" class="img" alt="sertification"></a>
+        <img src="./assets/sertificate/responsivewebdesign.png" class="img" alt="sertification"></a>
         <p class="projecttext"><b>freeCodeCamp</b> Responsive Web Design</p>
-        <a class="project-link" href="https://www.freecodecamp.org/certification/samirrhashimov/responsive-web-design">Verify this Sertification</a>
+        <a class="project-link" href="https://www.freecodecamp.org/certification/samirrhashimov/responsive-web-design">Check this Sertification</a>
        </div>
       </div>
     </section>
