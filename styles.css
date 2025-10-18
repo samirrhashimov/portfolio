@@ -65,7 +65,9 @@ body {
   margin-top: 13px;
 }
 .socialmedia {
-  margin: 6px;
+  display: flex;
+  justify-content: center;
+  margin: 6px 0 6px 0;
   width: 100%;
 }
 .sm {
