@@ -125,13 +125,9 @@ li {
 .dev_div{
   width: 325px;
   height: 210px;
-  background: linear-gradient(
-  45deg,
-  #00bb07,
-  #00ff00);
-  color: #000;
+  color: #fff;
   border-radius: 20px;
-  border: 3px solid white;
+  border-left: 3px solid #00bb07;
   padding: 10px;
   margin: 5px;
   transition: transform 0.3s ease-in-out;
@@ -143,13 +139,9 @@ li {
 .fend_div{
   width: 325px;
   height: 210px;
-  background: linear-gradient(
-  45deg,
-  #00cff9,
-  #00f0ff);
-  color: #000;
+  color: #fff;
   border-radius: 20px;
-  border: 3px solid white;
+  border-left: 3px solid #00cff9;
   padding: 10px;
   margin: 5px;
   transition: transform 0.3s ease-in-out;
@@ -161,13 +153,9 @@ li {
 .other_div {
   width: 325px;
   height: 210px;
-  background: linear-gradient(
-  45deg,
-  #ffa022,
-  #ffba75);
-  color: #000;
+  color: #fff;
   border-radius: 20px;
-  border: 3px solid white;
+  border-left: 3px solid #ffa022;
   padding: 10px;
   margin: 5px;
   transition: transform 0.3s ease-in-out;
