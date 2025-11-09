@@ -151,7 +151,6 @@ li {
   justify-content: center;
   border-radius: 0 0 10px 10px;
   z-index: 997;
-  
   background: rgba(255, 255, 255, 0.1);
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
@@ -196,7 +195,7 @@ li {
 }
 .projects-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 0fr));
+  grid-template-columns: repeat(auto-fit, minmax(300px, 0fr));
   gap: 5px;
   padding: 0;
   margin: 0;
@@ -218,6 +217,7 @@ li {
   border-radius: 10px;
   border: 1px solid #aaa;
 }
+
 .img{
   height: auto;
   width: 100%;
@@ -225,96 +225,81 @@ li {
 }
 
 .project-link{
-  color: #00A0FF;
-  text-decoration: none;
-  padding-bottom: 10px;
-}
-.project-text {
-  font-family: "Arial", Sans-Serif;
-}
-
-/* Social Media Section */
-#social {
-  background: linear-gradient(
-  180deg,
-  #111111 0%,
-  #ffffff 15%,
-  #ffffff 50%,
-  #cccccc 85%,
-  #ccc 100%);
-  display: block;
-  position: relative;
-  height: 370px;
-  width: 100%;
-  text-align: center;
-  justify-content: center;
-}
-#socialtitle {
-  position: relative;
-  top: 90px;
-  color: #000;
-  font-family: "Outfit", Serif;
-}
-.profile-link {
-  position: relative;
-  top: 90px;
-  text-decoration: none;
-  margin: 15px;
-  color: #434;
-  font-family: "Outfit", Sans-Serif;
-}
-#span1 {
   display: flex;
   justify-content: center;
-  text-align: center;
-  top: 120px;
-}
-.contactus {
-  position: relative;
-  font-family: "Outfit", Serif;
-  top: 140px;
-  color: #000000;
-}
-#mailcollector {
-  position: relative;
-  top: 140px;
-  background-color: #ffffff;
-  color: #000000;
-  border-radius: 10px;
-  height: 30px;
-  width: 250px;
-}
-#submitbutton {
-  position: relative;
-  top: 140px;
-  height: 35px;
-  border-radius: 10px;
-  width: 60px;
   color: #fff;
-  background-color: #0060cc;
-  border-top-color: #00aaff;
-  border-right-color: #0050f0;
-  border-bottom-color: #0050f0;
-  border-left-color: #00aaff;
-  font-family: "Outfit", Arial;
-}
-#bookmark {
-  position: absolute;
-  width: 25px;
-  height: 70px;
-  background: linear-gradient( 
-  180deg,
-  #111111 0%,
-  #222 3%,
-  #ffc700cc 20%,
-  #ffc700cc 50%,
-  #ffcf00ff 70%,
-  #ffcf00ff 90%,
-  #ffffff 100%);
-  top: 0px;
-  right: 30px;
+  font-weight: bold;
+  text-decoration: none;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  font-family: Poppins;
+  width: 100%;
 }
 
+.learnmorecontainer {
+  display: flex;
+  width: 100%;
+  align-items: center;
+  justify-content: center;
+  background-color: #0070FF;
+  border-radius: 9px;
+}
+.projecttext {
+  font-family: Poppins;
+}
+
+/* Certificates section */
+.sertificate-link{
+  display: flex;
+  justify-content: center;
+  color: #000;
+  font-weight: bold;
+  text-decoration: none;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  font-family: Poppins;
+  width: 100%;
+}
+/* Contributions section */
+.ostext {
+  padding: 0;
+  margin: 5px 5px;
+  font-family: Poppins;
+}
+
+.os-tile {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: none;
+  border: none;
+  border-radius: 10px;
+  border: 1px solid #aaa;
+}
+
+.os-link{
+  color: #fff;
+  text-decoration: none;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  font-family: Poppins;
+  font-weight: bold;
+}
+
+.checkcontainer {
+  display: flex;
+  width: 100%;
+  align-items: center;
+  justify-content: center;
+  background-color: #fff;
+  border-radius: 9px;
+}
+
+/* Footer Section */
 .goToUp {
   display: flex;
   justify-content: center;
@@ -327,9 +312,10 @@ li {
 .goupBtn {
   padding: 10px;
   border: 1.5px solid white;
-  border-radius: 17px;
+  border-radius: 14px;
   color: white !important;
   text-decoration: none !important;
+  font-family: Outfit;
   font-weight: bold;
   transition: all linear 0.1s;
 }
