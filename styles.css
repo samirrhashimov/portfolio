@@ -9,9 +9,7 @@ html {
   overflow-x: hidden;
   scroll-behavior: smooth;
 }
-body {
-  overflow-x: hidden;
-}
+
 .blank {
   display: block;
   height: 200px;
@@ -195,7 +193,7 @@ li {
 }
 .projects-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 0fr));
+  grid-template-columns: repeat(auto-fit, minmax(250px, 0fr));
   gap: 5px;
   padding: 0;
   margin: 0;
@@ -221,7 +219,11 @@ li {
 .img{
   height: auto;
   width: 100%;
-  border-radius: 10px
+  border-radius: 10px;
+}
+
+.contrast {
+  filter: contrast(150%);
 }
 
 .project-link{
@@ -274,7 +276,6 @@ li {
   box-sizing: border-box;
   display: flex;
   flex-direction: column;
-  align-items: center;
   background: none;
   border: none;
   border-radius: 10px;
@@ -340,23 +341,7 @@ li {
   font-size: 12px;
 }
 /* Keyframes */
-@keyframes welcome {
-  0% {
-    color: #aa0000;
-  }
 
-  25% {
-    color: #00aa00
-  }
-
-  75% {
-    color: #0000aa;
-  }
-  100% {
-    color: #aa0000;
-  }
-}
- 
 /* Media */
 @media (max-width: 900px) {
   .projects-grid {
