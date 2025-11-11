@@ -80,6 +80,7 @@ li {
 }
  .skillsBadges {
   margin: 5px;
+  overflow-x: auto;
  }
 
 .skillsdiv {
