@@ -150,7 +150,7 @@
     <div class="projects-grid">
       <div class="project-tile">
         <a href="https://www.freecodecamp.org/certification/samirrhashimov/responsive-web-design">
-          <img src="./assets/sertificate/responsivewebdesign.png" class="img" alt="sertification"></a>
+          <img src="./assets/certificate/FreeCodeCamp/responsivewebdesign.png" class="img" alt="sertification"></a>
         <p class="projecttext"><b>freeCodeCamp</b> Responsive Web Design</p>
         <div class="checkcontainer">
           <a class="sertificate-link"
@@ -158,6 +158,18 @@
             Sertification</a>
         </div>
       </div>
+
+      <div class="cert-item" data-img-0="./assets/certificate/FutureLearn/UiUx/FutureLearn-Digitalskills1.jpg" data-img-1="./assets/certificate/FutureLearn/UiUx/FutureLearn-Digitalskills2.jpg">
+        <button class="c-btn c-prev" aria-label="prev">‹</button>
+        <a href="https://www.futurelearn.com/certificates/cnaf239">
+        <img class="c-img" src="" alt="FutureLearn-DigitalskillsandUX">
+        </a>
+        <button class="c-btn c-next" aria-label="next">›</button>
+        <p class="c-text"><b>FutureLearn -</b> Digital Skills: User Experience
+</p>
+      </div>
+
+
     </div>
   </section>
   <div class="blank-medium"></div>
@@ -186,5 +198,45 @@
     <p id="copyright">© 2025 - Samir Hashimov</p>
   </section>
 </body>
+
+<script>
+  (function () {
+    const el = document.currentScript ? document.currentScript.previousElementSibling : null;
+    const root = el && el.classList && el.classList.contains('cert-item') ? el : document.querySelector('.cert-item');
+    if (!root) return;
+    const img = root.querySelector('.c-img');
+    const prev = root.querySelector('.c-prev');
+    const next = root.querySelector('.c-next');
+
+    const imgs = [
+      root.dataset.img0 || root.getAttribute('data-img-0') || '',
+      root.dataset.img1 || root.getAttribute('data-img-1') || ''
+    ].filter(Boolean);
+
+    let i = 0;
+    function show(index) {
+      if (!imgs.length) return;
+      i = (index + imgs.length) % imgs.length;
+      img.src = imgs[i];
+    }
+
+    prev.addEventListener('click', () => show(i - 1));
+    next.addEventListener('click', () => show(i + 1));
+    root.tabIndex = 0;
+    root.addEventListener('keydown', e => {
+      if (e.key === 'ArrowLeft') show(i - 1);
+      if (e.key === 'ArrowRight') show(i + 1);
+    });
+
+    root.setImages = function (array) {
+      if (!Array.isArray(array)) return;
+      imgs.length = 0;
+      Array.prototype.push.apply(imgs, array.filter(Boolean));
+      show(0);
+    };
+
+    show(0);
+  })();
+</script>
 
 </html>
