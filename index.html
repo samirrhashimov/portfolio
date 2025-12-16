@@ -159,13 +159,23 @@
         </div>
       </div>
 
-      <div class="cert-item" data-img-0="./assets/certificate/FutureLearn/UiUx/FutureLearn-Digitalskills1.jpg" data-img-1="./assets/certificate/FutureLearn/UiUx/FutureLearn-Digitalskills2.jpg">
+      <div class="cert-item" data-img-0="./assets/certificate/FutureLearn/UX-Accenture/1.jpg" data-img-1="./assets/certificate/FutureLearn/UX-Accenture/2.jpg">
         <button class="c-btn c-prev" aria-label="prev">‹</button>
         <a href="https://www.futurelearn.com/certificates/cnaf239">
         <img class="c-img" src="" alt="FutureLearn-DigitalskillsandUX">
         </a>
         <button class="c-btn c-next" aria-label="next">›</button>
         <p class="c-text"><b>FutureLearn -</b> Digital Skills: User Experience
+</p>
+      </div>
+
+      <div class="cert-item" data-img-0="./assets/certificate/FutureLearn/AI-Accenture/1.jpg" data-img-1="./assets/certificate/FutureLearn/AI-Accenture/2.jpg">
+        <button class="c-btn c-prev" aria-label="prev">‹</button>
+        <a href="https://www.futurelearn.com/certificates/c4xlfvw">
+        <img class="c-img" src="" alt="FutureLearn-Artificial Intelligence">
+        </a>
+        <button class="c-btn c-next" aria-label="next">›</button>
+        <p class="c-text"><b>FutureLearn -</b> Digital Skills: Artificial Intelligence
 </p>
       </div>
 
@@ -200,10 +210,7 @@
 </body>
 
 <script>
-  (function () {
-    const el = document.currentScript ? document.currentScript.previousElementSibling : null;
-    const root = el && el.classList && el.classList.contains('cert-item') ? el : document.querySelector('.cert-item');
-    if (!root) return;
+  document.querySelectorAll('.cert-item').forEach(root => {
     const img = root.querySelector('.c-img');
     const prev = root.querySelector('.c-prev');
     const next = root.querySelector('.c-next');
@@ -236,7 +243,7 @@
     };
 
     show(0);
-  })();
+  });
 </script>
 
 </html>
