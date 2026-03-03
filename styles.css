@@ -102,9 +102,9 @@ li {
 }
 
 .skillstext {
-  font-weight: bold;
+  font-family: Poppins;
   margin: 5px;
-  font-size: 17px;
+  font-size: 16px;
   color: #fff;
   background-color: #009912;
   padding: 7px;
@@ -113,9 +113,9 @@ li {
 }
 
 .skillstext3 {
-  font-weight: bold;
+  font-family: Poppins;
   margin: 5px;
-  font-size: 17px;
+  font-size: 16px;
   color: #fff;
   background-color: #ff8022;
   padding: 7px;
@@ -136,7 +136,7 @@ li {
 }
 
 .dev_div:hover {
-  transform: scale(1.1);
+  transform: scale(1.03);
 }
 
 .other_div {
@@ -152,7 +152,7 @@ li {
 }
 
 .other_div:hover {
-  transform: scale(1.1);
+  transform: scale(1.03);
 }
 
 /* Navbar section */
@@ -420,6 +420,7 @@ li {
 }
 
 #copyright {
+  font-family: Poppins;
   position: relative;
   text-align: center;
   justify-content: center;
