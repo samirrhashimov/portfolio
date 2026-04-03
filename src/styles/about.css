@@ -1,0 +1,57 @@
+.about {
+    display: flex;
+    gap: 16px;
+}
+
+.aboutRight {
+    border-top: 1px solid #ADABAA;
+    border-left: 2.5px solid #ADABAA;
+    border-right: 1px solid #000;
+    border-bottom: 2.5px solid #000;
+    padding: 16px;
+    flex: 1;
+}
+
+.pp {
+    width: 130px;
+    border-radius: 50%;
+
+}
+
+.userName {
+    font-family: Outfit;
+    font-size: 16px;
+    margin: 5px 0px;
+    color: #474746;
+}
+
+.miniBio {
+    font-family: inter;
+    font-size: 14px;
+}
+
+.socialMedia {
+    margin: 10px 0px 0px 0px;
+    display: flex;
+    gap: 5px;
+}
+
+.socialMedia a {
+    color: inherit;
+}
+
+.socialIcons {
+    width: 24px;
+    height: 24px;
+}
+
+.aboutLeft {
+    border-top: 1px solid #ADABAA;
+    border-left: 2.5px solid #ADABAA;
+    border-right: 1px solid #000;
+    border-bottom: 2.5px solid #000;
+    padding: 16px;
+    flex: 1;
+    color: #474746;
+    font-family: Inter;
+}

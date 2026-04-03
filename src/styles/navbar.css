@@ -1,0 +1,46 @@
+.navbar {
+    padding: 12px 0px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1.2px solid #E5E2E1;
+}
+
+.logo {
+    font-family: Inter;
+    font-size: 1.2rem;
+}
+
+.navbarright {
+    display: flex;
+    gap: 12px;
+    align-items: center;
+}
+
+.navbarList {
+    text-decoration: none;
+    color: #1A1A1A;
+    font-family: Inter;
+    font-size: 0.8rem;
+    border-bottom: 1px solid #1A1A1A;
+    padding: 3px 0px;
+}
+
+.navbarList:hover {
+    border-bottom: 1px solid #699F35;
+    color: #699F35;
+}
+
+.cv {
+    padding: 6px 10px;
+    border-radius: 8px;
+    border: none;
+    background-color: #396A00;
+    color: #fff;
+}
+
+.cv:hover {
+    border: none;
+    background-color: #50841C;
+    color: #fff;
+}
