@@ -1,9 +1,21 @@
+.navbar-wrapper {
+    position: sticky;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 100;
+    background-color: #fff;
+}
+
 .navbar {
+    max-width: 1104px;
+    margin: 0 auto;
     padding: 12px 0px;
     display: flex;
     justify-content: space-between;
     align-items: center;
     border-bottom: 1.2px solid #E5E2E1;
+    background-color: transparent;
 }
 
 .logo {
@@ -33,14 +45,20 @@
 
 .cv {
     padding: 6px 10px;
-    border-radius: 8px;
+    border-radius: 5px;
     border: none;
     background-color: #396A00;
     color: #fff;
+    width: 40px;
 }
 
 .cv:hover {
     border: none;
     background-color: #50841C;
     color: #fff;
+}
+
+.cvIcon {
+    width: 20px;
+    height: 15px;
 }

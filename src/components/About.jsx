@@ -43,6 +43,7 @@ const About = () => {
                     I create modern web applications with HTML5, CSS3, JavaScript, and React. <br/>
                     Additionally, I create and publish my own products. My link management platform, called Blink, is available on the web, on Google Play, and as a Firefox extension. Currently, I am deepening my knowledge of the React ecosystem, exploring TypeScript, and switching to using Tailwind for efficiency.
                 </p>
+                <img className='skillIcons' src="https://skillicons.dev/icons?i=html,css,js,react,vite,python,git,github,npm,firebase,netlify,vercel,vscode" />
             </div>
         </div>
     )
