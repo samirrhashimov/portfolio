@@ -59,7 +59,7 @@ const Projects = () => {
         <div>
             <h1 className='projectTypeText'>Web Apps</h1>
             <div className='projectGrid'>
-                <div className='gridElement'>
+                <a className='gridElement' href={`https://github.com/${GITHUB_USERNAME}/blink`} target='_blank' rel='noopener noreferrer'>
                     <div className='imageContainer'
                          onMouseEnter={() => setHoveredProject('blink')}
                          onMouseLeave={() => setHoveredProject(null)}
@@ -76,8 +76,8 @@ const Projects = () => {
                         />
                     </div>
                     <p className='gridElementHeader'><b>Blink</b> - Link Sharing Platform</p>
-                </div>
-                <div className='gridElement'>
+                </a>
+                <a className='gridElement' href={`https://github.com/${GITHUB_USERNAME}/bakuWeather`} target='_blank' rel='noopener noreferrer'>
                     <div className='imageContainer'
                          onMouseEnter={() => setHoveredProject('baku')}
                          onMouseLeave={() => setHoveredProject(null)}
@@ -94,8 +94,8 @@ const Projects = () => {
                         />
                     </div>
                     <p className='gridElementHeader'><b>bakuWeather</b> - Weather App</p>
-                </div>
-                <div className='gridElement'>
+                </a>
+                <a className='gridElement' href={`https://github.com/${GITHUB_USERNAME}/brandkit`} target='_blank' rel='noopener noreferrer'>
                     <div className='imageContainer'
                          onMouseEnter={() => setHoveredProject('brandkit')}
                          onMouseLeave={() => setHoveredProject(null)}
@@ -112,8 +112,8 @@ const Projects = () => {
                         />
                     </div>
                     <p className='gridElementHeader'><b>brandkit</b> - NPM Icon Library</p>
-                </div>
-                <div className='gridElement'>
+                </a>
+                <a className='gridElement' href={`https://github.com/${GITHUB_USERNAME}/noteify`} target='_blank' rel='noopener noreferrer'>
                     <div className='imageContainer'
                          onMouseEnter={() => setHoveredProject('noteify')}
                          onMouseLeave={() => setHoveredProject(null)}
@@ -130,8 +130,8 @@ const Projects = () => {
                         />
                     </div>
                     <p className='gridElementHeader'><b>Noteify</b> - Cloud Notepad</p>
-                </div>
-                <div className='gridElement'>
+                </a>
+                <a className='gridElement' href={`https://github.com/${GITHUB_USERNAME}/whispen`} target='_blank' rel='noopener noreferrer'>
                     <div className='imageContainer'
                          onMouseEnter={() => setHoveredProject('whispen')}
                          onMouseLeave={() => setHoveredProject(null)}
@@ -148,7 +148,7 @@ const Projects = () => {
                         />
                     </div>
                     <p className='gridElementHeader'><b>Whispen</b> - PDF reader App</p>
-                </div>
+                </a>
             </div>
             <h1 className='projectTypeText'>npm Packages</h1>
             <div className='npmGrid'>

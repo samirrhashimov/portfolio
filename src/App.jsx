@@ -6,6 +6,7 @@ import About from './components/About'
 import SectionHeader from './components/SectionHeader'
 import Projects from './components/Projects'
 import Spacer from './components/Spacer'
+import Volunteering from './components/Volunteering'
 
 function App() {
 
@@ -14,11 +15,20 @@ function App() {
     <>
       <Navbar />
       <div className='container'>
-        <SectionHeader text="About"/>
-        <About />
+        <div id='about'>
+          <SectionHeader text="About"/>
+        </div>
+        <About/>
         <Spacer height={50}/>
-        <SectionHeader text="Projects"/>
+        <div id='projects'>
+          <SectionHeader text="Projects"/>
+        </div>
         <Projects/>
+        <Spacer height={50}/>
+        <div id='volunteering'>
+          <SectionHeader text="Community"/>
+        </div>
+        <Volunteering/>
       </div>
     </>
   )
