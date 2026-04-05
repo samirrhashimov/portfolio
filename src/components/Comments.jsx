@@ -14,7 +14,7 @@ const Comments = () => {
             reactionsEnabled="1"
             emitMetadata="0"
             inputPosition="top"
-            theme="light"
+            theme="https://raw.githubusercontent.com/samirrhashimov/portfolio/main/public/giscus-theme.css"
             lang="en"
             loading="lazy"
         />
