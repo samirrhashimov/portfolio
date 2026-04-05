@@ -27,10 +27,10 @@ const Volunteering = () => {
                     </div>
       </div>
       
-      <h1 className='aboutTypeText'>Volunteering</h1>
+      {/* <h1 className='aboutTypeText'>Volunteering</h1>
       <div className='contributions'>
 
-      </div>
+      </div> */}
     </div>
   )
 }

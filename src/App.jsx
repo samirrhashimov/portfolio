@@ -7,6 +7,7 @@ import SectionHeader from './components/SectionHeader'
 import Projects from './components/Projects'
 import Spacer from './components/Spacer'
 import Volunteering from './components/Volunteering'
+import Contact from './components/Contact'
 
 function App() {
 
@@ -29,6 +30,11 @@ function App() {
           <SectionHeader text="Community"/>
         </div>
         <Volunteering/>
+        <Spacer height={50}/>
+        <div id='contact'>
+          <SectionHeader text="Contact"/>
+        </div>
+        <Contact/>
       </div>
     </>
   )

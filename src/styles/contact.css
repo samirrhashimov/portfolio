@@ -1,0 +1,43 @@
+.aboutTypeText {
+    font-family: Inter;
+    font-size: 1.3rem;
+    margin-bottom: 10px;
+}
+
+.contactText {
+    font-family: Inter;
+    font-size: 1rem;
+    font-weight: bold;
+    font-style: italic;
+}
+
+.contactArea {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin: 30px 0 50px 0;
+}
+
+.contactActions {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 10px 0;
+    gap: 10px;
+}
+
+.contactActions a {
+    text-decoration: none;
+    color: #313030;
+    font-family: Outfit;
+}
+
+.contactActions a:first-child {
+    text-decoration: none;
+    background-color: #9DD766;
+    border: 1px solid #396A00;
+    border-radius: 4px;
+    padding: 6px 10px;
+    color: #000;
+    font-family: Outfit;
+}

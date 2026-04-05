@@ -11,7 +11,7 @@ const Navbar = () => {
                 <a className='navbarList' href='#about'>About</a>
                 <a className='navbarList' href='#projects'>Projects</a>
                 <a className='navbarList' href='#contact'>Contact</a>
-                <a href='../assets/files/Samir_Hashimov_CV.docx' download>
+                <a href='/Samir_Hashimov_CV.docx' download>
                 <button className='cv'><TbFileCvFilled className='cvIcon'/></button>
                 </a>
             </div>

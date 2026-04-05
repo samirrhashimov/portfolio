@@ -1,11 +1,15 @@
 import React, { useState, useEffect } from 'react'
 import '../styles/project.css'
 import blinkImg from '../assets/images/projects/blink.png'
+import blinkHoverImg from '../assets/images/projects/blinkhover.png'
 import bakuWeatherImg from '../assets/images/projects/bakuWeather.png'
+import bakuWeatherHoverImg from '../assets/images/projects/bakuWeatherHover.png'
 import brandkitImg from '../assets/images/projects/brandkit.png'
+import brandkitHoverImg from '../assets/images/projects/brandkitjsHover.png'
 import noteifyImg from '../assets/images/projects/noteify.png'
+import noteifyHoverImg from '../assets/images/projects/noteifyHover.png'
 import whispenImg from '../assets/images/projects/whispen.png'
-import demoImg from '../assets/images/projects/demo.jpeg'
+import whispenHoverImg from '../assets/images/projects/whispenHover.png'
 
 const npmPackages = ["brandkitjs"]
 const GITHUB_USERNAME = "samirrhashimov"
@@ -70,8 +74,8 @@ const Projects = () => {
                              style={{ opacity: hoveredProject === 'blink' ? 0 : 1 }}
                         />
                         <img className='gridElementImg overlay' 
-                             src={demoImg} 
-                             alt="Blink Demo"
+                             src={blinkHoverImg} 
+                             alt="Blink Hover"
                              style={{ opacity: hoveredProject === 'blink' ? 1 : 0 }}
                         />
                     </div>
@@ -88,8 +92,8 @@ const Projects = () => {
                              style={{ opacity: hoveredProject === 'baku' ? 0 : 1 }}
                         />
                         <img className='gridElementImg overlay' 
-                             src={demoImg} 
-                             alt="Baku Demo"
+                             src={bakuWeatherHoverImg} 
+                             alt="Baku Weather Demo"
                              style={{ opacity: hoveredProject === 'baku' ? 1 : 0 }}
                         />
                     </div>
@@ -106,7 +110,7 @@ const Projects = () => {
                              style={{ opacity: hoveredProject === 'brandkit' ? 0 : 1 }}
                         />
                         <img className='gridElementImg overlay' 
-                             src={demoImg} 
+                             src={brandkitHoverImg} 
                              alt="Brandkit Demo"
                              style={{ opacity: hoveredProject === 'brandkit' ? 1 : 0 }}
                         />
@@ -124,7 +128,7 @@ const Projects = () => {
                              style={{ opacity: hoveredProject === 'noteify' ? 0 : 1 }}
                         />
                         <img className='gridElementImg overlay' 
-                             src={demoImg} 
+                             src={noteifyHoverImg} 
                              alt="Noteify Demo"
                              style={{ opacity: hoveredProject === 'noteify' ? 1 : 0 }}
                         />
@@ -142,7 +146,7 @@ const Projects = () => {
                              style={{ opacity: hoveredProject === 'whispen' ? 0 : 1 }}
                         />
                         <img className='gridElementImg overlay' 
-                             src={demoImg} 
+                             src={whispenHoverImg} 
                              alt="Whispen Demo"
                              style={{ opacity: hoveredProject === 'whispen' ? 1 : 0 }}
                         />
