@@ -1,5 +1,6 @@
 import React from 'react'
 import '../styles/contact.css'
+import Comments from './Comments'
 
 const Contact = () => {
     return (
@@ -15,6 +16,7 @@ const Contact = () => {
                 </div>
             </div>
             <h1 className='aboutTypeText'>Comments</h1>
+            <Comments />
         </div>
     )
 }
