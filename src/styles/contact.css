@@ -2,6 +2,7 @@
     font-family: Inter;
     font-size: 1.3rem;
     margin-bottom: 10px;
+    color: var(--text-color);
 }
 
 .contactText {
@@ -9,6 +10,7 @@
     font-size: 1rem;
     font-weight: bold;
     font-style: italic;
+    color: var(--text-color);
 }
 
 .contactArea {
@@ -28,22 +30,22 @@
 
 .contactActions a {
     text-decoration: none;
-    color: #313030;
+    color: var(--secondary-text);
     font-family: Outfit;
 }
 
 .contactActions a:first-child {
     text-decoration: none;
-    background-color: #9DD766;
-    border: 1px solid #396A00;
+    background-color: var(--badge-bg);
+    border: 1px solid var(--badge-border);
     border-radius: 4px;
     padding: 3px 10px;
-    color: #000;
+    color: var(--text-color);
     font-family: Outfit;
 }
 
 .contactActions a:first-child:hover {
-    background-color: #82BB4E;
+    background-color: var(--accent-hover);
     transition: all 0.1s ease;
 }
 

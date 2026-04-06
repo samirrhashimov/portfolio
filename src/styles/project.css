@@ -12,7 +12,7 @@
 
 .gridElementImg {
     width: 200px;
-    border: 1.5px solid #5F5E5E;
+    border: 1.5px solid var(--card-border-alt);
     border-radius: 12px;
     transition: opacity 0.3s ease;
 }
@@ -43,8 +43,8 @@
     font-family: Inter;
     font-size: 1.3rem;
     margin-bottom: 10px;
+    color: var(--text-color);
 }
-
 
 .npmGrid {
     display: grid;
@@ -54,32 +54,34 @@
 }
 
 .npmGridElement {
-    border: 1.5px solid #ADABAA;
+    border: 1.5px solid var(--card-border-alt);
     border-radius: 10px 0;
     padding: 15px;
     word-break: break-word;
     overflow-wrap: break-word;
     position: relative;
     min-height: 150px;
+    background-color: var(--card-bg);
     transition: all 0.3s ease-out;
     display: flex;
     flex-direction: column;
 }
 
 .npmGridElement:hover {
-    border-color: #000000;
+    border-color: var(--text-color);
 }
 
 .pkgName {
     font-family: Inter;
     font-weight: bold;
+    color: var(--text-color);
 }
 
 .pkgDescription {
     font-family: Inter;
     font-size: 0.8rem;
     margin: 5px 0 10px 0;
-    color: #313030;
+    color: var(--secondary-text);
 }
 
 .pkgVersion {
@@ -88,8 +90,9 @@
     gap: 6px;
     font-family: Inter;
     padding: 6px 10px;
-    background-color: #9DD766;
-    border: 1px solid #396A00;
+    background-color: var(--badge-bg);
+    border: 1px solid var(--badge-border);
+    color: var(--text-color);
     border-radius: 4px;
     width: fit-content;
     margin-top: auto;
@@ -110,13 +113,14 @@
 }
 
 .githubGridElement {
-    border: 1.5px solid #ADABAA;
+    border: 1.5px solid var(--card-border-alt);
     border-radius: 10px 0;
     padding: 15px;
     word-break: break-word;
     overflow-wrap: break-word;
     position: relative;
     min-height: 150px;
+    background-color: var(--card-bg);
     cursor: pointer;
     transition: all 0.3s ease-out;
     display: flex;
@@ -124,19 +128,21 @@
 }
 
 .githubGridElement:hover {
-    border-color: #000000;
+    border-color: var(--text-color);
 }
+
 .repoName {
     font-family: Inter;
     font-weight: bold;
     margin: 0;
+    color: var(--text-color);
 }
 
 .repoDescription {
     font-family: Inter;
     font-size: 0.8rem;
     margin: 5px 0 10px 0;
-    color: #313030;
+    color: var(--secondary-text);
 }
 
 .repoLanguage {
@@ -145,8 +151,9 @@
     gap: 6px;
     font-family: Inter;
     padding: 6px 10px;
-    background-color: #9DD766;
-    border: 1px solid #396A00;
+    background-color: var(--badge-bg);
+    border: 1px solid var(--badge-border);
+    color: var(--text-color);
     border-radius: 4px;
     width: fit-content;
     margin-top: auto;
@@ -158,11 +165,14 @@
     letter-spacing: 0.5px;
     transition: all 0.2s ease-out;
 }
+
 @media (max-width: 768px) {
-    .npmGrid, .githubGrid {
+
+    .npmGrid,
+    .githubGrid {
         grid-template-columns: 1fr;
     }
-    
+
     .gridElementImg {
         width: 100%;
         height: auto;
@@ -172,8 +182,9 @@
         grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
     }
 
-    .npmGridElement, .githubGridElement {
+    .npmGridElement,
+    .githubGridElement {
         min-height: auto;
-        padding-bottom: 60px; /* Space for the absolute positioned version/language */
+        padding-bottom: 60px;
     }
 }

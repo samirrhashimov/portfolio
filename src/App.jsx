@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import './App.css'
 import Navbar from './components/Navbar'
 import './index.css'
@@ -10,11 +10,26 @@ import Volunteering from './components/Volunteering'
 import Contact from './components/Contact'
 
 function App() {
+  const [isDarkMode, setIsDarkMode] = useState(
+    localStorage.getItem('theme') === 'dark' || 
+    (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)
+  )
 
+  useEffect(() => {
+    if (isDarkMode) {
+      document.body.classList.add('dark-theme');
+      localStorage.setItem('theme', 'dark');
+    } else {
+      document.body.classList.remove('dark-theme');
+      localStorage.setItem('theme', 'light');
+    }
+  }, [isDarkMode]);
+
+  const toggleTheme = () => setIsDarkMode(!isDarkMode);
 
   return (
     <>
-      <Navbar />
+      <Navbar toggleTheme={toggleTheme} isDarkMode={isDarkMode} />
       <div className='container'>
         <div id='about'>
           <SectionHeader text="About"/>

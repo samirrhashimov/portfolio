@@ -11,26 +11,26 @@
 }
 
 .aboutRight {
-    border-top: 1px solid #ADABAA;
-    border-left: 2.5px solid #ADABAA;
-    border-right: 1px solid #000;
-    border-bottom: 2.5px solid #000;
+    border-top: 1px solid var(--card-border-alt);
+    border-left: 2.5px solid var(--card-border-alt);
+    border-right: 1px solid var(--text-color);
+    border-bottom: 2.5px solid var(--text-color);
     padding: 16px;
     flex: 1;
     border-radius: 12px 0px;
+    background-color: var(--card-bg);
 }
 
 .pp {
     width: 130px;
     border-radius: 50%;
-
 }
 
 .userName {
     font-family: Outfit;
     font-size: 16px;
     margin: 5px 0px;
-    color: #474746;
+    color: var(--secondary-text);
 }
 
 .miniBio {
@@ -51,30 +51,32 @@
 .socialIcons {
     width: 24px;
     height: 24px;
+    filter: var(--icon-filter);
+    /* I can add a filter variable if needed, but react-icons are better */
 }
 
 .aboutLeft {
-    border-top: 1px solid #ADABAA;
-    border-left: 2.5px solid #ADABAA;
-    border-right: 1px solid #000;
-    border-bottom: 2.5px solid #000;
+    border-top: 1px solid var(--card-border-alt);
+    border-left: 2.5px solid var(--card-border-alt);
+    border-right: 1px solid var(--text-color);
+    border-bottom: 2.5px solid var(--text-color);
     padding: 16px;
     flex: 1;
-    color: #313030;
+    color: var(--text-color);
     font-family: Inter;
     border-radius: 12px 0px;
+    background-color: var(--card-bg);
 }
 
 .skillIcons {
     max-width: 500px;
     margin-top: 12px;
-    ;
 }
 
 .skillIconsContainer {
     display: flex;
     justify-content: center;
-    overflow: scroll;
+    overflow: hidden;
 }
 
 .certificateGrid {
@@ -87,13 +89,16 @@
 .certificateGridElement {
     display: flex;
     flex-direction: row;
-    border: 1px solid #ADABAA;
+    border: 1px solid var(--card-border-alt);
+    background-color: var(--card-bg);
     border-radius: 0 10px 10px 0;
+    overflow: hidden;
 }
 
 .certificateImg {
     max-width: 250px;
     height: 150px;
+    object-fit: cover;
 }
 
 .certificateInfo {
@@ -112,7 +117,7 @@
 .certificateParagraph {
     font-size: 0.9rem;
     font-family: Inter;
-    color: #313030;
+    color: var(--secondary-text);
     margin-top: 5px;
 }
 
@@ -127,12 +132,14 @@
 }
 
 .certificateBadge {
-    background-color: #9DD766;
-    border: 1px solid #396A00;
+    background-color: var(--badge-bg);
+    border: 1px solid var(--badge-border);
+    color: var(--text-color);
     border-radius: 4px;
     padding: 6px 10px;
     font-size: 0.7rem;
     font-family: Inter;
+    white-space: nowrap;
 }
 
 @media (max-width: 768px) {
