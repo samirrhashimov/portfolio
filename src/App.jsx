@@ -8,8 +8,10 @@ import Projects from './components/Projects'
 import Spacer from './components/Spacer'
 import Volunteering from './components/Volunteering'
 import Contact from './components/Contact'
+import { useTranslation } from 'react-i18next';
 
 function App() {
+  const { t } = useTranslation();
   const [isDarkMode, setIsDarkMode] = useState(
     localStorage.getItem('theme') === 'dark' || 
     (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)
@@ -32,22 +34,22 @@ function App() {
       <Navbar toggleTheme={toggleTheme} isDarkMode={isDarkMode} />
       <div className='container'>
         <div id='about'>
-          <SectionHeader text="About"/>
+          <SectionHeader text={t('sections.about')}/>
         </div>
         <About/>
         <Spacer height={50}/>
         <div id='projects'>
-          <SectionHeader text="Projects"/>
+          <SectionHeader text={t('sections.projects')}/>
         </div>
         <Projects/>
         <Spacer height={50}/>
         <div id='volunteering'>
-          <SectionHeader text="Community"/>
+          <SectionHeader text={t('sections.community')}/>
         </div>
         <Volunteering/>
         <Spacer height={50}/>
         <div id='contact'>
-          <SectionHeader text="Contact"/>
+          <SectionHeader text={t('sections.contact')}/>
         </div>
         <Contact/>
       </div>

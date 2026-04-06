@@ -10,11 +10,13 @@ import noteifyImg from '../assets/images/projects/noteify.png'
 import noteifyHoverImg from '../assets/images/projects/noteifyHover.png'
 import whispenImg from '../assets/images/projects/whispen.png'
 import whispenHoverImg from '../assets/images/projects/whispenHover.png'
+import { useTranslation } from 'react-i18next';
 
 const npmPackages = ["brandkitjs"]
 const GITHUB_USERNAME = "samirrhashimov"
 
 const Projects = () => {
+    const { t } = useTranslation();
     const [hoveredProject, setHoveredProject] = useState(null);
     const [packages, setPackages] = useState([])
     const [repos, setRepos] = useState([])
@@ -61,7 +63,7 @@ const Projects = () => {
 
     return (
         <div>
-            <h1 className='projectTypeText'>Web Apps</h1>
+            <h1 className='projectTypeText'>{t('projects.webApps')}</h1>
             <div className='projectGrid'>
                 <a className='gridElement' href={`https://github.com/${GITHUB_USERNAME}/blink`} target='_blank' rel='noopener noreferrer'>
                     <div className='imageContainer'
@@ -154,11 +156,11 @@ const Projects = () => {
                     <p className='gridElementHeader'><b>Whispen</b> - PDF reader App</p>
                 </a>
             </div>
-            <h1 className='projectTypeText'>npm Packages</h1>
+            <h1 className='projectTypeText'>{t('projects.npmPackages')}</h1>
             <div className='npmGrid'>
                 {packages.length === 0 ? (
                     <div className='npmGridElement'>
-                        <p>Loading npm packages...</p>
+                        <p>{t('projects.loading')}</p>
                     </div>
                 ) : (
                     packages.map(pkg => (
@@ -170,11 +172,11 @@ const Projects = () => {
                     ))
                 )}
             </div>
-            <h1 className='projectTypeText'>GitHub Repositories</h1>
+            <h1 className='projectTypeText'>{t('projects.githubRepos')}</h1>
             <div className='githubGrid'>
                 {repos.length === 0 ? (
                     <div className='githubGridElement'>
-                        <p>Loading repositories...</p>
+                        <p>{t('projects.loading')}</p>
                     </div>
                 ) : (
                     repos.map(repo => (

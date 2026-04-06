@@ -12,6 +12,7 @@
     --badge-bg: #9dd766;
     --badge-border: #396a00;
     --github-npm-bg: transparent;
+    --card-bg: #ffffff;
 }
 
 body.dark-theme {

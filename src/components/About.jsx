@@ -7,11 +7,14 @@ import { SiMedium, SiBuymeacoffee } from "react-icons/si";
 import { BiLogoDevTo } from "react-icons/bi";
 import edugovazFrontBackend from "../assets/images/certificate/edugovaz-frontbackend.jpg"
 import freecodecampResponsiveWeb from "../assets/images/certificate/freecodecamp-responsivewebdesign.png"
+import { useTranslation } from 'react-i18next';
 
 const About = () => {
+    const { t } = useTranslation();
+
     return (
         <div>
-            <h1 className='aboutTypeText'>Bio</h1>
+            <h1 className='aboutTypeText'>{t('about.bioTitle')}</h1>
             <div className='about'>
                 <div className='aboutRight'>
                     <img className='pp' src={pp} alt='Samirr' />
@@ -43,9 +46,7 @@ const About = () => {
                 </div>
                 <div className='aboutLeft'>
                     <p className='bio'>
-                        I am Samir Hashimov, a Front-End developer and UI designer based in Baku, Azerbaijan.
-                        I create modern web applications with HTML5, CSS3, JavaScript, and React. <br />
-                        Additionally, I create and publish my own products. My link management platform, called Blink, is available on the web, on Google Play, and as a Firefox extension. Currently, I am deepening my knowledge of the React ecosystem, exploring TypeScript, and switching to using Tailwind for efficiency.
+                        {t('about.bio')}
                     </p>
                     <div className='skillIconsContainer'>
                         <img className='skillIcons' src="https://skillicons.dev/icons?i=html,css,js,react,vite,python,git,github,npm,firebase,netlify,vercel,vscode" />
@@ -53,7 +54,7 @@ const About = () => {
                 </div>
 
             </div>
-            <h1 className='aboutTypeText'>Certificates</h1>
+            <h1 className='aboutTypeText'>{t('about.certificatesTitle')}</h1>
             <div className='certificateGrid'>
                 <div className='certificateGridElement'>
                     <img className='certificateImg' src={edugovazFrontBackend}></img>
