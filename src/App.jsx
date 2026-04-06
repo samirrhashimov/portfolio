@@ -9,6 +9,7 @@ import Spacer from './components/Spacer'
 import Volunteering from './components/Volunteering'
 import Contact from './components/Contact'
 import { useTranslation } from 'react-i18next';
+import FadeInSection from './components/FadeInSection';
 
 function App() {
   const { t } = useTranslation();
@@ -33,25 +34,39 @@ function App() {
     <>
       <Navbar toggleTheme={toggleTheme} isDarkMode={isDarkMode} />
       <div className='container'>
-        <div id='about'>
-          <SectionHeader text={t('sections.about')}/>
-        </div>
-        <About/>
+        <FadeInSection>
+          <div id='about'>
+            <SectionHeader text={t('sections.about')}/>
+          </div>
+          <About/>
+        </FadeInSection>
+        
         <Spacer height={50}/>
-        <div id='projects'>
-          <SectionHeader text={t('sections.projects')}/>
-        </div>
-        <Projects/>
+        
+        <FadeInSection>
+          <div id='projects'>
+            <SectionHeader text={t('sections.projects')}/>
+          </div>
+          <Projects/>
+        </FadeInSection>
+        
         <Spacer height={50}/>
-        <div id='volunteering'>
-          <SectionHeader text={t('sections.community')}/>
-        </div>
-        <Volunteering/>
+        
+        <FadeInSection>
+          <div id='volunteering'>
+            <SectionHeader text={t('sections.community')}/>
+          </div>
+          <Volunteering/>
+        </FadeInSection>
+        
         <Spacer height={50}/>
-        <div id='contact'>
-          <SectionHeader text={t('sections.contact')}/>
-        </div>
-        <Contact/>
+        
+        <FadeInSection>
+          <div id='contact'>
+            <SectionHeader text={t('sections.contact')}/>
+          </div>
+          <Contact/>
+        </FadeInSection>
       </div>
     </>
   )

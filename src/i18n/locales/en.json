@@ -27,5 +27,10 @@
     "loading": "Loading...",
     "error": "GitHub API rate limit exceeded or network error. Please try again later.",
     "noResults": "No results found."
+  },
+  "contributions": {
+    "title": "Contributions",
+    "osGuide": "translation - Added Turkish translations to two articles",
+    "distromatch": "UI/UX update - UI/UX Modernization and Database Expansion"
   }
 }
