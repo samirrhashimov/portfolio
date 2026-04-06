@@ -24,6 +24,8 @@
     "webApps": "Veb Proqramlar",
     "npmPackages": "NPM Paketləri",
     "githubRepos": "GitHub Repozitoriyaları",
-    "loading": "Yüklənir..."
+    "loading": "Yüklənir...",
+    "error": "GitHub API limitinə çatılıb və ya şəbəkə xətası baş verib. Zəhmət olmasa bir az sonra yenidən yoxlayın.",
+    "noResults": "Nəticə tapılmadı."
   }
 }

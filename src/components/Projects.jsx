@@ -20,6 +20,7 @@ const Projects = () => {
     const [hoveredProject, setHoveredProject] = useState(null);
     const [packages, setPackages] = useState([])
     const [repos, setRepos] = useState([])
+    const [reposError, setReposError] = useState(false)
 
     useEffect(() => {
       Promise.all(
@@ -32,33 +33,36 @@ const Projects = () => {
               description: data.description,
               url: `https://www.npmjs.com/package/${data.name}`
             }))
+            .catch(() => null)
         )
-      ).then(setPackages)
+      ).then(res => setPackages(res.filter(p => p !== null)))
     }, [])
 
     useEffect(() => {
-      fetch(`https://api.github.com/users/${GITHUB_USERNAME}/repos?sort=updated&per_page=100`)
-        .then(res => res.json())
+      fetch(`https://api.github.com/users/${GITHUB_USERNAME}/repos?sort=updated&per_page=20`)
+        .then(res => {
+          if (!res.ok) throw new Error('API error')
+          return res.json()
+        })
         .then(data => {
           if (Array.isArray(data)) {
-            const repoPromises = data
+            const filteredRepos = data
               .filter(repo => !repo.fork)
               .slice(0, 8)
-              .map(repo =>
-                fetch(`https://api.github.com/repos/${GITHUB_USERNAME}/${repo.name}/languages`)
-                  .then(res => res.json())
-                  .then(languages => ({
-                    name: repo.name,
-                    description: repo.description,
-                    language: Object.keys(languages).length > 0 ? Object.keys(languages)[0] : 'Unknown',
-                    url: repo.html_url
-                  }))
-              )
-            return Promise.all(repoPromises)
+              .map(repo => ({
+                name: repo.name,
+                description: repo.description,
+                language: repo.language || 'Unknown',
+                url: repo.html_url
+              }))
+            setRepos(filteredRepos)
+            setReposError(false)
           }
-          return []
         })
-        .then(setRepos)
+        .catch(err => {
+          console.error('GitHub API unreachable or rate limited', err)
+          setReposError(true)
+        })
     }, [])
 
     return (
@@ -160,7 +164,7 @@ const Projects = () => {
             <div className='npmGrid'>
                 {packages.length === 0 ? (
                     <div className='npmGridElement'>
-                        <p>{t('projects.loading')}</p>
+                        <p>{t('projects.noResults')}</p>
                     </div>
                 ) : (
                     packages.map(pkg => (
@@ -174,7 +178,11 @@ const Projects = () => {
             </div>
             <h1 className='projectTypeText'>{t('projects.githubRepos')}</h1>
             <div className='githubGrid'>
-                {repos.length === 0 ? (
+                {reposError ? (
+                    <div className='githubGridElement'>
+                        <p>{t('projects.error')}</p>
+                    </div>
+                ) : repos.length === 0 ? (
                     <div className='githubGridElement'>
                         <p>{t('projects.loading')}</p>
                     </div>

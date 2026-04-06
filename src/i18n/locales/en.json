@@ -24,6 +24,8 @@
     "webApps": "Web Applications",
     "npmPackages": "NPM Packages",
     "githubRepos": "GitHub Repositories",
-    "loading": "Loading..."
+    "loading": "Loading...",
+    "error": "GitHub API rate limit exceeded or network error. Please try again later.",
+    "noResults": "No results found."
   }
 }
