@@ -46,3 +46,11 @@
     background-color: #82BB4E;
     transition: all 0.1s ease;
 }
+
+@media (max-width: 480px) {
+    .contactActions {
+        flex-direction: row;
+        gap: 15px;
+        text-align: center;
+    }
+}

@@ -158,3 +158,22 @@
     letter-spacing: 0.5px;
     transition: all 0.2s ease-out;
 }
+@media (max-width: 768px) {
+    .npmGrid, .githubGrid {
+        grid-template-columns: 1fr;
+    }
+    
+    .gridElementImg {
+        width: 100%;
+        height: auto;
+    }
+
+    .projectGrid {
+        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    }
+
+    .npmGridElement, .githubGridElement {
+        min-height: auto;
+        padding-bottom: 60px; /* Space for the absolute positioned version/language */
+    }
+}

@@ -64,3 +64,28 @@
     font-size: 0.7rem;
     font-family: Inter;
 }
+@media (max-width: 768px) {
+    .contributionsGridElement {
+        flex-direction: column;
+        border-radius: 10px;
+    }
+    
+    .contributionsImg {
+        max-width: 100%;
+        height: auto;
+        border-radius: 10px 10px 0 0;
+        border-right: none;
+        border-bottom: 1px solid #ADABAA;
+    }
+
+    .contributionsInfo {
+        margin: 10px 0;
+        padding: 0 10px 15px 10px;
+    }
+
+    .contributionsBadges {
+        position: static;
+        margin-top: 10px;
+        justify-content: center;
+    }
+}

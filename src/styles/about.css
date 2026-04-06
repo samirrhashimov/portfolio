@@ -68,6 +68,13 @@
 .skillIcons {
     max-width: 500px;
     margin-top: 12px;
+    ;
+}
+
+.skillIconsContainer {
+    display: flex;
+    justify-content: center;
+    overflow: scroll;
 }
 
 .certificateGrid {
@@ -126,4 +133,39 @@
     padding: 6px 10px;
     font-size: 0.7rem;
     font-family: Inter;
+}
+
+@media (max-width: 768px) {
+    .about {
+        flex-direction: column;
+    }
+
+    .certificateGridElement {
+        flex-direction: column;
+        border-radius: 10px;
+        align-items: center;
+        text-align: center;
+    }
+
+    .certificateImg {
+        max-width: 100%;
+        height: auto;
+        border-radius: 10px 10px 0 0;
+    }
+
+    .certificateInfo {
+        margin: 10px 0;
+        padding: 0 10px 10px 10px;
+    }
+
+    .certificateBadges {
+        position: static;
+        margin-top: 10px;
+        justify-content: center;
+    }
+
+    .skillIcons {
+        max-width: 300px;
+        margin-top: 12px;
+    }
 }
