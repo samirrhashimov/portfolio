@@ -30,7 +30,7 @@ const Navbar = ({ toggleTheme, isDarkMode }) => {
                             {isDarkMode ? <FiSun className="themeIcon" /> : <FiMoon className="themeIcon" />}
                         </button>
 
-                        <a href='/Samir_Hashimov_CV.docx' download title="Download CV">
+                        <a href='/Samir_Hashimov_CV.pdf' download title="Download CV">
                             <button className='cv'><TbFileCvFilled className='cvIcon' /></button>
                         </a>
                     </div>
