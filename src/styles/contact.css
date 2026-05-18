@@ -34,6 +34,10 @@
     font-family: Outfit;
 }
 
+.contactActions a:hover {
+    color: var(--text-color);
+}
+
 .contactActions a:first-child {
     text-decoration: none;
     background-color: var(--badge-bg);
