@@ -21,8 +21,8 @@
     "comments": "Comments"
   },
   "projects": {
-    "webApps": "Web Applications",
-    "npmPackages": "NPM Packages",
+    "webApps": "Web Apps",
+    "packages": "Libraries & Packages",
     "githubRepos": "GitHub Repositories",
     "loading": "Loading...",
     "error": "GitHub API rate limit exceeded or network error. Please try again later.",

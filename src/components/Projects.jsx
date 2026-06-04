@@ -160,7 +160,7 @@ const Projects = () => {
                     <p className='gridElementHeader'><b>Whispen</b> - PDF reader App</p>
                 </a>
             </div>
-            <h1 className='projectTypeText'>{t('projects.npmPackages')}</h1>
+            <h1 className='projectTypeText'>{t('projects.packages')}</h1>
             <div className='npmGrid'>
                 {packages.length === 0 ? (
                     <div className='npmGridElement'>
