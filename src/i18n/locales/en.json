@@ -23,6 +23,7 @@
   "projects": {
     "webApps": "Web Apps",
     "packages": "Libraries & Packages",
+    "landingPages": "Landing Pages",
     "githubRepos": "GitHub Repositories",
     "loading": "Loading...",
     "error": "GitHub API rate limit exceeded or network error. Please try again later.",
