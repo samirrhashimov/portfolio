@@ -7,6 +7,7 @@ const Contact = () => {
 
     return (
         <div>
+            <h1 className='aboutTypeText'>{t('contact.title')}</h1>
             <div className='contactArea'>
                 <div className='contactForm'>
                     <p className='contactText'>
@@ -17,7 +18,6 @@ const Contact = () => {
                     </div>
                 </div>
             </div>
-            {/* Comments moved to Community component */}
         </div>
     )
 }

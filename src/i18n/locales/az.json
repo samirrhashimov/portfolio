@@ -10,6 +10,9 @@
     "community": "İcma",
     "contact": "Əlaqə"
   },
+  "contact": {
+    "title": "Əlaqə"
+  },
   "about": {
     "bioTitle": "Bioqrafiya",
     "bio": "Mən Samir Hashimov, Bakı, Azərbaycanda yaşayan Front-End Developer və UI dizaynerəm. HTML5, CSS3, JavaScript və React istifadə edərək müasir veb proqramlar hazırlayıram. Bundan əlavə, öz app-lərimi yaradıram və yayımlayıram. \"Blink\" adlı link idarəetmə platformam artıq vebdə, Google Play-də və Firefox genişlənməsi kimi mövcuddur. Hal-hazırda React ekosistemi haqqında biliklərimi dərinləşdirirəm, TypeScript-i araşdırıram və səmərəlilik üçün Tailwind-ə keçirəm.",
@@ -31,6 +34,7 @@
       "distromatch": "UI/UX yeniləməsi - UI/UX Modernləşdirilməsi və Məlumat Bazasının Genişləndirilməsi"
     },
     "contact": {
+      "title": "Əlaqə",
       "text": "Ağlınızda bir layihə var və ya sadəcə salam demək istəyirsiniz? Eşitməkdən şad olaram.",
       "email": "E-poçt göndər",
       "comments": "Şərhlər"
