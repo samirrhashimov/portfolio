@@ -20,7 +20,7 @@ const Navbar = ({ toggleTheme, isDarkMode }) => {
                     <div className="navbarLinks">
                         <a className='navbarList' href='#about'>{t('navbar.about')}</a>
                         <a className='navbarList' href='#projects'>{t('navbar.projects')}</a>
-                        <a className='navbarList' href='#contact'>{t('navbar.contact')}</a>
+                        <a className='navbarList' href='#community'>{t('navbar.community')}</a>
                     </div>
                     <div className='navbarActions'>
                         <button className='langToggle' onClick={changeLanguage}>
