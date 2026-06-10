@@ -3,8 +3,10 @@ import '../styles/volunteering.css'
 import distromatch from '../assets/images/contributions/distromatch.png'
 import osGuide from '../assets/images/contributions/opensource_guide.png'
 import { useTranslation } from 'react-i18next';
+import Contact from './Contact'
+import Comments from './Comments'
 
-const Volunteering = () => {
+const Community = () => {
   const { t } = useTranslation();
 
   return (
@@ -29,8 +31,11 @@ const Volunteering = () => {
             </a>
         </div>
       </div>
+      <Contact />
+      <h1 className='aboutTypeText'>{t('contact.comments')}</h1>
+      <Comments />
     </div>
   )
 }
 
-export default Volunteering
+export default Community

@@ -1,6 +1,5 @@
 import React from 'react'
 import '../styles/contact.css'
-import Comments from './Comments'
 import { useTranslation } from 'react-i18next';
 
 const Contact = () => {
@@ -18,8 +17,7 @@ const Contact = () => {
                     </div>
                 </div>
             </div>
-            <h1 className='aboutTypeText'>{t('contact.comments')}</h1>
-            <Comments />
+            {/* Comments moved to Community component */}
         </div>
     )
 }

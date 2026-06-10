@@ -5,8 +5,7 @@ import About from './components/About'
 import SectionHeader from './components/SectionHeader'
 import Projects from './components/Projects'
 import Spacer from './components/Spacer'
-import Volunteering from './components/Volunteering'
-import Contact from './components/Contact'
+import Community from './components/Community'
 import { useTranslation } from 'react-i18next';
 import FadeInSection from './components/FadeInSection';
 
@@ -52,20 +51,13 @@ function App() {
         <Spacer height={50}/>
         
         <FadeInSection>
-          <div id='volunteering'>
+          <div id='community'>
             <SectionHeader text={t('sections.community')}/>
           </div>
-          <Volunteering/>
+          <Community/>
         </FadeInSection>
         
         <Spacer height={50}/>
-        
-        <FadeInSection>
-          <div id='contact'>
-            <SectionHeader text={t('sections.contact')}/>
-          </div>
-          <Contact/>
-        </FadeInSection>
       </div>
     </>
   )
