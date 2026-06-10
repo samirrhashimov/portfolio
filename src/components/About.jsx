@@ -45,12 +45,15 @@ const About = () => {
                     </div>
                 </div>
                 <div className='aboutLeft'>
-                    <p className='bio'>
-                        {t('about.bio')}
-                    </p>
-                    <div className='skillIconsContainer'>
-                        <img className='skillIcons' src="https://skillicons.dev/icons?i=html,css,js,react,vite,python,git,github,npm,firebase,netlify,vercel,vscode" />
+                    <div className='aboutLeftItems'>
+                        <p className='bio'>
+                            {t('about.bio')}
+                        </p>
+                        <div className='skillIconsContainer'>
+                            <img className='skillIcons' src="https://skillicons.dev/icons?i=html,css,js,react,vite,python,git,github,npm,firebase,netlify,vercel,vscode" />
+                        </div>
                     </div>
+
                 </div>
 
             </div>
