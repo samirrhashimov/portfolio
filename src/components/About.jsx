@@ -56,7 +56,7 @@ const About = () => {
             </div>
             <h1 className='aboutTypeText'>{t('about.certificatesTitle')}</h1>
             <div className='certificateGrid'>
-                <div className='certificateGridElement'>
+                <a className='certificateGridElement' href={edugovazFrontBackend} target='_blank' rel='noreferrer'>
                     <img className='certificateImg' src={edugovazFrontBackend}></img>
                     <div className='certificateInfo'>
                         <p className='certificateHeader'>Bakı Dövlət Peşə Tədris Mərkəzi</p>
@@ -69,8 +69,8 @@ const About = () => {
                             <p className='certificateBadge'>Node.js</p>
                         </div>
                     </div>
-                </div>
-                <div className='certificateGridElement'>
+                </a>
+                <a className='certificateGridElement' href='https://www.freecodecamp.org/certification/samirrhashimov/responsive-web-design' target='_blank' rel='noreferrer'>
                     <img className='certificateImg' src={freecodecampResponsiveWeb}></img>
                     <div className='certificateInfo'>
                         <p className='certificateHeader'>freeCodeCamp</p>
@@ -81,7 +81,7 @@ const About = () => {
                             <p className='certificateBadge'>JS</p>
                         </div>
                     </div>
-                </div>
+                </a>
             </div>
         </div>
     )

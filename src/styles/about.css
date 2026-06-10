@@ -52,7 +52,6 @@
     width: 24px;
     height: 24px;
     filter: var(--icon-filter);
-    /* I can add a filter variable if needed, but react-icons are better */
 }
 
 .aboutLeft {
@@ -93,6 +92,13 @@
     background-color: var(--card-bg);
     border-radius: 0 10px 10px 0;
     overflow: hidden;
+    text-decoration: none;
+    color: inherit;
+    transition: border-color 0.15s ease, transform 0.12s ease;
+}
+
+.certificateGridElement:hover {
+    border-color: var(--text-color);
 }
 
 .certificateImg {
