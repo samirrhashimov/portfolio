@@ -33,6 +33,13 @@
       "osGuide": "translation - Added Turkish translations to two articles",
       "distromatch": "UI/UX update - UI/UX Modernization and Database Expansion"
     },
+    "honors": {
+      "title": "Honors",
+      "certificate": {
+        "header": "Certificate of Appreciation – @ngoagency",
+        "paragraph": "Awarded for active participation to the international project focused on environmental legal norms in the Karabakh and Eastern Zangezur regions."
+      }
+    },
     "contact": {
       "title": "Contact",
       "text": "Have a project in mind or just want to say hi? I'd love to hear from you.",

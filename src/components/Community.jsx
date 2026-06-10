@@ -4,6 +4,7 @@ import { useTranslation } from 'react-i18next';
 import Contact from './Contact'
 import Comments from './Comments'
 import Contributions from './Contributions'
+import Honors from './Honors'
 
 const Community = () => {
     const { t } = useTranslation();
@@ -11,6 +12,7 @@ const Community = () => {
     return (
         <div>
             <Contributions />
+            <Honors />
             <Contact />
             <h1 className='aboutTypeText'>{t('community.contact.comments')}</h1>
             <Comments />
