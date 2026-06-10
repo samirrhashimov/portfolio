@@ -15,11 +15,6 @@
     "bio": "I am Samir Hashimov, a Front-End developer and UI designer based in Baku, Azerbaijan. I create modern web applications with HTML5, CSS3, JavaScript, and React. Additionally, I create and publish my own products. My link management platform, called Blink, is available on the web, on Google Play, and as a Firefox extension. Currently, I am deepening my knowledge of the React ecosystem, exploring TypeScript, and switching to using Tailwind for efficiency.",
     "certificatesTitle": "Certificates"
   },
-  "contact": {
-    "text": "Have a project in mind or just want to say hi? I'd love to hear from you.",
-    "email": "Send Email",
-    "comments": "Comments"
-  },
   "projects": {
     "webApps": "Web Apps",
     "packages": "Libraries & Packages",
@@ -29,9 +24,16 @@
     "error": "GitHub API rate limit exceeded or network error. Please try again later.",
     "noResults": "No results found."
   },
-  "contributions": {
-    "title": "Contributions",
-    "osGuide": "translation - Added Turkish translations to two articles",
-    "distromatch": "UI/UX update - UI/UX Modernization and Database Expansion"
+  "community": {
+    "contributions": {
+      "title": "Contributions",
+      "osGuide": "translation - Added Turkish translations to two articles",
+      "distromatch": "UI/UX update - UI/UX Modernization and Database Expansion"
+    },
+    "contact": {
+      "text": "Have a project in mind or just want to say hi? I'd love to hear from you.",
+      "email": "Send Email",
+      "comments": "Comments"
+    }
   }
 }

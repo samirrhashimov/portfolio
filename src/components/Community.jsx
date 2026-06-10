@@ -11,14 +11,14 @@ const Community = () => {
 
   return (
     <div>
-      <h1 className='aboutTypeText'>{t('contributions.title')}</h1>
+      <h1 className='aboutTypeText'>{t('community.contributions.title')}</h1>
       <div className='volunteering'>
         <div className='contributionsGrid'>
             <a className='contributionsGridElement' href='https://github.com/github/opensource.guide/pull/3500' target='_blank' rel='noreferrer'>
                 <img className='contributionsImg' src={osGuide}></img>
                 <div className='contributionsInfo'>
                     <p className='contributionsHeader'>opensource.guide</p>
-                    <p className='contributionsParagraph'>{t('contributions.osGuide')}</p>
+                    <p className='contributionsParagraph'>{t('community.contributions.osGuide')}</p>
                 </div>
             </a>
 
@@ -26,13 +26,13 @@ const Community = () => {
                 <img className='contributionsImg' src={distromatch}></img>
                 <div className='contributionsInfo'>
                     <p className='contributionsHeader'>distromatch</p>
-                    <p className='contributionsParagraph'>{t('contributions.distromatch')}</p>
+                    <p className='contributionsParagraph'>{t('community.contributions.distromatch')}</p>
                 </div>
             </a>
         </div>
       </div>
       <Contact />
-      <h1 className='aboutTypeText'>{t('contact.comments')}</h1>
+      <h1 className='aboutTypeText'>{t('community.contact.comments')}</h1>
       <Comments />
     </div>
   )
