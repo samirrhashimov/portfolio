@@ -1,7 +1,22 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import Giscus from '@giscus/react'
 
 const Comments = () => {
+    const [theme, setTheme] = useState(() => {
+        if (typeof document === 'undefined') return 'light'
+        return document.body.classList.contains('dark-theme') ? 'dark' : 'light'
+    })
+
+    useEffect(() => {
+        if (typeof document === 'undefined') return
+        const observer = new MutationObserver(() => {
+            const isDark = document.body.classList.contains('dark-theme')
+            setTheme(isDark ? 'dark' : 'light')
+        })
+        observer.observe(document.body, { attributes: true, attributeFilter: ['class'] })
+        return () => observer.disconnect()
+    }, [])
+
     return (
         <Giscus
             id="comments"
@@ -14,7 +29,7 @@ const Comments = () => {
             reactionsEnabled="1"
             emitMetadata="0"
             inputPosition="top"
-            theme="light"
+            theme={theme}
             lang="en"
             loading="lazy"
         />
