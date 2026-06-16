@@ -50,7 +50,7 @@ const About = () => {
                             {t('about.bio')}
                         </p>
                         <div className='skillIconsContainer'>
-                            <img className='skillIcons' src="https://skillicons.dev/icons?i=html,css,js,react,vite,python,git,github,npm,firebase,netlify,vercel,vscode" />
+                            <img className='skillIcons' src="https://skillicons.dev/icons?i=html,css,js,react,vite,python,git,npm,figma,firebase,netlify,vercel,vscode" />
                         </div>
                     </div>
 
