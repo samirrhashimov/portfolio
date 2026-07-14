@@ -10,9 +10,6 @@ const Contact = () => {
             <h1 className='aboutTypeText'>{t('contact.title')}</h1>
             <div className='contactArea'>
                 <div className='contactForm'>
-                    <p className='contactText'>
-                        {t('community.contact.text')}
-                    </p>
                     <div className='contactActions'>
                         <a href="mailto:samirrhashimov@proton.me">{t('community.contact.email')}</a> · <a href="https://github.com/samirrhashimov">GitHub</a>  · <a href="https://www.linkedin.com/in/samirrhashimov/">LinkedIn</a>
                     </div>
