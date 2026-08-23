@@ -19,7 +19,7 @@ const About = () => {
                 <div className='aboutRight'>
                     <img className='pp' src={pp} alt='Samirr' />
                     <p className='userName'>@samirrhashimov</p>
-                    <p className='miniBio'>Front-End Developer & UI Designer</p>
+                    <p className='miniBio'>Junior Front-End Developer</p>
                     <div className='socialMedia'>
                         <a href="https://github.com/samirrhashimov" target="_blank" rel="noreferrer">
                             <FaGithub className='socialIcons' />
@@ -50,7 +50,7 @@ const About = () => {
                             {t('about.bio')}
                         </p>
                         <div className='skillIconsContainer'>
-                            <img className='skillIcons' src="https://skillicons.dev/icons?i=html,css,js,react,vite,python,git,npm,figma,firebase,netlify,vercel,vscode" />
+                            <img className='skillIcons' src="https://skillicons.dev/icons?i=html,css,js,react,vite,git,figma,firebase" />
                         </div>
                     </div>
 

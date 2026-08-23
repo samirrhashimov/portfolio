@@ -73,6 +73,7 @@
 
 .cv:hover {
     background-color: var(--accent-hover);
+    transition: all 0.3s ease;
 }
 
 .cvIcon {
