@@ -60,7 +60,7 @@ const About = () => {
             </div>
             <h1 className='aboutTypeText'>{t('about.certificatesTitle')}</h1>
             <div className='certificateGrid'>
-                <a className='certificateGridElement' href='https://www.freecodecamp.org/certification/samirrhashimov/responsive-web-design' target='_blank' rel='noreferrer'>
+                <a className='certificateGridElement' href='https://learn.microsoft.com/api/credentials/share/en-us/samirrhashimov/ACA552F1F434C6A8?sharingId=CF4D36DF8A903864' target='_blank' rel='noreferrer'>
                     <img className='certificateImg' src={AZ900}></img>
                     <div className='certificateInfo'>
                         <p className='certificateHeader'>Microsoft</p>
