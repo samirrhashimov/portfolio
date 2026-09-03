@@ -7,6 +7,7 @@ import { SiMedium, SiBuymeacoffee } from "react-icons/si";
 import { BiLogoDevTo } from "react-icons/bi";
 import edugovazFrontBackend from "../assets/images/certificate/edugovaz-frontbackend.jpg"
 import freecodecampResponsiveWeb from "../assets/images/certificate/freecodecamp-responsivewebdesign.png"
+import AZ900 from "../assets/images/certificate/AZ-900.png"
 import { useTranslation } from 'react-i18next';
 
 const About = () => {
@@ -50,7 +51,7 @@ const About = () => {
                             {t('about.bio')}
                         </p>
                         <div className='skillIconsContainer'>
-                            <img className='skillIcons' src="https://skillicons.dev/icons?i=html,css,js,react,vite,git,figma,firebase" />
+                            <img className='skillIcons' src="https://skillicons.dev/icons?i=html,css,js,react,vite,git,figma,firebase,azure" />
                         </div>
                     </div>
 
@@ -59,6 +60,18 @@ const About = () => {
             </div>
             <h1 className='aboutTypeText'>{t('about.certificatesTitle')}</h1>
             <div className='certificateGrid'>
+                <a className='certificateGridElement' href='https://www.freecodecamp.org/certification/samirrhashimov/responsive-web-design' target='_blank' rel='noreferrer'>
+                    <img className='certificateImg' src={AZ900}></img>
+                    <div className='certificateInfo'>
+                        <p className='certificateHeader'>Microsoft</p>
+                        <p className='certificateParagraph'>Azure Fundamentals (AZ-900)</p>
+                        <div className='certificateBadges'>
+                            <p className='certificateBadge'>Azure</p>
+                            <p className='certificateBadge'>Cloud Computing</p>
+                            <p className='certificateBadge'>ARM</p>
+                        </div>
+                    </div>
+                </a>
                 <a className='certificateGridElement' href={edugovazFrontBackend} target='_blank' rel='noreferrer'>
                     <img className='certificateImg' src={edugovazFrontBackend}></img>
                     <div className='certificateInfo'>
