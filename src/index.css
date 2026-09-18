@@ -1,4 +1,24 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Outfit:wght@100..900&display=swap');
+@import "tailwindcss";
+
+@custom-variant dark (&:where(.dark-theme, .dark-theme *));
+
+@theme inline {
+    --color-bg: var(--bg-color);
+    --color-text: var(--text-color);
+    --color-secondary: var(--secondary-text);
+    --color-border: var(--border-color);
+    --color-card-border: var(--card-border-alt);
+    --color-accent: var(--accent-color);
+    --color-accent-hover: var(--accent-hover);
+    --color-section-header: var(--section-header);
+    --color-badge: var(--badge-bg);
+    --color-badge-border: var(--badge-border);
+    --color-github-npm: var(--github-npm-bg);
+    --color-card: var(--card-bg);
+    --font-inter: 'Inter', sans-serif;
+    --font-outfit: 'Outfit', sans-serif;
+}
 
 :root {
     --bg-color: #ffffff;
@@ -28,38 +48,4 @@ body.dark-theme {
     --badge-border: #00a3c4;
     --card-bg: #161616;
 }
-
-*,
-*::before,
-*::after {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-}
-
-html {
-    scroll-behavior: smooth;
-}
-
-body {
-    min-height: 100vh;
-    background-color: var(--bg-color);
-    color: var(--text-color);
-    transition: background-color 0.3s ease, color 0.3s ease;
-}
-
-.container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 48px;
-}
-
-@media (max-width: 768px) {
-    .container {
-        padding: 0 20px;
-    }
-}
-
-[id] {
-    scroll-margin-top: 100px;
-}
+

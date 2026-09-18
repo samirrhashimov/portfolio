@@ -31,9 +31,9 @@ function App() {
   return (
     <>
       <Navbar toggleTheme={toggleTheme} isDarkMode={isDarkMode} />
-      <div className='container'>
+      <div className='max-w-[1200px] mx-auto px-12 md:max-[768px]:px-5 max-md:px-5'>
         <FadeInSection>
-          <div id='about'>
+          <div id='about' className='scroll-mt-[100px]'>
             <SectionHeader text={t('sections.about')}/>
           </div>
           <About/>
@@ -42,7 +42,7 @@ function App() {
         <Spacer height={50}/>
         
         <FadeInSection>
-          <div id='projects'>
+          <div id='projects' className='scroll-mt-[100px]'>
             <SectionHeader text={t('sections.projects')}/>
           </div>
           <Projects/>
@@ -51,7 +51,7 @@ function App() {
         <Spacer height={50}/>
         
         <FadeInSection>
-          <div id='community'>
+          <div id='community' className='scroll-mt-[100px]'>
             <SectionHeader text={t('sections.community')}/>
           </div>
           <Community/>

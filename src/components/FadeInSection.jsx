@@ -1,5 +1,4 @@
 import React, { useEffect, useRef, useState } from 'react';
-import '../styles/FadeInSection.css';
 
 const FadeInSection = ({ children }) => {
     const [isVisible, setVisible] = useState(false);
@@ -22,7 +21,7 @@ const FadeInSection = ({ children }) => {
 
     return (
         <div
-            className={`fade-in-section ${isVisible ? 'is-visible' : ''}`}
+            className={`transition-all duration-600 ease-out will-change-[opacity,visibility] ${isVisible ? 'opacity-100 translate-y-0 visible' : 'opacity-0 translate-y-[10px] invisible'}`}
             ref={domRef}
         >
             {children}

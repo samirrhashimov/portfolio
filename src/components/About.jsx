@@ -1,6 +1,5 @@
 import React from 'react'
 import pp from '../assets/images/samirr.jpg'
-import '../styles/about.css'
 import { FaGithub, FaLinkedin, FaInstagram, } from "react-icons/fa";
 import { FaXTwitter } from "react-icons/fa6";
 import { SiMedium, SiBuymeacoffee } from "react-icons/si";
@@ -15,86 +14,86 @@ const About = () => {
 
     return (
         <div>
-            <h1 className='aboutTypeText'>{t('about.bioTitle')}</h1>
-            <div className='about'>
-                <div className='aboutRight'>
-                    <img className='pp' src={pp} alt='Samirr' />
-                    <p className='userName'>@samirrhashimov</p>
-                    <p className='miniBio'>Junior Front-End Developer</p>
-                    <div className='socialMedia'>
-                        <a href="https://github.com/samirrhashimov" target="_blank" rel="noreferrer">
-                            <FaGithub className='socialIcons' />
+            <h1 className='font-[Inter] text-[1.3rem] mb-2.5'>{t('about.bioTitle')}</h1>
+            <div className='flex gap-4 pb-[25px] max-md:flex-col'>
+                <div className='border-t border-r border-b-[2.5px] border-l-[2.5px] p-4 flex-1 rounded-[12px_0px] bg-card border-t-card-border border-l-card-border border-r-text border-b-text'>
+                    <img className='w-[130px] rounded-full' src={pp} alt='Samirr' />
+                    <p className='font-[Outfit] text-[16px] my-[5px] text-secondary'>@samirrhashimov</p>
+                    <p className='font-[Inter] text-[14px]'>Junior Front-End Developer</p>
+                    <div className='mt-[10px] flex gap-[5px] text-inherit'>
+                        <a href="https://github.com/samirrhashimov" target="_blank" rel="noreferrer" className="text-inherit">
+                            <FaGithub className='w-6 h-6' />
                         </a>
-                        <a href="https://linkedin.com/in/samirrhashimov" target="_blank" rel="noreferrer">
-                            <FaLinkedin className='socialIcons' />
+                        <a href="https://linkedin.com/in/samirrhashimov" target="_blank" rel="noreferrer" className="text-inherit">
+                            <FaLinkedin className='w-6 h-6' />
                         </a>
-                        <a href="https://instagram.com/samirrhashimov" target="_blank" rel="noreferrer">
-                            <FaInstagram className='socialIcons' />
+                        <a href="https://instagram.com/samirrhashimov" target="_blank" rel="noreferrer" className="text-inherit">
+                            <FaInstagram className='w-6 h-6' />
                         </a>
-                        <a href="https://x.com/samirrhashimov" target="_blank" rel="noreferrer">
-                            <FaXTwitter className='socialIcons' />
+                        <a href="https://x.com/samirrhashimov" target="_blank" rel="noreferrer" className="text-inherit">
+                            <FaXTwitter className='w-6 h-6' />
                         </a>
-                        <a href="https://medium.com/@samirrhashimov" target="_blank" rel="noreferrer">
-                            <SiMedium className='socialIcons' />
+                        <a href="https://medium.com/@samirrhashimov" target="_blank" rel="noreferrer" className="text-inherit">
+                            <SiMedium className='w-6 h-6' />
                         </a>
-                        <a href="https://dev.to/samirrhashimov" target="_blank" rel="noreferrer">
-                            <BiLogoDevTo className='socialIcons' />
+                        <a href="https://dev.to/samirrhashimov" target="_blank" rel="noreferrer" className="text-inherit">
+                            <BiLogoDevTo className='w-6 h-6' />
                         </a>
-                        <a href="https://buymeacoffee.com/samirrhashimov" target="_blank" rel="noreferrer">
-                            <SiBuymeacoffee className='socialIcons' />
+                        <a href="https://buymeacoffee.com/samirrhashimov" target="_blank" rel="noreferrer" className="text-inherit">
+                            <SiBuymeacoffee className='w-6 h-6' />
                         </a>
                     </div>
                 </div>
-                <div className='aboutLeft'>
-                    <div className='aboutLeftItems'>
-                        <p className='bio'>
+                <div className='border-t border-r border-b-[2.5px] border-l-[2.5px] p-4 flex-1 text-text font-[Inter] rounded-[12px_0px] bg-card border-t-card-border border-l-card-border border-r-text border-b-text'>
+                    <div className='flex flex-col justify-between h-full'>
+                        <p className=''>
                             {t('about.bio')}
                         </p>
-                        <div className='skillIconsContainer'>
-                            <img className='skillIcons' src="https://skillicons.dev/icons?i=html,css,js,react,vite,git,figma,firebase,azure" />
+                        <div className='flex justify-center overflow-hidden'>
+                            <img className='max-w-[500px] mt-[12px] max-md:max-w-[300px]' src="https://skillicons.dev/icons?i=html,css,js,react,vite,git,figma,firebase,azure" />
                         </div>
                     </div>
 
                 </div>
 
             </div>
-            <h1 className='aboutTypeText'>{t('about.certificatesTitle')}</h1>
-            <div className='certificateGrid'>
-                <a className='certificateGridElement' href='https://learn.microsoft.com/api/credentials/share/en-us/samirrhashimov/ACA552F1F434C6A8?sharingId=CF4D36DF8A903864' target='_blank' rel='noreferrer'>
-                    <img className='certificateImg' src={AZ900}></img>
-                    <div className='certificateInfo'>
-                        <p className='certificateHeader'>Microsoft</p>
-                        <p className='certificateParagraph'>Azure Fundamentals (AZ-900)</p>
-                        <div className='certificateBadges'>
-                            <p className='certificateBadge'>Azure</p>
-                            <p className='certificateBadge'>Cloud Computing</p>
-                            <p className='certificateBadge'>ARM</p>
+            <h1 className='font-[Inter] text-[1.3rem] mb-2.5'>{t('about.certificatesTitle')}</h1>
+            <div className='grid grid-cols-[repeat(auto-fit,minmax(400px,1fr))] gap-[18px] pb-[20px] max-md:grid-cols-[repeat(auto-fit,minmax(250px,1fr))]'>
+                <a className='flex flex-row border border-card-border bg-card rounded-[0_10px_10px_0] overflow-hidden no-underline text-inherit transition-all duration-150 hover:border-text max-md:flex-col max-md:rounded-[10px] max-md:items-center max-md:text-center' href='https://learn.microsoft.com/api/credentials/share/en-us/samirrhashimov/ACA552F1F434C6A8?sharingId=CF4D36DF8A903864' target='_blank' rel='noreferrer'>
+                    <img className='max-w-[250px] h-[150px] object-cover max-md:max-w-full max-md:h-auto max-md:rounded-t-[10px]' src={AZ900}></img>
+                    <div className='mx-[10px] relative w-full max-md:my-[10px] max-md:px-[10px] max-md:pb-[10px]'>
+                        <p className='text-[1rem] font-[Inter] font-bold mt-[5px]'>Microsoft</p>
+                        <p className='text-[0.9rem] font-[Inter] text-secondary mt-[5px]'>Azure Fundamentals (AZ-900)</p>
+                        <div className='absolute bottom-[15px] flex flex-row gap-[5px] overflow-auto w-full max-md:static max-md:mt-[10px] max-md:justify-center'>
+                            <p className='bg-badge border border-badge-border text-text rounded-[4px] py-[6px] px-[10px] text-[0.7rem] font-[Inter] whitespace-nowrap'>Azure</p>
+                            <p className='bg-badge border border-badge-border text-text rounded-[4px] py-[6px] px-[10px] text-[0.7rem] font-[Inter] whitespace-nowrap'>Cloud Computing</p>
+                            <p className='bg-badge border border-badge-border text-text rounded-[4px] py-[6px] px-[10px] text-[0.7rem] font-[Inter] whitespace-nowrap'>ARM</p>
                         </div>
                     </div>
                 </a>
-                <a className='certificateGridElement' href={edugovazFrontBackend} target='_blank' rel='noreferrer'>
-                    <img className='certificateImg' src={edugovazFrontBackend}></img>
-                    <div className='certificateInfo'>
-                        <p className='certificateHeader'>Bakı Dövlət Peşə Tədris Mərkəzi</p>
-                        <p className='certificateParagraph'>Front-End & Back-End Developer</p>
-                        <div className='certificateBadges'>
-                            <p className='certificateBadge'>HTML5</p>
-                            <p className='certificateBadge'>CSS3</p>
-                            <p className='certificateBadge'>JS</p>
-                            <p className='certificateBadge'>React</p>
-                            <p className='certificateBadge'>Node.js</p>
+                <a className='flex flex-row border border-card-border bg-card rounded-[0_10px_10px_0] overflow-hidden no-underline text-inherit transition-all duration-150 hover:border-text max-md:flex-col max-md:rounded-[10px] max-md:items-center max-md:text-center' href={edugovazFrontBackend} target='_blank' rel='noreferrer'>
+                    <img className='max-w-[250px] h-[150px] object-cover max-md:max-w-full max-md:h-auto max-md:rounded-t-[10px]' src={edugovazFrontBackend}></img>
+                    <div className='mx-[10px] relative w-full max-md:my-[10px] max-md:px-[10px] max-md:pb-[10px]'>
+                        <p className='text-[1rem] font-[Inter] font-bold mt-[5px]'>Bakı Dövlət Peşə Tədris Mərkəzi</p>
+                        <p className='text-[0.9rem] font-[Inter] text-secondary mt-[5px]'>Front-End & Back-End Developer</p>
+                        <div className='absolute bottom-[15px] flex flex-row gap-[5px] overflow-auto w-full max-md:static max-md:mt-[10px] max-md:justify-center'>
+                            <p className='bg-badge border border-badge-border text-text rounded-[4px] py-[6px] px-[10px] text-[0.7rem] font-[Inter] whitespace-nowrap'>HTML5</p>
+                            <p className='bg-badge border border-badge-border text-text rounded-[4px] py-[6px] px-[10px] text-[0.7rem] font-[Inter] whitespace-nowrap'>CSS3</p>
+                            <p className='bg-badge border border-badge-border text-text rounded-[4px] py-[6px] px-[10px] text-[0.7rem] font-[Inter] whitespace-nowrap'>JS</p>
+                            <p className='bg-badge border border-badge-border text-text rounded-[4px] py-[6px] px-[10px] text-[0.7rem] font-[Inter] whitespace-nowrap'>React</p>
+                            <p className='bg-badge border border-badge-border text-text rounded-[4px] py-[6px] px-[10px] text-[0.7rem] font-[Inter] whitespace-nowrap'>Node.js</p>
                         </div>
                     </div>
                 </a>
-                <a className='certificateGridElement' href='https://www.freecodecamp.org/certification/samirrhashimov/responsive-web-design' target='_blank' rel='noreferrer'>
-                    <img className='certificateImg' src={freecodecampResponsiveWeb}></img>
-                    <div className='certificateInfo'>
-                        <p className='certificateHeader'>freeCodeCamp</p>
-                        <p className='certificateParagraph'>Responsive Web Design</p>
-                        <div className='certificateBadges'>
-                            <p className='certificateBadge'>HTML5</p>
-                            <p className='certificateBadge'>CSS3</p>
-                            <p className='certificateBadge'>JS</p>
+                <a className='flex flex-row border border-card-border bg-card rounded-[0_10px_10px_0] overflow-hidden no-underline text-inherit transition-all duration-150 hover:border-text max-md:flex-col max-md:rounded-[10px] max-md:items-center max-md:text-center' href='https://www.freecodecamp.org/certification/samirrhashimov/responsive-web-design' target='_blank' rel='noreferrer'>
+                    <img className='max-w-[250px] h-[150px] object-cover max-md:max-w-full max-md:h-auto max-md:rounded-t-[10px]' src={freecodecampResponsiveWeb}></img>
+                    <div className='mx-[10px] relative w-full max-md:my-[10px] max-md:px-[10px] max-md:pb-[10px]'>
+                        <p className='text-[1rem] font-[Inter] font-bold mt-[5px]'>freeCodeCamp</p>
+                        <p className='text-[0.9rem] font-[Inter] text-secondary mt-[5px]'>Responsive Web Design</p>
+                        <div className='absolute bottom-[15px] flex flex-row gap-[5px] overflow-auto w-full max-md:static max-md:mt-[10px] max-md:justify-center'>
+                            <p className='bg-badge border border-badge-border text-text rounded-[4px] py-[6px] px-[10px] text-[0.7rem] font-[Inter] whitespace-nowrap'>HTML5</p>
+                            <p className='bg-badge border border-badge-border text-text rounded-[4px] py-[6px] px-[10px] text-[0.7rem] font-[Inter] whitespace-nowrap'>CSS3</p>
+                            <p className='bg-badge border border-badge-border text-text rounded-[4px] py-[6px] px-[10px] text-[0.7rem] font-[Inter] whitespace-nowrap'>JS</p>
                         </div>
                     </div>
                 </a>

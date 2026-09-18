@@ -1,5 +1,4 @@
 import React from 'react'
-import '../styles/navbar.css'
 import { TbFileCvFilled } from "react-icons/tb";
 import { FiSun, FiMoon } from "react-icons/fi";
 import { useTranslation } from 'react-i18next';
@@ -13,25 +12,25 @@ const Navbar = ({ toggleTheme, isDarkMode }) => {
     };
 
     return (
-        <div className='navbar-wrapper'>
-            <div className='navbar'>
-                <h1 className='logo'>Samir Hashimov</h1>
-                <div className='navbarright'>
-                    <div className="navbarLinks">
-                        <a className='navbarList' href='#about'>{t('navbar.about')}</a>
-                        <a className='navbarList' href='#projects'>{t('navbar.projects')}</a>
-                        <a className='navbarList' href='#community'>{t('navbar.community')}</a>
+        <div className='sticky top-0 left-0 w-full z-[100] bg-bg transition-colors duration-300'>
+            <div className='max-w-[1104px] mx-auto py-3 px-5 xl:px-0 flex justify-between items-center border-b-[1.2px] border-border bg-transparent'>
+                <h1 className='font-[Inter] text-[1.2rem] text-text max-md:text-[1.1rem]'>Samir Hashimov</h1>
+                <div className='flex gap-3 items-center'>
+                    <div className="flex gap-3 max-[480px]:hidden">
+                        <a className='no-underline text-text font-[Inter] text-[0.8rem] border-b border-text py-[3px] hover:border-section-header hover:text-section-header max-[480px]:text-[0.75rem]' href='#about'>{t('navbar.about')}</a>
+                        <a className='no-underline text-text font-[Inter] text-[0.8rem] border-b border-text py-[3px] hover:border-section-header hover:text-section-header max-[480px]:text-[0.75rem]' href='#projects'>{t('navbar.projects')}</a>
+                        <a className='no-underline text-text font-[Inter] text-[0.8rem] border-b border-text py-[3px] hover:border-section-header hover:text-section-header max-[480px]:text-[0.75rem]' href='#community'>{t('navbar.community')}</a>
                     </div>
-                    <div className='navbarActions'>
-                        <button className='langToggle' onClick={changeLanguage}>
+                    <div className='flex gap-2.5 items-center'>
+                        <button className='bg-transparent border border-border text-text p-1.5 rounded-[5px] cursor-pointer flex items-center justify-center font-medium transition-all duration-200 h-[32px] hover:border-section-header hover:text-section-header text-[0.8rem] min-w-[38px] font-[Inter]' onClick={changeLanguage}>
                             {i18n.language === 'en' ? 'AZ' : 'EN'}
                         </button>
-                        <button className='themeToggle' onClick={toggleTheme}>
-                            {isDarkMode ? <FiSun className="themeIcon" /> : <FiMoon className="themeIcon" />}
+                        <button className='bg-transparent border border-border text-text p-1.5 rounded-[5px] cursor-pointer flex items-center justify-center font-medium transition-all duration-200 h-[32px] hover:border-section-header hover:text-section-header text-[1.2rem]' onClick={toggleTheme}>
+                            {isDarkMode ? <FiSun className="w-[18px] h-[18px]" /> : <FiMoon className="w-[18px] h-[18px]" />}
                         </button>
 
                         <a href='/Samir_Hashimov_CV.pdf' download title="Download CV">
-                            <button className='cv'><TbFileCvFilled className='cvIcon' /></button>
+                            <button className='p-1.5 rounded-[5px] bg-badge border border-badge-border text-[#fff] w-[32px] h-[32px] cursor-pointer flex items-center justify-center hover:bg-accent-hover transition-all duration-300'><TbFileCvFilled className='w-[18px] h-[18px]' /></button>
                         </a>
                     </div>
                 </div>
