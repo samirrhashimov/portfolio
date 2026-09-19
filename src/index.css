@@ -33,6 +33,10 @@
     --badge-border: #008299;
     --github-npm-bg: transparent;
     --card-bg: #ffffff;
+    --cursor-x: 50%;
+    --cursor-y: 50%;
+    --cursor-glow-opacity: 0;
+    --cursor-glow-color: 255, 255, 255;
 }
 
 body.dark-theme {
@@ -47,6 +51,32 @@ body.dark-theme {
     --badge-bg: #003643;
     --badge-border: #00a3c4;
     --card-bg: #161616;
+    --cursor-glow-color: 255, 255, 255;
+}
+
+body {
+    background: var(--bg-color);
+    color: var(--text-color);
+}
+
+body::before {
+    position: fixed;
+    inset: 0;
+    z-index: 0;
+    pointer-events: none;
+    content: '';
+    background: radial-gradient(
+        circle 360px at var(--cursor-x) var(--cursor-y),
+        rgba(var(--cursor-glow-color), 0.018),
+        transparent 78%
+    );
+    opacity: var(--cursor-glow-opacity);
+    transition: opacity 180ms ease;
+}
+
+#root {
+    position: relative;
+    z-index: 1;
 }
 
 ::selection {

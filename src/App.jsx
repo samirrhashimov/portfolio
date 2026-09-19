@@ -56,6 +56,28 @@ function App() {
     }
   }, [isDarkMode]);
 
+  useEffect(() => {
+    const root = document.documentElement;
+
+    const updateGlowPosition = (event) => {
+      root.style.setProperty('--cursor-x', `${event.clientX}px`);
+      root.style.setProperty('--cursor-y', `${event.clientY}px`);
+      root.style.setProperty('--cursor-glow-opacity', '1');
+    };
+
+    const hideGlow = () => {
+      root.style.setProperty('--cursor-glow-opacity', '0');
+    };
+
+    window.addEventListener('pointermove', updateGlowPosition, { passive: true });
+    window.addEventListener('pointerleave', hideGlow);
+
+    return () => {
+      window.removeEventListener('pointermove', updateGlowPosition);
+      window.removeEventListener('pointerleave', hideGlow);
+    };
+  }, []);
+
   const toggleTheme = () => setIsDarkMode(!isDarkMode);
 
   return (
