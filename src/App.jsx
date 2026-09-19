@@ -3,43 +3,36 @@ import { Routes, Route } from 'react-router-dom'
 import Navbar from './components/Navbar'
 import './index.css'
 import About from './components/About'
-import SectionHeader from './components/SectionHeader'
 import Projects from './components/Projects'
 import Spacer from './components/Spacer'
 import Community from './components/Community'
 import Links from './components/Links'
-import { useTranslation } from 'react-i18next'
 import FadeInSection from './components/FadeInSection'
 
 // Home Page Component
 function Home() {
-  const { t } = useTranslation();
-
   return (
     <div className='max-w-[1200px] mx-auto px-12 md:max-[768px]:px-5 max-md:px-5'>
       <FadeInSection>
         <div id='about' className='scroll-mt-[100px]'>
-          <SectionHeader text={t('sections.about')}/>
+          <About/>
         </div>
-        <About/>
       </FadeInSection>
       
       <Spacer height={50}/>
       
       <FadeInSection>
         <div id='projects' className='scroll-mt-[100px]'>
-          <SectionHeader text={t('sections.projects')}/>
+          <Projects/>
         </div>
-        <Projects/>
       </FadeInSection>
       
       <Spacer height={50}/>
       
       <FadeInSection>
         <div id='community' className='scroll-mt-[100px]'>
-          <SectionHeader text={t('sections.community')}/>
+          <Community/>
         </div>
-        <Community/>
       </FadeInSection>
       
       <Spacer height={50}/>

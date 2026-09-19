@@ -14,7 +14,7 @@ const About = () => {
 
     return (
         <div>
-            <h1 className='font-[Inter] text-[1.3rem] mb-2.5 font-bold'>{t('about.bioTitle')}</h1>
+            <h1 className='font-[Inter] text-[1.3rem] mt-[20px] mb-2.5 font-bold'>{t('about.bioTitle')}</h1>
             <div className='flex gap-4 pb-[25px] max-md:flex-col'>
                 <div className='border-t border-r border-b-[2.5px] border-l-[2.5px] p-4 flex-1 rounded-[12px_0px] bg-card border-t-card-border border-l-card-border border-r-text border-b-text'>
                     <img className='w-[130px] rounded-full' src={pp} alt='Samirr' />
