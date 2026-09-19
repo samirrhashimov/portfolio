@@ -10,6 +10,7 @@ import blog101Img from '../assets/images/projects/blog101.png'
 
 import snapImg from '../assets/images/projects/snap.png'
 import { useTranslation } from 'react-i18next';
+import { FaArrowLeft, FaArrowRight } from 'react-icons/fa';
 
 const npmPackages = ["brandkitjs"]
 const GITHUB_USERNAME = "samirrhashimov"
@@ -80,8 +81,9 @@ const Projects = () => {
             <div className='flex items-center justify-between gap-4 mb-[10px]'>
                 <h1 className='font-[Inter] text-[1.3rem] text-text font-bold'>{t('sections.projects')}</h1>
                 {projects.length > 4 && (
-                    <button type='button' className='border border-card-border bg-card text-text rounded-[6px] px-[12px] py-[8px] font-[Inter] cursor-pointer hover:border-text' onClick={() => setShowAllProjects(current => !current)}>
+                    <button type='button' className='inline-flex items-center gap-[3px] border border-card-border bg-card text-text rounded-[6px] px-[12px] py-[8px] font-[Inter] text-[12px] cursor-pointer hover:border-[#444] hover:bg-[#111]' onClick={() => setShowAllProjects(current => !current)}>
                         {showAllProjects ? t('projects.showLess') : t('projects.showMore')}
+                        <span aria-hidden='true' className='ml-[6px]'>{showAllProjects ? <FaArrowLeft /> : <FaArrowRight />}</span>
                     </button>
                 )}
             </div>
@@ -89,7 +91,7 @@ const Projects = () => {
                 {projects.map((project, index) => (
                     <a key={project.id} className={`block no-underline text-inherit transition-all duration-200 ${!showAllProjects && index >= 4 ? 'hidden' : ''} ${!showAllProjects && index >= 2 ? 'max-md:hidden' : ''}`} href={`https://github.com/${GITHUB_USERNAME}/${project.repository}`} target='_blank' rel='noopener noreferrer'>
                         <div className='relative inline-block group'>
-                            <img className='block w-full h-auto border-[1.5px] border-card-border rounded-xl transition-opacity duration-300 group-hover:border-white'
+                            <img className='block w-full h-auto border-[1.5px] border-card-border rounded-xl transition-transform duration-200 ease-out group-hover:scale-[1.02]'
                                 src={project.image}
                                 alt={project.alt}
                             />
