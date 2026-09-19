@@ -52,7 +52,7 @@ const Projects = () => {
                 if (Array.isArray(data)) {
                     const filteredRepos = data
                         .filter(repo => !repo.fork)
-                        .slice(0, 8)
+                        .slice(0, 6)
                         .map(repo => ({
                             name: repo.name,
                             description: repo.description,
@@ -71,7 +71,7 @@ const Projects = () => {
 
     return (
         <div>
-            <h1 className='font-[Inter] text-[1.3rem] mb-[10px] text-text'>{t('projects.webApps')}</h1>
+            <h1 className='font-[Inter] text-[1.3rem] mb-[10px] text-text font-bold'>{t('projects.webApps')}</h1>
             <div className='grid grid-cols-[repeat(auto-fit,minmax(200px,200px))] justify-start gap-[18px] pb-[20px] max-md:grid-cols-[repeat(auto-fit,minmax(150px,1fr))]'>
                 <a className='block no-underline text-inherit transition-all duration-200' href={`https://github.com/${GITHUB_USERNAME}/blink`} target='_blank' rel='noopener noreferrer'>
                     <div className='relative inline-block group'
@@ -166,7 +166,7 @@ const Projects = () => {
             </div>
 
             {/* New area */}
-            <h1 className='font-[Inter] text-[1.3rem] mb-[10px] text-text'>{t('projects.landingPages')}</h1>
+            <h1 className='font-[Inter] text-[1.3rem] mb-[10px] text-text font-bold'>{t('projects.landingPages')}</h1>
             <div className='grid grid-cols-[repeat(auto-fit,minmax(200px,200px))] justify-start gap-[18px] pb-[20px] max-md:grid-cols-[repeat(auto-fit,minmax(150px,1fr))]'>
                 <a className='block no-underline text-inherit transition-all duration-200' href={`https://github.com/${GITHUB_USERNAME}/snap-landing-page`} target='_blank' rel='noopener noreferrer'>
                     <div className='relative inline-block group'>
@@ -206,7 +206,7 @@ const Projects = () => {
                 </a>
             </div>
             {/* New area end */}
-            <h1 className='font-[Inter] text-[1.3rem] mb-[10px] text-text'>{t('projects.packages')}</h1>
+            <h1 className='font-[Inter] text-[1.3rem] mb-[10px] text-text font-bold'>{t('projects.packages')}</h1>
             <div className='grid grid-cols-2 gap-[18px] pb-[20px] max-md:grid-cols-1'>
                 {packages.length === 0 ? (
                     <div className='border-[1.5px] border-card-border rounded-[10px_0] p-[15px] break-words relative min-h-[150px] bg-card transition-all duration-300 flex flex-col hover:border-text max-md:min-h-0 max-md:pb-[60px]'>
@@ -222,7 +222,7 @@ const Projects = () => {
                     ))
                 )}
             </div>
-            <h1 className='font-[Inter] text-[1.3rem] mb-[10px] text-text'>{t('projects.githubRepos')}</h1>
+            <h1 className='font-[Inter] text-[1.3rem] mb-[10px] text-text font-bold'>{t('projects.githubRepos')}</h1>
             <div className='grid grid-cols-2 gap-[18px] pb-[15px] max-md:grid-cols-1'>
                 {reposError ? (
                     <div className='border-[1.5px] border-card-border rounded-[10px_0] p-[15px] break-words relative min-h-[150px] bg-card cursor-pointer transition-all duration-300 flex flex-col hover:border-text max-md:min-h-0 max-md:pb-[60px]'>

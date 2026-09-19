@@ -14,35 +14,12 @@ const About = () => {
 
     return (
         <div>
-            <h1 className='font-[Inter] text-[1.3rem] mb-2.5'>{t('about.bioTitle')}</h1>
+            <h1 className='font-[Inter] text-[1.3rem] mb-2.5 font-bold'>{t('about.bioTitle')}</h1>
             <div className='flex gap-4 pb-[25px] max-md:flex-col'>
                 <div className='border-t border-r border-b-[2.5px] border-l-[2.5px] p-4 flex-1 rounded-[12px_0px] bg-card border-t-card-border border-l-card-border border-r-text border-b-text'>
                     <img className='w-[130px] rounded-full' src={pp} alt='Samirr' />
                     <p className='font-[Outfit] text-[16px] my-[5px] text-secondary'>@samirrhashimov</p>
                     <p className='font-[Inter] text-[14px]'>Junior Front-End Developer</p>
-                    <div className='mt-[10px] flex gap-[5px] text-inherit'>
-                        <a href="https://github.com/samirrhashimov" target="_blank" rel="noreferrer" className="text-inherit">
-                            <FaGithub className='w-6 h-6' />
-                        </a>
-                        <a href="https://linkedin.com/in/samirrhashimov" target="_blank" rel="noreferrer" className="text-inherit">
-                            <FaLinkedin className='w-6 h-6' />
-                        </a>
-                        <a href="https://instagram.com/samirrhashimov" target="_blank" rel="noreferrer" className="text-inherit">
-                            <FaInstagram className='w-6 h-6' />
-                        </a>
-                        <a href="https://x.com/samirrhashimov" target="_blank" rel="noreferrer" className="text-inherit">
-                            <FaXTwitter className='w-6 h-6' />
-                        </a>
-                        <a href="https://medium.com/@samirrhashimov" target="_blank" rel="noreferrer" className="text-inherit">
-                            <SiMedium className='w-6 h-6' />
-                        </a>
-                        <a href="https://dev.to/samirrhashimov" target="_blank" rel="noreferrer" className="text-inherit">
-                            <BiLogoDevTo className='w-6 h-6' />
-                        </a>
-                        <a href="https://buymeacoffee.com/samirrhashimov" target="_blank" rel="noreferrer" className="text-inherit">
-                            <SiBuymeacoffee className='w-6 h-6' />
-                        </a>
-                    </div>
                 </div>
                 <div className='border-t border-r border-b-[2.5px] border-l-[2.5px] p-4 flex-1 text-text font-[Inter] rounded-[12px_0px] bg-card border-t-card-border border-l-card-border border-r-text border-b-text'>
                     <div className='flex flex-col justify-between h-full'>
@@ -57,7 +34,7 @@ const About = () => {
                 </div>
 
             </div>
-            <h1 className='font-[Inter] text-[1.3rem] mb-2.5'>{t('about.certificatesTitle')}</h1>
+            <h1 className='font-[Inter] text-[1.3rem] mb-2.5 font-bold'>{t('about.certificatesTitle')}</h1>
             <div className='grid grid-cols-[repeat(auto-fit,minmax(400px,1fr))] gap-[18px] pb-[20px] max-md:grid-cols-[repeat(auto-fit,minmax(250px,1fr))]'>
                 <a className='flex flex-row border border-card-border bg-card rounded-[0_10px_10px_0] overflow-hidden no-underline text-inherit transition-all duration-150 hover:border-text max-md:flex-col max-md:rounded-[10px] max-md:items-center max-md:text-center' href='https://learn.microsoft.com/api/credentials/share/en-us/samirrhashimov/ACA552F1F434C6A8?sharingId=CF4D36DF8A903864' target='_blank' rel='noreferrer'>
                     <img className='max-w-[250px] h-[150px] object-cover max-md:max-w-full max-md:h-auto max-md:rounded-t-[10px]' src={AZ900}></img>

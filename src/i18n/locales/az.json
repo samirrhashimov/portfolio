@@ -1,8 +1,8 @@
 {
   "navbar": {
-    "about": "Haqqımda",
-    "projects": "Layihələr",
-    "community": "İcma"
+    "home": "Əsas Səhifə",
+    "blog": "Bloq",
+    "social": "Sosial Media"
   },
   "sections": {
     "about": "Haqqımda",
@@ -15,7 +15,7 @@
   },
   "about": {
     "bioTitle": "Bioqrafiya",
-    "bio": "Mən Samir Hashimov, Bakı, Azərbaycanda yaşayan Front-End Developer və UI dizaynerəm. HTML5, CSS3, JavaScript və React istifadə edərək müasir veb proqramlar hazırlayıram. Bundan əlavə, öz app-lərimi yaradıram və yayımlayıram. \"Blink\" adlı link idarəetmə platformam artıq vebdə, Google Play-də və Firefox genişlənməsi kimi mövcuddur. Hal-hazırda React ekosistemi haqqında biliklərimi dərinləşdirirəm, TypeScript-i araşdırıram və səmərəlilik üçün Tailwind-ə keçirəm.",
+    "bio": "Mən Samir Hashimov, Junior Front-End Developerəm. Öz app-lərimi yaradıram və yayımlayıram. Blink adlı link idarəetmə platformam artıq vebdə, Google Play-də və Firefox genişlənməsi kimi mövcuddur. Hal-hazırda React ekosistemi haqqında biliklərimi dərinləşdirirəm, TypeScript-i araşdırıram və Tailwind-ə keçirəm.",
     "certificatesTitle": "Sertifikatlar"
   },
   "projects": {
@@ -28,22 +28,9 @@
     "noResults": "Nəticə tapılmadı."
   },
   "community": {
-    "contributions": {
-      "title": "Töhfələr",
-      "osGuide": "tərcümə - İki məqaləyə Türk dili tərcümələri əlavə edildi",
-      "distromatch": "UI/UX yeniləməsi - UI/UX Modernləşdirilməsi və Məlumat Bazasının Genişləndirilməsi"
-    },
-    "honors": {
-      "title": "Təltiflər",
-      "certificate": {
-        "header": "Certificate of Appreciation – QHT Agentliyi & ILER PU",
-        "paragraph": "Awarded for active participation and valuable contributions to the international project focused on environmental legal norms in the Karabakh and Eastern Zangezur regions."
-      }
-    },
     "contact": {
       "title": "Əlaqə",
-      "email": "E-poçt göndər",
-      "comments": "Şərhlər"
+      "email": "E-poçt göndər"
     }
   }
 }

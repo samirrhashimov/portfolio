@@ -1,8 +1,8 @@
 {
   "navbar": {
-    "about": "About",
-    "projects": "Projects",
-    "community": "Community"
+    "home": "Home",
+    "blog": "Blog",
+    "social": "Social Media"
   },
   "sections": {
     "about": "About",
@@ -15,7 +15,7 @@
   },
   "about": {
     "bioTitle": "Biography",
-    "bio": "I am Samir Hashimov, a Front-End developer and UI designer based in Baku, Azerbaijan. I create modern web applications with HTML5, CSS3, JavaScript, and React. Additionally, I create and publish my own products. My link management platform, called Blink, is available on the web, on Google Play, and as a Firefox extension. Currently, I am deepening my knowledge of the React ecosystem, exploring TypeScript, and switching to using Tailwind for efficiency.",
+    "bio": "I am Samir Hashimov, a Junior Front-End Developer. I build and publish my own apps. My link management platform, Blink, is available on the web, Google Play, and as a Firefox extension. Currently, I am deepening my knowledge of the React ecosystem, exploring TypeScript, and transitioning to Tailwind.",
     "certificatesTitle": "Certificates"
   },
   "projects": {
@@ -28,22 +28,9 @@
     "noResults": "No results found."
   },
   "community": {
-    "contributions": {
-      "title": "Contributions",
-      "osGuide": "translation - Added Turkish translations to two articles",
-      "distromatch": "UI/UX update - UI/UX Modernization and Database Expansion"
-    },
-    "honors": {
-      "title": "Honors",
-      "certificate": {
-        "header": "Certificate of Appreciation – @ngoagency",
-        "paragraph": "Awarded for active participation to the international project focused on environmental legal norms in the Karabakh and Eastern Zangezur regions."
-      }
-    },
     "contact": {
       "title": "Contact",
-      "email": "Send Email",
-      "comments": "Comments"
+      "email": "Send Email"
     }
   }
 }

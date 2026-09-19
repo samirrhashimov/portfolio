@@ -6,7 +6,7 @@ const Contact = () => {
 
     return (
         <div>
-            <h1 className='font-[Inter] text-[1.3rem] my-[10px] text-text'>{t('contact.title')}</h1>
+            <h1 className='font-[Inter] text-[1.3rem] my-[10px] text-text font-bold'>{t('contact.title')}</h1>
             <div className='w-full flex justify-center mt-[30px] mb-[50px]'>
                 <div className='contactForm'>
                     <div className='flex justify-center items-center mt-[15px] gap-[10px] max-[480px]:flex-row max-[480px]:gap-[15px] max-[480px]:text-center text-secondary font-[Outfit]'>
