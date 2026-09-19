@@ -96,8 +96,10 @@ const Projects = () => {
                                 alt={project.alt}
                             />
                         </div>
-                        <p className='font-[Inter] text-[0.95rem] leading-tight font-bold text-text text-left mt-[8px] mb-[3px]'>{project.name}</p>
-                        <p className='font-[Inter] text-[0.75rem] leading-[1.35] text-secondary text-left min-h-[2.7em]'>{project.description}</p>
+                        <div className='p-[10px]'>
+                            <p className='font-[Inter] text-[0.95rem] leading-tight font-bold text-text text-left mb-[3px]'>{project.name}</p>
+                            <p className='font-[Inter] text-[0.75rem] leading-[1.35] text-secondary text-left min-h-[2.7em]'>{project.description}</p>
+                        </div>
                     </a>
                 ))}
             </div>
