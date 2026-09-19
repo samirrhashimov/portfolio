@@ -34,7 +34,7 @@ const About = () => {
                 </div>
 
             </div>
-            <h1 className='font-[Inter] text-[1.3rem] mb-2.5 font-bold'>{t('about.certificatesTitle')}</h1>
+            <h1 className='font-[Inter] text-[1.3rem] mt-[20px] mb-2.5 font-bold'>{t('about.certificatesTitle')}</h1>
             <div className='grid grid-cols-[repeat(auto-fit,minmax(400px,1fr))] gap-[18px] pb-[20px] max-md:grid-cols-[repeat(auto-fit,minmax(250px,1fr))]'>
                 <a className='flex flex-row border border-card-border bg-card rounded-[0_10px_10px_0] overflow-hidden no-underline text-inherit transition-all duration-150 hover:border-text max-md:flex-col max-md:rounded-[10px] max-md:items-center max-md:text-center' href='https://learn.microsoft.com/api/credentials/share/en-us/samirrhashimov/ACA552F1F434C6A8?sharingId=CF4D36DF8A903864' target='_blank' rel='noreferrer'>
                     <img className='w-[250px] h-[150px] object-cover shrink-0' src={AZ900}></img>

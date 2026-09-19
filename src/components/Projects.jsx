@@ -90,8 +90,8 @@ const Projects = () => {
             <div className='grid grid-cols-4 gap-[18px] pb-[20px] max-md:grid-cols-2'>
                 {projects.map((project, index) => (
                     <a key={project.id} className={`block no-underline text-inherit transition-all duration-200 ${!showAllProjects && index >= 4 ? 'hidden' : ''} ${!showAllProjects && index >= 2 ? 'max-md:hidden' : ''}`} href={`https://github.com/${GITHUB_USERNAME}/${project.repository}`} target='_blank' rel='noopener noreferrer'>
-                        <div className='relative inline-block group'>
-                            <img className='block w-full h-auto border-[1.5px] border-card-border rounded-xl transition-transform duration-200 ease-out group-hover:scale-[1.02]'
+                        <div className='relative inline-block group overflow-hidden rounded-xl border-[1.5px] border-card-border'>
+                            <img className='block w-full h-auto transition-transform duration-200 ease-out group-hover:scale-[1.02]'
                                 src={project.image}
                                 alt={project.alt}
                             />
@@ -102,7 +102,7 @@ const Projects = () => {
                 ))}
             </div>
 
-            <h1 className='font-[Inter] text-[1.3rem] mb-[10px] text-text font-bold'>{t('projects.packages')}</h1>
+            <h1 className='font-[Inter] text-[1.3rem] mt-[20px] mb-[10px] text-text font-bold'>{t('projects.packages')}</h1>
             <div className='grid grid-cols-2 gap-[18px] pb-[20px] max-md:grid-cols-1'>
                 {packages.length === 0 ? (
                     <div className='border-[1.5px] border-card-border rounded-[10px_0] p-[15px] break-words relative min-h-[150px] bg-card transition-all duration-300 flex flex-col hover:border-text max-md:min-h-0 max-md:pb-[60px]'>
@@ -118,7 +118,7 @@ const Projects = () => {
                     ))
                 )}
             </div>
-            <h1 className='font-[Inter] text-[1.3rem] mb-[10px] text-text font-bold'>{t('projects.githubRepos')}</h1>
+            <h1 className='font-[Inter] text-[1.3rem] mt-[20px] mb-[10px] text-text font-bold'>{t('projects.githubRepos')}</h1>
             <div className='grid grid-cols-2 gap-[18px] pb-[15px] max-md:grid-cols-1'>
                 {reposError ? (
                     <div className='border-[1.5px] border-card-border rounded-[10px_0] p-[15px] break-words relative min-h-[150px] bg-card cursor-pointer transition-all duration-300 flex flex-col hover:border-text max-md:min-h-0 max-md:pb-[60px]'>
