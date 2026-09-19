@@ -1,18 +1,32 @@
 import React from 'react'
+import { FaEnvelope, FaInstagram, FaLinkedin } from 'react-icons/fa'
 import { useTranslation } from 'react-i18next';
 
 const Contact = () => {
     const { t } = useTranslation();
+    const contactLinks = [
+        { label: t('contact.emailLabel'), value: 'samirrhashimov@proton.me', href: 'mailto:samirrhashimov@proton.me', icon: FaEnvelope },
+        { label: 'LinkedIn', value: 'linkedin.com/in/samirrhashimov', href: 'https://www.linkedin.com/in/samirrhashimov/', icon: FaLinkedin },
+        { label: 'Instagram', value: '@samirrhashimov', href: 'https://www.instagram.com/samirrhashimov/', icon: FaInstagram },
+    ]
 
     return (
         <div>
             <h1 className='font-[Inter] text-[1.3rem] my-[10px] text-text font-bold'>{t('contact.title')}</h1>
-            <div className='w-full flex justify-center mt-[30px] mb-[50px]'>
-                <div className='contactForm'>
-                    <div className='flex justify-center items-center mt-[15px] gap-[10px] max-[480px]:flex-row max-[480px]:gap-[15px] max-[480px]:text-center text-secondary font-[Outfit]'>
-                        <a href="mailto:samirrhashimov@proton.me" className='no-underline bg-badge border border-badge-border rounded-[4px] py-[3px] px-[10px] text-text font-[Outfit] hover:bg-accent-hover transition-all duration-300'>{t('community.contact.email')}</a> · <a href="https://github.com/samirrhashimov" className='no-underline text-secondary hover:text-text font-[Outfit]'>GitHub</a>  · <a href="https://www.linkedin.com/in/samirrhashimov/" className='no-underline text-secondary hover:text-text font-[Outfit]'>LinkedIn</a>
-                    </div>
-                </div>
+            <div className='grid grid-cols-3 gap-[14px] mt-[20px] mb-[50px] max-md:grid-cols-2 max-sm:grid-cols-1'>
+                {contactLinks.map(link => {
+                    const Icon = link.icon
+                    const isEmail = link.href.startsWith('mailto:')
+                    return (
+                        <a key={link.label} href={link.href} target={isEmail ? undefined : '_blank'} rel={isEmail ? undefined : 'noreferrer'} className='block min-h-[150px] border border-card-border bg-card rounded-xl p-[16px] no-underline text-text'>
+                            <div className='flex h-[42px] w-[42px] items-center justify-center rounded-[9px] border border-card-border text-secondary'>
+                                <Icon className='text-[1.15rem]' />
+                            </div>
+                            <p className='font-[Inter] text-[1rem] font-bold mt-[18px] mb-[4px]'>{link.label}</p>
+                            <p className='font-[Inter] text-[0.85rem] text-secondary break-words'>{link.value}</p>
+                        </a>
+                    )
+                })}
             </div>
         </div>
     )

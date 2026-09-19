@@ -11,7 +11,8 @@
     "contact": "Contact"
   },
   "contact": {
-    "title": "Contact"
+    "title": "Contact",
+    "emailLabel": "Email"
   },
   "about": {
     "bioTitle": "Biography",

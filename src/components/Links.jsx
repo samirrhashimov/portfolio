@@ -1,11 +1,3 @@
-import React from 'react'
-
-const Links = () => {
-  return (
-    <div>
-      
-    </div>
-  )
-}
+const Links = () => null
 
 export default Links

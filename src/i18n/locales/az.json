@@ -11,7 +11,8 @@
     "contact": "Əlaqə"
   },
   "contact": {
-    "title": "Əlaqə"
+    "title": "Əlaqə",
+    "emailLabel": "E-poçt"
   },
   "about": {
     "bioTitle": "Bioqrafiya",
