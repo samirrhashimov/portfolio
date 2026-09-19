@@ -24,6 +24,16 @@
     "landingPages": "Landing Pages-lər",
     "showMore": "Daha çoxu",
     "showLess": "Daha azı",
+    "descriptions": {
+      "blink": "Link və resursları təşkil edib təhlükəsiz paylaşmaq üçün mərkəzləşdirilmiş platforma.",
+      "ipekchi": "Gündəlik həyat üçün geyim və aksesuarlar təqdim edən müasir e-ticarət mağazası.",
+      "blog101": "Fikirləri, yazıları və hekayələri paylaşmaq üçün minimalistik bloq platforması.",
+      "brandkit": "Brend ikonlarını tapmaq, embed kodu almaq və NPM ilə inteqrasiya etmək üçün alət.",
+      "snap": "Remote komandaların iş axınını, tapşırıqlarını və əməkdaşlığını asanlaşdıran platforma.",
+      "auraHydra": "Sağlam həyat tərzi üçün funksional smart bottle təqdimat səhifəsi.",
+      "blogr": "Auditoriyanı böyütmək və brendi inkişaf etdirmək üçün müasir bloq platforması.",
+      "digitalBank": "Onlayn bankçılıq, büdcə planlaması və sürətli əməliyyatlar üçün rəqəmsal həll."
+    },
     "githubRepos": "Son Repozitoriyalar",
     "loading": "Yüklənir...",
     "error": "GitHub API limitinə çatılıb və ya şəbəkə xətası baş verib. Zəhmət olmasa bir az sonra yenidən yoxlayın.",

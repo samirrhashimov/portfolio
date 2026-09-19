@@ -36,22 +36,22 @@ const About = () => {
             </div>
             <h1 className='font-[Inter] text-[1.3rem] mt-[20px] mb-2.5 font-bold'>{t('about.certificatesTitle')}</h1>
             <div className='grid grid-cols-3 gap-[18px] pb-[20px] max-md:grid-cols-2'>
-                <a className='block overflow-hidden border border-card-border bg-card rounded-xl no-underline text-inherit transition-all duration-150 hover:border-text' href='https://learn.microsoft.com/api/credentials/share/en-us/samirrhashimov/ACA552F1F434C6A8?sharingId=CF4D36DF8A903864' target='_blank' rel='noreferrer'>
-                    <img className='block w-full aspect-[7/5] object-cover object-center' src={AZ900} alt='Microsoft Azure Fundamentals certificate'></img>
+                <a className='group block overflow-hidden border border-card-border bg-card rounded-xl no-underline text-inherit' href='https://learn.microsoft.com/api/credentials/share/en-us/samirrhashimov/ACA552F1F434C6A8?sharingId=CF4D36DF8A903864' target='_blank' rel='noreferrer'>
+                    <img className='block w-full aspect-[7/5] object-cover object-center transition-transform duration-200 ease-out group-hover:scale-[1.02]' src={AZ900} alt='Microsoft Azure Fundamentals certificate'></img>
                     <div className='flex min-h-[90px] flex-col justify-center p-[10px] text-center'>
                         <p className='text-[0.95rem] leading-tight font-[Inter] font-bold text-text mb-[3px]'>Microsoft</p>
                         <p className='text-[0.75rem] leading-[1.35] font-[Inter] text-secondary'>Azure Fundamentals (AZ-900)</p>
                     </div>
                 </a>
-                <a className='block overflow-hidden border border-card-border bg-card rounded-xl no-underline text-inherit transition-all duration-150 hover:border-text' href={edugovazFrontBackend} target='_blank' rel='noreferrer'>
-                    <img className='block w-full aspect-[7/5] object-cover object-center' src={edugovazFrontBackend} alt='Front-End and Back-End Developer certificate'></img>
+                <a className='group block overflow-hidden border border-card-border bg-card rounded-xl no-underline text-inherit' href={edugovazFrontBackend} target='_blank' rel='noreferrer'>
+                    <img className='block w-full aspect-[7/5] object-cover object-center transition-transform duration-200 ease-out group-hover:scale-[1.02]' src={edugovazFrontBackend} alt='Front-End and Back-End Developer certificate'></img>
                     <div className='flex min-h-[90px] flex-col justify-center p-[10px] text-center'>
                         <p className='text-[0.95rem] leading-tight font-[Inter] font-bold text-text mb-[3px]'>Bakı Dövlət Peşə Tədris Mərkəzi</p>
                         <p className='text-[0.75rem] leading-[1.35] font-[Inter] text-secondary'>Front-End & Back-End Developer</p>
                     </div>
                 </a>
-                <a className='block overflow-hidden border border-card-border bg-card rounded-xl no-underline text-inherit transition-all duration-150 hover:border-text' href='https://www.freecodecamp.org/certification/samirrhashimov/responsive-web-design' target='_blank' rel='noreferrer'>
-                    <img className='block w-full aspect-[7/5] object-cover object-center' src={freecodecampResponsiveWeb} alt='freeCodeCamp Responsive Web Design certificate'></img>
+                <a className='group block overflow-hidden border border-card-border bg-card rounded-xl no-underline text-inherit' href='https://www.freecodecamp.org/certification/samirrhashimov/responsive-web-design' target='_blank' rel='noreferrer'>
+                    <img className='block w-full aspect-[7/5] object-cover object-center transition-transform duration-200 ease-out group-hover:scale-[1.02]' src={freecodecampResponsiveWeb} alt='freeCodeCamp Responsive Web Design certificate'></img>
                     <div className='flex min-h-[90px] flex-col justify-center p-[10px] text-center'>
                         <p className='text-[0.95rem] leading-tight font-[Inter] font-bold text-text mb-[3px]'>freeCodeCamp</p>
                         <p className='text-[0.75rem] leading-[1.35] font-[Inter] text-secondary'>Responsive Web Design</p>

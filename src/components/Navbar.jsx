@@ -21,9 +21,9 @@ const Navbar = ({ toggleTheme, isDarkMode }) => {
                 </div>
                 <div className='flex gap-3 items-center'>
                     <div className="flex gap-3 max-[480px]:hidden">
-                        <a className='no-underline text-text font-[Inter] text-[0.8rem] border-b border-text py-[3px] hover:border-section-header hover:text-section-header max-[480px]:text-[0.75rem]' href='/'>{t('navbar.home')}</a>
-                        <a className='no-underline text-text font-[Inter] text-[0.8rem] border-b border-text py-[3px] hover:border-section-header hover:text-section-header max-[480px]:text-[0.75rem]' href='/'>{t('navbar.blog')}</a>
-                        <a className='no-underline text-text font-[Inter] text-[0.8rem] border-b border-text py-[3px] hover:border-section-header hover:text-section-header max-[480px]:text-[0.75rem]' href='/links'>{t('navbar.social')}</a>
+                        <a className='no-underline text-text font-[Inter] text-[0.8rem] border-b border-text py-[3px] transition-colors duration-200 hover:border-section-header hover:text-section-header max-[480px]:text-[0.75rem]' href='/'>{t('navbar.home')}</a>
+                        <a className='no-underline text-text font-[Inter] text-[0.8rem] border-b border-text py-[3px] transition-colors duration-200 hover:border-section-header hover:text-section-header max-[480px]:text-[0.75rem]' href='/'>{t('navbar.blog')}</a>
+                        <a className='no-underline text-text font-[Inter] text-[0.8rem] border-b border-text py-[3px] transition-colors duration-200 hover:border-section-header hover:text-section-header max-[480px]:text-[0.75rem]' href='/links'>{t('navbar.social')}</a>
                     </div>
                     <div className='flex gap-2.5 items-center'>
                         <button className='bg-transparent border border-border text-text p-1.5 rounded-[5px] cursor-pointer flex items-center justify-center font-medium transition-all duration-200 h-[32px] hover:border-[#444] hover:bg-[#111] text-[0.8rem] min-w-[38px] font-[Inter]' onClick={changeLanguage}>

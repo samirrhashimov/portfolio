@@ -16,15 +16,34 @@ const npmPackages = ["brandkitjs"]
 const GITHUB_USERNAME = "samirrhashimov"
 
 const projects = [
-    { id: 'blink', name: 'Blink', description: 'Link və resursları təşkil edib təhlükəsiz paylaşmaq üçün mərkəzləşdirilmiş platforma.', repository: 'blink', image: blinkImg, alt: 'Blink Project' },
-    { id: 'ipekchi', name: 'Ipekchi', description: 'Gündəlik həyat üçün geyim və aksesuarlar təqdim edən müasir e-ticarət mağazası.', repository: 'ipekchi', image: ipekchiImg, alt: 'Ipekchi Project' },
-    { id: 'blog101', name: 'Blog101', description: 'Fikirləri, yazıları və hekayələri paylaşmaq üçün minimalistik bloq platforması.', repository: 'blog101', image: blog101Img, alt: 'Blog101 Project' },
-    { id: 'brandkit', name: 'brandkit', description: 'Brend ikonlarını tapmaq, embed kodu almaq və NPM ilə inteqrasiya etmək üçün alət.', repository: 'brandkit', image: brandkitImg, alt: 'Brandkit Project' },
-    { id: 'snap', name: 'Snap', description: 'Remote komandaların iş axınını, tapşırıqlarını və əməkdaşlığını asanlaşdıran platforma.', repository: 'snap-landing-page', image: snapImg, alt: 'Snap Project' },
-    { id: 'auraHydra', name: 'AuraHydra', description: 'Sağlam həyat tərzi üçün funksional smart bottle təqdimat səhifəsi.', repository: 'auraHydra-landing-page', image: auraHydraImg, alt: 'AuraHydra Project' },
-    { id: 'blogr', name: 'Blogr', description: 'Auditoriyanı böyütmək və brendi inkişaf etdirmək üçün müasir bloq platforması.', repository: 'blogr-landing-page', image: blogrImg, alt: 'Blogr Project' },
-    { id: 'digitalBank', name: 'DigitalBank', description: 'Onlayn bankçılıq, büdcə planlaması və sürətli əməliyyatlar üçün rəqəmsal həll.', repository: 'bank-landing-page', image: digitalBankImg, alt: 'DigitalBank Project' },
+    { id: 'blink', name: 'Blink', descriptionKey: 'projects.descriptions.blink', repository: 'blink', image: blinkImg, alt: 'Blink Project' },
+    { id: 'ipekchi', name: 'Ipekchi', descriptionKey: 'projects.descriptions.ipekchi', repository: 'ipekchi', image: ipekchiImg, alt: 'Ipekchi Project' },
+    { id: 'blog101', name: 'Blog101', descriptionKey: 'projects.descriptions.blog101', repository: 'blog101', image: blog101Img, alt: 'Blog101 Project' },
+    { id: 'brandkit', name: 'brandkit', descriptionKey: 'projects.descriptions.brandkit', repository: 'brandkit', image: brandkitImg, alt: 'Brandkit Project' },
+    { id: 'snap', name: 'Snap', descriptionKey: 'projects.descriptions.snap', repository: 'snap-landing-page', image: snapImg, alt: 'Snap Project' },
+    { id: 'auraHydra', name: 'AuraHydra', descriptionKey: 'projects.descriptions.auraHydra', repository: 'auraHydra-landing-page', image: auraHydraImg, alt: 'AuraHydra Project' },
+    { id: 'blogr', name: 'Blogr', descriptionKey: 'projects.descriptions.blogr', repository: 'blogr-landing-page', image: blogrImg, alt: 'Blogr Project' },
+    { id: 'digitalBank', name: 'DigitalBank', descriptionKey: 'projects.descriptions.digitalBank', repository: 'bank-landing-page', image: digitalBankImg, alt: 'DigitalBank Project' },
 ]
+
+const ProjectCard = ({ project }) => {
+    const { t } = useTranslation();
+
+    return (
+        <a className='block no-underline text-inherit transition-all duration-300' href={`https://github.com/${GITHUB_USERNAME}/${project.repository}`} target='_blank' rel='noopener noreferrer'>
+            <div className='relative inline-block group overflow-hidden rounded-xl border-[1.5px] border-card-border'>
+                <img className='block w-full h-auto transition-transform duration-200 ease-out group-hover:scale-[1.02]'
+                    src={project.image}
+                    alt={project.alt}
+                />
+            </div>
+            <div className='p-[10px]'>
+                <p className='font-[Inter] text-[0.95rem] leading-tight font-bold text-text text-left mb-[3px]'>{project.name}</p>
+                <p className='font-[Inter] text-[0.75rem] leading-[1.35] text-secondary text-left min-h-[2.7em]'>{t(project.descriptionKey)}</p>
+            </div>
+        </a>
+    )
+}
 
 const Projects = () => {
     const { t } = useTranslation();
@@ -88,24 +107,20 @@ const Projects = () => {
                 )}
             </div>
             <div className='grid grid-cols-4 gap-[18px] pb-[20px] max-md:grid-cols-2'>
-                {projects.map((project, index) => (
-                    <a key={project.id} className={`block no-underline text-inherit transition-all duration-200 ${!showAllProjects && index >= 4 ? 'hidden' : ''} ${!showAllProjects && index >= 2 ? 'max-md:hidden' : ''}`} href={`https://github.com/${GITHUB_USERNAME}/${project.repository}`} target='_blank' rel='noopener noreferrer'>
-                        <div className='relative inline-block group overflow-hidden rounded-xl border-[1.5px] border-card-border'>
-                            <img className='block w-full h-auto transition-transform duration-200 ease-out group-hover:scale-[1.02]'
-                                src={project.image}
-                                alt={project.alt}
-                            />
-                        </div>
-                        <div className='p-[10px]'>
-                            <p className='font-[Inter] text-[0.95rem] leading-tight font-bold text-text text-left mb-[3px]'>{project.name}</p>
-                            <p className='font-[Inter] text-[0.75rem] leading-[1.35] text-secondary text-left min-h-[2.7em]'>{project.description}</p>
-                        </div>
-                    </a>
+                {projects.slice(0, 4).map((project, index) => (
+                    <div key={project.id} className={!showAllProjects && index >= 2 ? 'max-md:hidden' : ''}>
+                        <ProjectCard project={project} />
+                    </div>
+                ))}
+            </div>
+            <div className={`grid grid-cols-4 gap-[18px] overflow-hidden transition-[max-height,opacity] duration-500 ease-in-out max-md:grid-cols-2 ${showAllProjects ? 'max-h-[2000px] opacity-100' : 'pointer-events-none max-h-0 opacity-0'}`}>
+                {projects.slice(4).map(project => (
+                    <ProjectCard key={project.id} project={project} />
                 ))}
             </div>
 
             <h1 className='font-[Inter] text-[1.3rem] mt-[20px] mb-[10px] text-text font-bold'>{t('projects.packages')}</h1>
-            <div className='grid grid-cols-2 gap-[18px] pb-[20px] max-md:grid-cols-1'>
+            <div className='grid grid-cols-3 gap-[18px] pb-[20px] max-md:grid-cols-1'>
                 {packages.length === 0 ? (
                     <div className='border-[1.5px] border-card-border rounded-[10px_0] p-[15px] break-words relative min-h-[150px] bg-card transition-all duration-300 flex flex-col hover:border-text max-md:min-h-0 max-md:pb-[60px]'>
                         <p>{t('projects.noResults')}</p>
@@ -121,7 +136,7 @@ const Projects = () => {
                 )}
             </div>
             <h1 className='font-[Inter] text-[1.3rem] mt-[20px] mb-[10px] text-text font-bold'>{t('projects.githubRepos')}</h1>
-            <div className='grid grid-cols-2 gap-[18px] pb-[15px] max-md:grid-cols-1'>
+            <div className='grid grid-cols-3 gap-[18px] pb-[15px] max-md:grid-cols-1'>
                 {reposError ? (
                     <div className='border-[1.5px] border-card-border rounded-[10px_0] p-[15px] break-words relative min-h-[150px] bg-card cursor-pointer transition-all duration-300 flex flex-col hover:border-text max-md:min-h-0 max-md:pb-[60px]'>
                         <p>{t('projects.error')}</p>
