@@ -15,14 +15,14 @@ const npmPackages = ["brandkitjs"]
 const GITHUB_USERNAME = "samirrhashimov"
 
 const projects = [
-    { id: 'blink', name: 'Blink', description: '', repository: 'blink', image: blinkImg, alt: 'Blink Project' },
-    { id: 'ipekchi', name: 'Ipekchi', description: '', repository: 'ipekchi', image: ipekchiImg, alt: 'Whispen Project' },
-    { id: 'blog101', name: 'Blog101', description: '', repository: 'blog101', image: blog101Img, alt: 'Whispen Project' },
-    { id: 'brandkit', name: 'brandkit', description: '', repository: 'brandkit', image: brandkitImg, alt: 'Brandkit Project' },
-    { id: 'snap', name: 'Snap', description: '', repository: 'snap-landing-page', image: snapImg, alt: 'Snap Project' },
-    { id: 'auraHydra', name: 'AuraHydra', description: '', repository: 'auraHydra-landing-page', image: auraHydraImg, alt: 'AuraHydra Project' },
-    { id: 'blogr', name: 'Blogr', description: '', repository: 'blogr-landing-page', image: blogrImg, alt: 'Blogr Project' },
-    { id: 'digitalBank', name: 'DigitalBank', description: '', repository: 'bank-landing-page', image: digitalBankImg, alt: 'DigitalBank Project' },
+    { id: 'blink', name: 'Blink', description: 'Link və resursları təşkil edib təhlükəsiz paylaşmaq üçün mərkəzləşdirilmiş platforma.', repository: 'blink', image: blinkImg, alt: 'Blink Project' },
+    { id: 'ipekchi', name: 'Ipekchi', description: 'Gündəlik həyat üçün geyim və aksesuarlar təqdim edən müasir e-ticarət mağazası.', repository: 'ipekchi', image: ipekchiImg, alt: 'Ipekchi Project' },
+    { id: 'blog101', name: 'Blog101', description: 'Fikirləri, yazıları və hekayələri paylaşmaq üçün minimalistik bloq platforması.', repository: 'blog101', image: blog101Img, alt: 'Blog101 Project' },
+    { id: 'brandkit', name: 'brandkit', description: 'Brend ikonlarını tapmaq, embed kodu almaq və NPM ilə inteqrasiya etmək üçün alət.', repository: 'brandkit', image: brandkitImg, alt: 'Brandkit Project' },
+    { id: 'snap', name: 'Snap', description: 'Remote komandaların iş axınını, tapşırıqlarını və əməkdaşlığını asanlaşdıran platforma.', repository: 'snap-landing-page', image: snapImg, alt: 'Snap Project' },
+    { id: 'auraHydra', name: 'AuraHydra', description: 'Sağlam həyat tərzi üçün funksional smart bottle təqdimat səhifəsi.', repository: 'auraHydra-landing-page', image: auraHydraImg, alt: 'AuraHydra Project' },
+    { id: 'blogr', name: 'Blogr', description: 'Auditoriyanı böyütmək və brendi inkişaf etdirmək üçün müasir bloq platforması.', repository: 'blogr-landing-page', image: blogrImg, alt: 'Blogr Project' },
+    { id: 'digitalBank', name: 'DigitalBank', description: 'Onlayn bankçılıq, büdcə planlaması və sürətli əməliyyatlar üçün rəqəmsal həll.', repository: 'bank-landing-page', image: digitalBankImg, alt: 'DigitalBank Project' },
 ]
 
 const Projects = () => {
@@ -94,7 +94,8 @@ const Projects = () => {
                                 alt={project.alt}
                             />
                         </div>
-                        <p className='flex font-[Inter] text-[0.9rem] my-[5px] items-center justify-center'><b>{project.name}</b>&nbsp;- {project.description}</p>
+                        <p className='font-[Inter] text-[0.95rem] leading-tight font-bold text-text text-left mt-[8px] mb-[3px]'>{project.name}</p>
+                        <p className='font-[Inter] text-[0.75rem] leading-[1.35] text-secondary text-left min-h-[2.7em]'>{project.description}</p>
                     </a>
                 ))}
             </div>
