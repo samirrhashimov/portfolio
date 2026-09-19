@@ -59,28 +59,4 @@ body.dark-theme {
     color: #ffffff;
 }
 
-.certificate-tags {
-    padding-bottom: 6px;
-    scrollbar-width: thin;
-    scrollbar-color: #606264 transparent;
-}
-
-.certificate-tags::-webkit-scrollbar {
-    height: 5px;
-}
-
-.certificate-tags::-webkit-scrollbar-track {
-    background: transparent;
-}
-
-.certificate-tags::-webkit-scrollbar-button {
-    display: none;
-    width: 0;
-    height: 0;
-}
-
-.certificate-tags::-webkit-scrollbar-thumb {
-    background: #9ca3af;
-    border-radius: 999px;
-}
 
