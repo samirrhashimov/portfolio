@@ -16,7 +16,13 @@
   "about": {
     "bioTitle": "Bioqrafiya",
     "bio": "Mən Samir Hashimov, Junior Front-End Developerəm. Öz app-lərimi yaradıram və yayımlayıram. Blink adlı link idarəetmə platformam artıq vebdə, Google Play-də və Firefox genişlənməsi kimi mövcuddur. Hal-hazırda React ekosistemi haqqında biliklərimi dərinləşdirirəm, TypeScript-i araşdırıram və Tailwind-ə keçirəm.",
-    "certificatesTitle": "Sertifikatlar"
+    "certificatesTitle": "Sertifikatlar",
+    "technologiesTitle": "Texnologiyalar",
+    "technologyGroups": {
+      "webDevelopment": "Front-End",
+      "designTools": "Dizayn və Alətlər",
+      "cloudDevOps": "Bulud və DevOps"
+    }
   },
   "projects": {
     "webApps": "Veb Proqramlar",
