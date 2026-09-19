@@ -22,6 +22,8 @@
     "webApps": "Web Apps",
     "packages": "Libraries & Packages",
     "landingPages": "Landing Pages",
+    "showMore": "Show more",
+    "showLess": "Show less",
     "githubRepos": "Recent Repositories",
     "loading": "Loading...",
     "error": "GitHub API rate limit exceeded or network error. Please try again later.",

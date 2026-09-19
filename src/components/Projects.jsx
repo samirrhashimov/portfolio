@@ -16,10 +16,9 @@ const GITHUB_USERNAME = "samirrhashimov"
 
 const projects = [
     { id: 'blink', name: 'Blink', description: '', repository: 'blink', image: blinkImg, alt: 'Blink Project' },
-    { id: 'brandkit', name: 'brandkit', description: '', repository: 'brandkit', image: brandkitImg, alt: 'Brandkit Project' },
-    { id: 'noteify', name: 'Noteify', description: '', repository: 'noteify', image: noteifyImg, alt: 'Noteify Project' },
     { id: 'ipekchi', name: 'Ipekchi', description: '', repository: 'ipekchi', image: ipekchiImg, alt: 'Whispen Project' },
     { id: 'blog101', name: 'Blog101', description: '', repository: 'blog101', image: blog101Img, alt: 'Whispen Project' },
+    { id: 'brandkit', name: 'brandkit', description: '', repository: 'brandkit', image: brandkitImg, alt: 'Brandkit Project' },
     { id: 'snap', name: 'Snap', description: '', repository: 'snap-landing-page', image: snapImg, alt: 'Snap Project' },
     { id: 'auraHydra', name: 'AuraHydra', description: '', repository: 'auraHydra-landing-page', image: auraHydraImg, alt: 'AuraHydra Project' },
     { id: 'blogr', name: 'Blogr', description: '', repository: 'blogr-landing-page', image: blogrImg, alt: 'Blogr Project' },
@@ -28,6 +27,7 @@ const projects = [
 
 const Projects = () => {
     const { t } = useTranslation();
+    const [showAllProjects, setShowAllProjects] = useState(false)
     const [packages, setPackages] = useState([])
     const [repos, setRepos] = useState([])
     const [reposError, setReposError] = useState(false)
@@ -77,12 +77,19 @@ const Projects = () => {
 
     return (
         <div>
-            <h1 className='font-[Inter] text-[1.3rem] mb-[10px] text-text font-bold'>{t('sections.projects')}</h1>
-            <div className='grid grid-cols-[repeat(auto-fit,minmax(200px,200px))] justify-start gap-[18px] pb-[20px] max-md:grid-cols-[repeat(auto-fit,minmax(150px,1fr))]'>
-                {projects.map(project => (
-                    <a key={project.id} className='block no-underline text-inherit transition-all duration-200' href={`https://github.com/${GITHUB_USERNAME}/${project.repository}`} target='_blank' rel='noopener noreferrer'>
+            <div className='flex items-center justify-between gap-4 mb-[10px]'>
+                <h1 className='font-[Inter] text-[1.3rem] text-text font-bold'>{t('sections.projects')}</h1>
+                {projects.length > 4 && (
+                    <button type='button' className='border border-card-border bg-card text-text rounded-[6px] px-[12px] py-[8px] font-[Inter] cursor-pointer hover:border-text' onClick={() => setShowAllProjects(current => !current)}>
+                        {showAllProjects ? t('projects.showLess') : t('projects.showMore')}
+                    </button>
+                )}
+            </div>
+            <div className='grid grid-cols-4 gap-[18px] pb-[20px] max-md:grid-cols-2'>
+                {projects.map((project, index) => (
+                    <a key={project.id} className={`block no-underline text-inherit transition-all duration-200 ${!showAllProjects && index >= 4 ? 'hidden' : ''} ${!showAllProjects && index >= 2 ? 'max-md:hidden' : ''}`} href={`https://github.com/${GITHUB_USERNAME}/${project.repository}`} target='_blank' rel='noopener noreferrer'>
                         <div className='relative inline-block group'>
-                            <img className='w-[200px] border-[1.5px] border-card-border rounded-xl transition-opacity duration-300 max-md:w-full max-md:h-auto group-hover:border-white'
+                            <img className='block w-full h-auto border-[1.5px] border-card-border rounded-xl transition-opacity duration-300 group-hover:border-white'
                                 src={project.image}
                                 alt={project.alt}
                             />

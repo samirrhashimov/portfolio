@@ -22,6 +22,8 @@
     "webApps": "Veb Proqramlar",
     "packages": "Kitabxanalar & Paketlər",
     "landingPages": "Landing Pages-lər",
+    "showMore": "Daha çoxu",
+    "showLess": "Daha azı",
     "githubRepos": "Son Repozitoriyalar",
     "loading": "Yüklənir...",
     "error": "GitHub API limitinə çatılıb və ya şəbəkə xətası baş verib. Zəhmət olmasa bir az sonra yenidən yoxlayın.",
