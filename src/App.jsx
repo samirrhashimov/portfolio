@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react'
-import { Routes, Route } from 'react-router-dom'
+import { Routes, Route, useLocation } from 'react-router-dom'
 import Navbar from './components/Navbar'
 import './index.css'
 import About from './components/About'
@@ -79,7 +79,6 @@ function App() {
   }, []);
 
   const toggleTheme = () => setIsDarkMode(!isDarkMode);
-
   return (
     <>
       <Navbar toggleTheme={toggleTheme} isDarkMode={isDarkMode} />
