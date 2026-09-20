@@ -29,8 +29,10 @@
     "webApps": "Web Apps",
     "packages": "Libraries & Packages",
     "landingPages": "Landing Pages",
+    "blogs": "Latest Articles",
     "showMore": "Show more",
     "showLess": "Show less",
+    "blogsError": "Articles could not be loaded right now.",
     "descriptions": {
       "blink": "A centralized platform for organizing, managing, and securely sharing links and resources.",
       "ipekchi": "A modern e-commerce store offering carefully selected clothing and accessories for everyday life.",

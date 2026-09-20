@@ -29,8 +29,10 @@
     "webApps": "Veb Proqramlar",
     "packages": "Kitabxanalar & Paketlər",
     "landingPages": "Landing Pages-lər",
+    "blogs": "Son Bloq Yazıları",
     "showMore": "Daha çoxu",
     "showLess": "Daha azı",
+    "blogsError": "Bloq yazıları hazırda yüklənə bilmədi.",
     "descriptions": {
       "blink": "Link və resursları təşkil edib təhlükəsiz paylaşmaq üçün mərkəzləşdirilmiş platforma.",
       "ipekchi": "Gündəlik həyat üçün geyim və aksesuarlar təqdim edən müasir e-ticarət mağazası.",
