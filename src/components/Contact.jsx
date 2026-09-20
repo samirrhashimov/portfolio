@@ -18,7 +18,7 @@ const Contact = () => {
                     const Icon = link.icon
                     const isEmail = link.href.startsWith('mailto:')
                     return (
-                        <a key={link.label} href={link.href} target={isEmail ? undefined : '_blank'} rel={isEmail ? undefined : 'noreferrer'} className='block min-h-[150px] border border-card-border bg-card rounded-xl p-[16px] no-underline text-text'>
+                        <a key={link.label} href={link.href} target={isEmail ? undefined : '_blank'} rel={isEmail ? undefined : 'noreferrer'} className='block min-h-[150px] border border-card-border bg-card rounded-xl p-[16px] no-underline text-text transition-colors duration-200 hover:border-border-hover'>
                             <div className='flex h-[42px] w-[42px] items-center justify-center rounded-[9px] border border-card-border text-secondary'>
                                 <Icon className='text-[1.15rem]' />
                             </div>
