@@ -8,6 +8,7 @@
     --color-text: var(--text-color);
     --color-secondary: var(--secondary-text);
     --color-border: var(--border-color);
+    --color-border-hover: var(--border-hover-color);
     --color-card-border: var(--card-border-alt);
     --color-accent: var(--accent-color);
     --color-accent-hover: var(--accent-hover);
@@ -16,6 +17,7 @@
     --color-badge-border: var(--badge-border);
     --color-github-npm: var(--github-npm-bg);
     --color-card: var(--card-bg);
+    --color-hover-surface: var(--hover-surface-color);
     --font-inter: 'Inter', sans-serif;
     --font-outfit: 'Outfit', sans-serif;
 }
@@ -26,6 +28,7 @@
     --secondary-text: #474746;
     --border-color: #e2e8f0;
     --card-border-alt: #cbd5e1;
+    --border-hover-color: #aebdce;
     --accent-color: #006680;
     --accent-hover: #004d61;
     --section-header: #008299;
@@ -33,6 +36,7 @@
     --badge-border: #008299;
     --github-npm-bg: transparent;
     --card-bg: #ffffff;
+    --hover-surface-color: #f3f6f9;
     --cursor-x: 50%;
     --cursor-y: 50%;
     --cursor-glow-opacity: 0;
@@ -45,12 +49,14 @@ body.dark-theme {
     --secondary-text: #a0a0a0;
     --border-color: #1e293b;
     --card-border-alt: #334155;
+    --border-hover-color: #64748b;
     --accent-color: #00a3c4;
     --accent-hover: #33b5d1;
     --section-header: #38bdf8;
     --badge-bg: #003643;
     --badge-border: #00a3c4;
     --card-bg: #161616;
+    --hover-surface-color: #222222;
     --cursor-glow-color: 255, 255, 255;
 }
 

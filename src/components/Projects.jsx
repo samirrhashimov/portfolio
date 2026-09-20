@@ -223,7 +223,7 @@ const Projects = () => {
             <div className='flex items-center justify-between gap-4 mb-[10px]'>
                 <h1 className='font-[Inter] text-[1.3rem] text-text font-bold'>{t('sections.projects')}</h1>
                 {projects.length > 4 && (
-                    <button type='button' className='inline-flex items-center gap-[3px] border border-card-border bg-card text-text rounded-[6px] px-[12px] py-[8px] font-[Inter] text-[12px] cursor-pointer hover:border-[#444] hover:bg-[#111]' onClick={() => setShowAllProjects(current => !current)}>
+                    <button type='button' className='inline-flex items-center gap-[3px] border border-card-border bg-card text-text rounded-[6px] px-[12px] py-[8px] font-[Inter] text-[12px] cursor-pointer hover:border-border-hover hover:bg-hover-surface' onClick={() => setShowAllProjects(current => !current)}>
                         {showAllProjects ? t('projects.showLess') : t('projects.showMore')}
                         <span aria-hidden='true' className='ml-[6px]'>{showAllProjects ? <FaArrowLeft /> : <FaArrowRight />}</span>
                     </button>
@@ -244,7 +244,7 @@ const Projects = () => {
 
             <div className='flex items-center justify-between gap-4 mt-[20px] mb-[10px]'>
                 <h1 className='font-[Inter] text-[1.3rem] text-text font-bold'>{t('projects.blogs')}</h1>
-                <button type='button' className='inline-flex items-center gap-[3px] border border-card-border bg-card text-text rounded-[6px] px-[12px] py-[8px] font-[Inter] text-[12px] cursor-pointer hover:border-[#444] hover:bg-[#111]' onClick={handleShowAllBlogs} disabled={blogsLoading && blogs.length > 0}>
+                <button type='button' className='inline-flex items-center gap-[3px] border border-card-border bg-card text-text rounded-[6px] px-[12px] py-[8px] font-[Inter] text-[12px] cursor-pointer hover:border-border-hover hover:bg-hover-surface' onClick={handleShowAllBlogs} disabled={blogsLoading && blogs.length > 0}>
                     {showAllBlogs ? t('projects.showLess') : t('projects.showMore')}
                     <span aria-hidden='true' className='ml-[6px]'>{showAllBlogs ? <FaArrowLeft /> : <FaArrowRight />}</span>
                 </button>
