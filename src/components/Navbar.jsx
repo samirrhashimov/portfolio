@@ -22,7 +22,7 @@ const Navbar = ({ toggleTheme, isDarkMode }) => {
                 <div className='flex gap-3 items-center'>
                     <div className="flex gap-3 max-[480px]:hidden">
                         <a className='no-underline text-text font-[Inter] text-[0.8rem] border-b border-text py-[3px] transition-colors duration-200 hover:border-section-header hover:text-section-header max-[480px]:text-[0.75rem]' href='/'>{t('navbar.home')}</a>
-                        <a className='no-underline text-text font-[Inter] text-[0.8rem] border-b border-text py-[3px] transition-colors duration-200 hover:border-section-header hover:text-section-header max-[480px]:text-[0.75rem]' href='/'>{t('navbar.blog')}</a>
+                        <a className='no-underline text-text font-[Inter] text-[0.8rem] border-b border-text py-[3px] transition-colors duration-200 hover:border-section-header hover:text-section-header max-[480px]:text-[0.75rem]' href='https://samirrhashimov.substack.com/' target="_blank">{t('navbar.blog')}</a>
                         <a className='no-underline text-text font-[Inter] text-[0.8rem] border-b border-text py-[3px] transition-colors duration-200 hover:border-section-header hover:text-section-header max-[480px]:text-[0.75rem]' href='/links'>{t('navbar.social')}</a>
                     </div>
                     <div className='flex gap-2.5 items-center'>
