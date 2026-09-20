@@ -1,8 +1,8 @@
 {
   "navbar": {
-    "about": "About",
-    "projects": "Projects",
-    "community": "Community"
+    "home": "Home",
+    "blog": "Blog",
+    "social": "Social Media"
   },
   "sections": {
     "about": "About",
@@ -11,39 +11,47 @@
     "contact": "Contact"
   },
   "contact": {
-    "title": "Contact"
+    "title": "Contact",
+    "emailLabel": "Email"
   },
   "about": {
     "bioTitle": "Biography",
-    "bio": "I am Samir Hashimov, a Front-End developer and UI designer based in Baku, Azerbaijan. I create modern web applications with HTML5, CSS3, JavaScript, and React. Additionally, I create and publish my own products. My link management platform, called Blink, is available on the web, on Google Play, and as a Firefox extension. Currently, I am deepening my knowledge of the React ecosystem, exploring TypeScript, and switching to using Tailwind for efficiency.",
-    "certificatesTitle": "Certificates"
+    "bio": "I am Samir Hashimov, a Junior Front-End Developer. I build and publish my own apps. My link management platform, Blink, is available on the web, Google Play, and as a Firefox extension. Currently, I am deepening my knowledge of the React ecosystem, exploring TypeScript, and transitioning to Tailwind.",
+    "certificatesTitle": "Certificates",
+    "technologiesTitle": "Technologies",
+    "technologyGroups": {
+      "webDevelopment": "Front-End",
+      "designTools": "Design & Tools",
+      "cloudDevOps": "Cloud & DevOps"
+    }
   },
   "projects": {
     "webApps": "Web Apps",
     "packages": "Libraries & Packages",
     "landingPages": "Landing Pages",
+    "blogs": "Latest Articles",
+    "showMore": "Show more",
+    "showLess": "Show less",
+    "blogsError": "Articles could not be loaded right now.",
+    "descriptions": {
+      "blink": "A centralized platform for organizing, managing, and securely sharing links and resources.",
+      "ipekchi": "A modern e-commerce store offering carefully selected clothing and accessories for everyday life.",
+      "blog101": "A minimal blog platform for sharing ideas, personal writing, and stories with readers.",
+      "brandkit": "A tool for finding popular brand icons, getting embed code, and integrating them through NPM.",
+      "snap": "A platform that helps remote teams manage workflows, tasks, and collaboration.",
+      "auraHydra": "A modern landing page for functional smart bottles that support a healthy lifestyle.",
+      "blogr": "A modern publishing and blogging platform built to grow audiences and develop brands.",
+      "digitalBank": "A next-generation digital banking solution for online banking, budgeting, and fast transactions."
+    },
     "githubRepos": "Recent Repositories",
     "loading": "Loading...",
     "error": "GitHub API rate limit exceeded or network error. Please try again later.",
     "noResults": "No results found."
   },
   "community": {
-    "contributions": {
-      "title": "Contributions",
-      "osGuide": "translation - Added Turkish translations to two articles",
-      "distromatch": "UI/UX update - UI/UX Modernization and Database Expansion"
-    },
-    "honors": {
-      "title": "Honors",
-      "certificate": {
-        "header": "Certificate of Appreciation – @ngoagency",
-        "paragraph": "Awarded for active participation to the international project focused on environmental legal norms in the Karabakh and Eastern Zangezur regions."
-      }
-    },
     "contact": {
       "title": "Contact",
-      "email": "Send Email",
-      "comments": "Comments"
+      "email": "Send Email"
     }
   }
 }

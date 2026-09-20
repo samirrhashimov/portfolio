@@ -1,8 +1,8 @@
 {
   "navbar": {
-    "about": "Haqqımda",
-    "projects": "Layihələr",
-    "community": "İcma"
+    "home": "Əsas Səhifə",
+    "blog": "Bloq",
+    "social": "Sosial Media"
   },
   "sections": {
     "about": "Haqqımda",
@@ -11,39 +11,47 @@
     "contact": "Əlaqə"
   },
   "contact": {
-    "title": "Əlaqə"
+    "title": "Əlaqə",
+    "emailLabel": "E-poçt"
   },
   "about": {
     "bioTitle": "Bioqrafiya",
-    "bio": "Mən Samir Hashimov, Bakı, Azərbaycanda yaşayan Front-End Developer və UI dizaynerəm. HTML5, CSS3, JavaScript və React istifadə edərək müasir veb proqramlar hazırlayıram. Bundan əlavə, öz app-lərimi yaradıram və yayımlayıram. \"Blink\" adlı link idarəetmə platformam artıq vebdə, Google Play-də və Firefox genişlənməsi kimi mövcuddur. Hal-hazırda React ekosistemi haqqında biliklərimi dərinləşdirirəm, TypeScript-i araşdırıram və səmərəlilik üçün Tailwind-ə keçirəm.",
-    "certificatesTitle": "Sertifikatlar"
+    "bio": "Mən Samir Hashimov, Junior Front-End Developerəm. Öz app-lərimi yaradıram və yayımlayıram. Blink adlı link idarəetmə platformam artıq vebdə, Google Play-də və Firefox genişlənməsi kimi mövcuddur. Hal-hazırda React ekosistemi haqqında biliklərimi dərinləşdirirəm, TypeScript-i araşdırıram və Tailwind-ə keçirəm.",
+    "certificatesTitle": "Sertifikatlar",
+    "technologiesTitle": "Texnologiyalar",
+    "technologyGroups": {
+      "webDevelopment": "Front-End",
+      "designTools": "Dizayn və Alətlər",
+      "cloudDevOps": "Bulud və DevOps"
+    }
   },
   "projects": {
     "webApps": "Veb Proqramlar",
     "packages": "Kitabxanalar & Paketlər",
     "landingPages": "Landing Pages-lər",
+    "blogs": "Son Bloq Yazıları",
+    "showMore": "Daha çoxu",
+    "showLess": "Daha azı",
+    "blogsError": "Bloq yazıları hazırda yüklənə bilmədi.",
+    "descriptions": {
+      "blink": "Link və resursları təşkil edib təhlükəsiz paylaşmaq üçün mərkəzləşdirilmiş platforma.",
+      "ipekchi": "Gündəlik həyat üçün geyim və aksesuarlar təqdim edən müasir e-ticarət mağazası.",
+      "blog101": "Fikirləri, yazıları və hekayələri paylaşmaq üçün minimalistik bloq platforması.",
+      "brandkit": "Brend ikonlarını tapmaq, embed kodu almaq və NPM ilə inteqrasiya etmək üçün alət.",
+      "snap": "Remote komandaların iş axınını, tapşırıqlarını və əməkdaşlığını asanlaşdıran platforma.",
+      "auraHydra": "Sağlam həyat tərzi üçün funksional smart bottle təqdimat səhifəsi.",
+      "blogr": "Auditoriyanı böyütmək və brendi inkişaf etdirmək üçün müasir bloq platforması.",
+      "digitalBank": "Onlayn bankçılıq, büdcə planlaması və sürətli əməliyyatlar üçün rəqəmsal həll."
+    },
     "githubRepos": "Son Repozitoriyalar",
     "loading": "Yüklənir...",
     "error": "GitHub API limitinə çatılıb və ya şəbəkə xətası baş verib. Zəhmət olmasa bir az sonra yenidən yoxlayın.",
     "noResults": "Nəticə tapılmadı."
   },
   "community": {
-    "contributions": {
-      "title": "Töhfələr",
-      "osGuide": "tərcümə - İki məqaləyə Türk dili tərcümələri əlavə edildi",
-      "distromatch": "UI/UX yeniləməsi - UI/UX Modernləşdirilməsi və Məlumat Bazasının Genişləndirilməsi"
-    },
-    "honors": {
-      "title": "Təltiflər",
-      "certificate": {
-        "header": "Certificate of Appreciation – QHT Agentliyi & ILER PU",
-        "paragraph": "Awarded for active participation and valuable contributions to the international project focused on environmental legal norms in the Karabakh and Eastern Zangezur regions."
-      }
-    },
     "contact": {
       "title": "Əlaqə",
-      "email": "E-poçt göndər",
-      "comments": "Şərhlər"
+      "email": "E-poçt göndər"
     }
   }
 }
