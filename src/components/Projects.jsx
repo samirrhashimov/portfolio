@@ -145,7 +145,7 @@ const Projects = () => {
     const [blogsError, setBlogsError] = useState(false)
 
     useEffect(() => {
-        fetchBlogs(3)
+        fetchBlogs(4)
             .then(data => {
                 setBlogs(data)
                 setBlogsError(false)
