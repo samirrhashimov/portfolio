@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import pp from '../assets/images/samirr.jpg'
 import { FaGithub, FaLinkedin, FaInstagram, FaMicrosoft } from "react-icons/fa";
 import { FaXTwitter } from "react-icons/fa6";
@@ -37,8 +37,33 @@ const technologyGroups = [
     },
 ]
 
+const certificates = [
+    {
+        title: 'Microsoft',
+        subtitle: 'Azure Fundamentals (AZ-900)',
+        image: AZ900,
+        alt: 'Microsoft Azure Fundamentals certificate',
+        link: 'https://learn.microsoft.com/api/credentials/share/en-us/samirrhashimov/ACA552F1F434C6A8?sharingId=CF4D36DF8A903864'
+    },
+    {
+        title: 'Bakı Dövlət Peşə Tədris Mərkəzi',
+        subtitle: 'Front-End & Back-End Developer',
+        image: edugovazFrontBackend,
+        alt: 'Front-End and Back-End Developer certificate',
+        link: edugovazFrontBackend
+    },
+    {
+        title: 'freeCodeCamp',
+        subtitle: 'Responsive Web Design',
+        image: freecodecampResponsiveWeb,
+        alt: 'freeCodeCamp Responsive Web Design certificate',
+        link: 'https://www.freecodecamp.org/certification/samirrhashimov/responsive-web-design'
+    }
+]
+
 const About = () => {
     const { t } = useTranslation();
+    const [showAllCertificates, setShowAllCertificates] = useState(false);
 
     return (
         <div>
@@ -62,29 +87,27 @@ const About = () => {
                 </div>
 
             </div>
-            <h1 className='font-[Inter] text-[1.3rem] mt-[20px] mb-2.5 font-bold'>{t('about.certificatesTitle')}</h1>
-            <div className='grid grid-cols-3 gap-[18px] pb-[20px] max-md:grid-cols-2'>
-                    <a className='group block overflow-hidden border border-card-border bg-card rounded-xl no-underline text-inherit' href='https://learn.microsoft.com/api/credentials/share/en-us/samirrhashimov/ACA552F1F434C6A8?sharingId=CF4D36DF8A903864' target='_blank' rel='noreferrer'>
-                    <img className='block w-full aspect-[7/5] object-cover object-center transition-transform duration-200 ease-out group-hover:scale-[1.02]' src={AZ900} alt='Microsoft Azure Fundamentals certificate'></img>
-                    <div className='flex min-h-[90px] flex-col justify-center p-[10px] text-center'>
-                        <p className='text-[0.95rem] leading-tight font-[Inter] font-bold text-text mb-[3px]'>Microsoft</p>
-                        <p className='text-[0.75rem] leading-[1.35] font-[Inter] text-secondary'>Azure Fundamentals (AZ-900)</p>
+            <div className='flex items-center justify-between gap-4 mt-[20px] mb-2.5'>
+                <h1 className='font-[Inter] text-[1.3rem] m-0 font-bold'>{t('about.certificatesTitle')}</h1>
+                {certificates.length > 2 && (
+                    <button type='button' className={`inline-flex items-center gap-[3px] border border-card-border bg-card text-text rounded-[6px] px-[12px] py-[8px] font-[Inter] text-[12px] cursor-pointer hover:border-border-hover hover:bg-hover-surface ${certificates.length <= 4 ? 'max-md:inline-flex md:hidden' : ''}`} onClick={() => setShowAllCertificates(current => !current)}>
+                        {showAllCertificates ? t('projects.showLess') : t('projects.showMore')}
+                        <span aria-hidden='true' className='ml-[6px]'>{showAllCertificates ? '←' : '→'}</span>
+                    </button>
+                )}
+            </div>
+            <div className='grid grid-cols-4 gap-[18px] pb-[20px] max-md:grid-cols-2'>
+                {certificates.map((cert, index) => (
+                    <div key={cert.title} className={!showAllCertificates && index >= 2 ? 'max-md:hidden' : ''}>
+                        <a className='group block overflow-hidden border border-card-border bg-card rounded-xl no-underline text-inherit h-full' href={cert.link} target='_blank' rel='noreferrer'>
+                            <img className='block w-full aspect-[7/5] object-cover object-center transition-transform duration-200 ease-out group-hover:scale-[1.02]' src={cert.image} alt={cert.alt}></img>
+                            <div className='flex min-h-[90px] flex-col justify-center p-[10px] text-center'>
+                                <p className='text-[0.95rem] leading-tight font-[Inter] font-bold text-text mb-[3px]'>{cert.title}</p>
+                                <p className='text-[0.75rem] leading-[1.35] font-[Inter] text-secondary'>{cert.subtitle}</p>
+                            </div>
+                        </a>
                     </div>
-                </a>
-                <a className='group block overflow-hidden border border-card-border bg-card rounded-xl no-underline text-inherit' href={edugovazFrontBackend} target='_blank' rel='noreferrer'>
-                    <img className='block w-full aspect-[7/5] object-cover object-center transition-transform duration-200 ease-out group-hover:scale-[1.02]' src={edugovazFrontBackend} alt='Front-End and Back-End Developer certificate'></img>
-                    <div className='flex min-h-[90px] flex-col justify-center p-[10px] text-center'>
-                        <p className='text-[0.95rem] leading-tight font-[Inter] font-bold text-text mb-[3px]'>Bakı Dövlət Peşə Tədris Mərkəzi</p>
-                        <p className='text-[0.75rem] leading-[1.35] font-[Inter] text-secondary'>Front-End & Back-End Developer</p>
-                    </div>
-                </a>
-                <a className='group block overflow-hidden border border-card-border bg-card rounded-xl no-underline text-inherit' href='https://www.freecodecamp.org/certification/samirrhashimov/responsive-web-design' target='_blank' rel='noreferrer'>
-                    <img className='block w-full aspect-[7/5] object-cover object-center transition-transform duration-200 ease-out group-hover:scale-[1.02]' src={freecodecampResponsiveWeb} alt='freeCodeCamp Responsive Web Design certificate'></img>
-                    <div className='flex min-h-[90px] flex-col justify-center p-[10px] text-center'>
-                        <p className='text-[0.95rem] leading-tight font-[Inter] font-bold text-text mb-[3px]'>freeCodeCamp</p>
-                        <p className='text-[0.75rem] leading-[1.35] font-[Inter] text-secondary'>Responsive Web Design</p>
-                    </div>
-                </a>
+                ))}
             </div>
             <h1 className='font-[Inter] text-[1.3rem] mt-[20px] mb-2.5 font-bold'>{t('about.technologiesTitle')}</h1>
             <div className='grid grid-cols-2 gap-[14px] pb-[20px] max-md:grid-cols-1'>

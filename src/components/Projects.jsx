@@ -163,7 +163,7 @@ const Projects = () => {
     const [blogsError, setBlogsError] = useState(false)
 
     useEffect(() => {
-        fetchBlogs(4)
+        fetchBlogs(5)
             .then(data => {
                 setBlogs(data)
                 setBlogsError(false)
@@ -240,8 +240,8 @@ const Projects = () => {
         <div>
             <div className='flex items-center justify-between gap-4 mb-[10px]'>
                 <h1 className='font-[Inter] text-[1.3rem] text-text font-bold'>{t('sections.projects')}</h1>
-                {projects.length > 4 && (
-                    <button type='button' className='inline-flex items-center gap-[3px] border border-card-border bg-card text-text rounded-[6px] px-[12px] py-[8px] font-[Inter] text-[12px] cursor-pointer hover:border-border-hover hover:bg-hover-surface' onClick={() => setShowAllProjects(current => !current)}>
+                {projects.length > 2 && (
+                    <button type='button' className={`inline-flex items-center gap-[3px] border border-card-border bg-card text-text rounded-[6px] px-[12px] py-[8px] font-[Inter] text-[12px] cursor-pointer hover:border-border-hover hover:bg-hover-surface ${projects.length <= 4 ? 'max-md:inline-flex md:hidden' : ''}`} onClick={() => setShowAllProjects(current => !current)}>
                         {showAllProjects ? t('projects.showLess') : t('projects.showMore')}
                         <span aria-hidden='true' className='ml-[6px]'>{showAllProjects ? <FaArrowLeft /> : <FaArrowRight />}</span>
                     </button>
@@ -262,10 +262,12 @@ const Projects = () => {
 
             <div className='flex items-center justify-between gap-4 mt-[20px] mb-[10px]'>
                 <h1 className='font-[Inter] text-[1.3rem] text-text font-bold'>{t('projects.blogs')}</h1>
-                <button type='button' className='inline-flex items-center gap-[3px] border border-card-border bg-card text-text rounded-[6px] px-[12px] py-[8px] font-[Inter] text-[12px] cursor-pointer hover:border-border-hover hover:bg-hover-surface' onClick={handleShowAllBlogs} disabled={blogsLoading && blogs.length > 0}>
-                    {showAllBlogs ? t('projects.showLess') : t('projects.showMore')}
-                    <span aria-hidden='true' className='ml-[6px]'>{showAllBlogs ? <FaArrowLeft /> : <FaArrowRight />}</span>
-                </button>
+                {blogs.length > 2 && (
+                    <button type='button' className={`inline-flex items-center gap-[3px] border border-card-border bg-card text-text rounded-[6px] px-[12px] py-[8px] font-[Inter] text-[12px] cursor-pointer hover:border-border-hover hover:bg-hover-surface ${blogs.length <= 4 ? 'max-md:inline-flex md:hidden' : ''}`} onClick={handleShowAllBlogs} disabled={blogsLoading && blogs.length > 0}>
+                        {showAllBlogs ? t('projects.showLess') : t('projects.showMore')}
+                        <span aria-hidden='true' className='ml-[6px]'>{showAllBlogs ? <FaArrowLeft /> : <FaArrowRight />}</span>
+                    </button>
+                )}
             </div>
             <div className='grid grid-cols-4 gap-[18px] pb-[20px] max-md:grid-cols-2'>
                 {blogsError ? (
@@ -273,7 +275,7 @@ const Projects = () => {
                 ) : blogsLoading && blogs.length === 0 ? (
                     <p className='font-[Inter] text-[0.8rem] text-secondary'>{t('projects.loading')}</p>
                 ) : (
-                    blogs.map((blog, index) => (
+                    (showAllBlogs ? blogs : blogs.slice(0, 4)).map((blog, index) => (
                         <div key={blog.id} className={!showAllBlogs && index >= 2 ? 'max-md:hidden' : ''}>
                             <BlogCard blog={blog} language={i18n.language} />
                         </div>
