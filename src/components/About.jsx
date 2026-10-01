@@ -107,13 +107,17 @@ const About = () => {
             <div className='grid grid-cols-4 gap-[18px] pb-[20px] max-md:grid-cols-2'>
                 {certificates.map((cert, index) => (
                     <div key={cert.title} className={!showAllCertificates && index >= 2 ? 'max-md:hidden' : ''}>
-                        <a className='group block overflow-hidden border border-card-border bg-card rounded-xl no-underline text-inherit h-full' href={cert.link} target='_blank' rel='noreferrer'>
-                            <img className='block w-full aspect-[7/5] object-cover object-center transition-transform duration-200 ease-out group-hover:scale-[1.02]' src={cert.image} alt={cert.alt}></img>
+                        <div className='overflow-hidden border border-card-border bg-card rounded-xl h-full'>
+                            <a className='group block overflow-hidden bg-black/5' href={cert.image} target='_blank' rel='noreferrer' aria-label={`Open ${cert.title} certificate image`}>
+                                <img className='block w-full aspect-[7/5] object-cover object-center transition-transform duration-200 ease-out group-hover:scale-[1.02]' src={cert.image} alt={cert.alt} loading='lazy'></img>
+                            </a>
+                            <a className='block no-underline text-inherit' href={cert.link} target='_blank' rel='noreferrer'>
                             <div className='flex min-h-[90px] flex-col justify-center p-[10px] text-center'>
                                 <p className='text-[0.95rem] leading-tight font-[Inter] font-bold text-text mb-[3px]'>{cert.title}</p>
                                 <p className='text-[0.75rem] leading-[1.35] font-[Inter] text-secondary'>{cert.subtitle}</p>
                             </div>
-                        </a>
+                            </a>
+                        </div>
                     </div>
                 ))}
             </div>
