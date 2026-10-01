@@ -7,6 +7,7 @@ import { BiLogoDevTo } from "react-icons/bi";
 import edugovazFrontBackend from "../assets/images/certificate/edugovaz-frontbackend.jpg"
 import freecodecampResponsiveWeb from "../assets/images/certificate/freecodecamp-responsivewebdesign.png"
 import AZ900 from "../assets/images/certificate/AZ-900.png"
+import fullstackopen from "../assets/images/certificate/fullstackopen-fullstack.png"
 import { useTranslation } from 'react-i18next';
 
 const technologyGroups = [
@@ -38,6 +39,13 @@ const technologyGroups = [
 ]
 
 const certificates = [
+    {
+        title: 'University of Helsinki',
+        subtitle: 'Full Stack Open - Deep Dive Into Modern Web Development (Part 0-4)',
+        image: fullstackopen,
+        alt: 'Full Stack Open Deep Dive Into Modern Web Development certificate',
+        link: 'https://studies.cs.helsinki.fi/stats/api/certificate/fullstackopen/en/1ed273d281b891477f8b82304bd05f0f'
+    },
     {
         title: 'Microsoft',
         subtitle: 'Azure Fundamentals (AZ-900)',
