@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import { createPortal } from 'react-dom'
 import pp from '../assets/images/samirr.jpg'
-import { FaGithub, FaLinkedin, FaInstagram, FaMicrosoft, FaTimes, FaExpand, FaChevronLeft, FaChevronRight, FaExternalLinkAlt } from "react-icons/fa";
+import { FaGithub, FaLinkedin, FaInstagram, FaMicrosoft, FaTimes, FaExpand, FaCompress, FaChevronLeft, FaChevronRight, FaExternalLinkAlt } from "react-icons/fa";
 import { FaXTwitter } from "react-icons/fa6";
 import { SiMedium, SiBuymeacoffee, SiHtml5, SiCss, SiJavascript, SiReact, SiVite, SiFigma, SiFirebase, SiVercel, SiNetlify, SiGit } from "react-icons/si";
 import { BiLogoDevTo } from "react-icons/bi";
@@ -81,6 +81,7 @@ const About = () => {
     const [isClosing, setIsClosing] = useState(false);
     const [slideDirection, setSlideDirection] = useState('next');
     const [slideKey, setSlideKey] = useState(0);
+    const [isFullscreen, setIsFullscreen] = useState(false);
     const lightboxRef = React.useRef(null);
 
     const openLightbox = (index) => {
@@ -127,6 +128,15 @@ const About = () => {
         return () => window.removeEventListener('keydown', handleKeyDown);
     }, [selectedCertIndex]);
 
+    React.useEffect(() => {
+        const handleFullscreenChange = () => {
+            setIsFullscreen(document.fullscreenElement === lightboxRef.current);
+        };
+
+        document.addEventListener('fullscreenchange', handleFullscreenChange);
+        return () => document.removeEventListener('fullscreenchange', handleFullscreenChange);
+    }, []);
+
     const toggleFullScreen = () => {
         if (!document.fullscreenElement) {
             lightboxRef.current?.requestFullscreen?.();
@@ -161,7 +171,7 @@ const About = () => {
                         </div>
                     </div>
                     <div className='flex min-h-[90px] flex-col justify-center p-[10px] text-center'>
-                        <p className='text-[0.95rem] leading-tight font-[Inter] font-bold text-text mb-[3px] group-hover:text-section-header transition-colors duration-200'>{t(cert.titleKey)}</p>
+                        <p className='text-[0.95rem] leading-tight font-[Inter] font-bold text-text mb-[3px]'>{t(cert.titleKey)}</p>
                         <p className='text-[0.75rem] leading-[1.35] font-[Inter] text-secondary'>{t(cert.subtitleKey)}</p>
                     </div>
                 </div>
@@ -239,40 +249,40 @@ const About = () => {
             {selectedCertIndex !== null && typeof document !== 'undefined' && createPortal(
                 <div
                     ref={lightboxRef}
-                    className={`fixed inset-0 z-[9999] flex items-center justify-center bg-black/95 backdrop-blur-md p-4 transition-all duration-300 ${isClosing ? 'animate-lightbox-fade-out' : 'animate-lightbox-fade-in'}`}
+                    className={`certificate-lightbox fixed inset-0 z-[9999] flex items-center justify-center bg-black/95 backdrop-blur-md p-4 transition-all duration-300 ${isClosing ? 'animate-lightbox-fade-out' : 'animate-lightbox-fade-in'}`}
                     onClick={handleClose}
                 >
                     {/* Top Bar */}
                     <div className='absolute top-4 left-4 right-4 md:top-6 md:left-6 md:right-6 flex items-center gap-3 text-white z-10' onClick={e => e.stopPropagation()}>
-                        <div className='flex min-w-0 flex-1 flex-col overflow-hidden animate-lightbox-zoom-in'>
+                        <div className='certificate-lightbox-info flex min-w-0 flex-1 flex-col overflow-hidden animate-lightbox-zoom-in'>
                             <p className='overflow-hidden text-ellipsis whitespace-nowrap font-[Inter] font-bold text-lg max-md:text-base'>{t(certificates[selectedCertIndex].titleKey)}</p>
                             <p className='overflow-hidden text-ellipsis whitespace-nowrap font-[Inter] text-sm text-gray-400 max-md:text-xs'>{t(certificates[selectedCertIndex].subtitleKey)}</p>
                         </div>
                         <div className='flex shrink-0 items-center gap-2 md:gap-3'>
                             <a
+                                className='certificate-lightbox-verify h-10 w-10 rounded-full inline-flex items-center justify-center bg-section-header text-white shadow-lg transition-colors duration-200 hover:bg-accent-hover shrink-0'
                                 href={certificates[selectedCertIndex].link}
                                 target='_blank'
                                 rel='noreferrer'
                                 onClick={e => e.stopPropagation()}
-                                className='h-10 w-10 rounded-full inline-flex items-center justify-center bg-section-header text-white shadow-lg transition-colors duration-200 hover:bg-accent-hover shrink-0'
                                 title={t('about.verifyCertificate')}
                                 aria-label={t('about.verifyCertificate')}
                             >
                                 <FaExternalLinkAlt className='text-sm' />
                             </a>
                             <button
+                                className='certificate-lightbox-fullscreen w-9 h-9 md:w-10 md:h-10 inline-flex items-center justify-center text-white hover:text-gray-200 transition-all duration-200 bg-white/10 hover:bg-white/20 rounded-full hover:scale-105 active:scale-95 shrink-0'
                                 type='button'
                                 onClick={(e) => { e.stopPropagation(); toggleFullScreen(); }}
-                                className='w-9 h-9 md:w-10 md:h-10 inline-flex items-center justify-center text-white hover:text-gray-200 transition-all duration-200 bg-white/10 hover:bg-white/20 rounded-full hover:scale-105 active:scale-95 shrink-0'
-                                title={t('about.fullscreen')}
-                                aria-label={t('about.fullscreen')}
+                                title={t(isFullscreen ? 'about.exitFullscreen' : 'about.fullscreen')}
+                                aria-label={t(isFullscreen ? 'about.exitFullscreen' : 'about.fullscreen')}
                             >
-                                <FaExpand className='text-sm md:text-base' />
+                                {isFullscreen ? <FaCompress className='text-sm md:text-base' /> : <FaExpand className='text-sm md:text-base' />}
                             </button>
                             <button
+                                className='certificate-lightbox-close w-9 h-9 md:w-10 md:h-10 inline-flex items-center justify-center text-white hover:text-gray-200 transition-all duration-200 bg-white/10 hover:bg-white/20 rounded-full hover:scale-105 active:scale-95 shrink-0'
                                 type='button'
                                 onClick={(e) => { e.stopPropagation(); handleClose(); }}
-                                className='w-9 h-9 md:w-10 md:h-10 inline-flex items-center justify-center text-white hover:text-gray-200 transition-all duration-200 bg-white/10 hover:bg-white/20 rounded-full hover:scale-105 active:scale-95 shrink-0'
                                 title={t('about.close')}
                                 aria-label={t('about.close')}
                             >
@@ -283,21 +293,21 @@ const About = () => {
 
                     {/* Content / Image Container */}
                     <div
-                        className={`relative w-full max-w-5xl max-h-[75vh] flex items-center justify-center mt-12 max-md:mt-24 ${isClosing ? 'animate-lightbox-zoom-out' : 'animate-lightbox-zoom-in'}`}
+                        className={`certificate-lightbox-content relative w-full max-w-5xl max-h-[75vh] flex items-center justify-center mt-12 max-md:mt-24 ${isClosing ? 'animate-lightbox-zoom-out' : 'animate-lightbox-zoom-in'}`}
                         onClick={e => e.stopPropagation()}
                     >
                         <img
                             key={`${selectedCertIndex}-${slideKey}`}
                             src={certificates[selectedCertIndex].image}
                             alt={t(certificates[selectedCertIndex].altKey)}
-                            className={`max-w-full max-h-[75vh] object-contain rounded-lg shadow-2xl ${slideDirection === 'next' ? 'animate-cert-slide-next' : 'animate-cert-slide-prev'}`}
+                            className={`certificate-lightbox-image max-w-full max-h-[75vh] object-contain rounded-lg shadow-2xl ${slideDirection === 'next' ? 'animate-cert-slide-next' : 'animate-cert-slide-prev'}`}
                         />
 
                         {/* Navigation Arrows */}
                         {selectedCertIndex > 0 && (
                             <button
                                 type='button'
-                                className='absolute left-[-15px] md:left-[-60px] top-1/2 -translate-y-1/2 text-white hover:bg-white/20 transition-all duration-200 p-3 bg-black/60 rounded-full hover:scale-110 active:scale-95 shadow-xl backdrop-blur-sm'
+                                className='certificate-lightbox-prev absolute left-[-15px] md:left-[-60px] top-1/2 -translate-y-1/2 text-white hover:bg-white/20 transition-all duration-200 p-3 bg-black/60 rounded-full hover:scale-110 active:scale-95 shadow-xl backdrop-blur-sm'
                                 onClick={handlePrev}
                                 title={t('about.previousCertificate')}
                                 aria-label={t('about.previousCertificate')}
@@ -308,7 +318,7 @@ const About = () => {
                         {selectedCertIndex < certificates.length - 1 && (
                             <button
                                 type='button'
-                                className='absolute right-[-15px] md:right-[-60px] top-1/2 -translate-y-1/2 text-white hover:bg-white/20 transition-all duration-200 p-3 bg-black/60 rounded-full hover:scale-110 active:scale-95 shadow-xl backdrop-blur-sm'
+                                className='certificate-lightbox-next absolute right-[-15px] md:right-[-60px] top-1/2 -translate-y-1/2 text-white hover:bg-white/20 transition-all duration-200 p-3 bg-black/60 rounded-full hover:scale-110 active:scale-95 shadow-xl backdrop-blur-sm'
                                 onClick={handleNext}
                                 title={t('about.nextCertificate')}
                                 aria-label={t('about.nextCertificate')}

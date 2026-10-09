@@ -53,6 +53,7 @@
     ,"verifyCertificate": "Sertifikatı yoxla",
     "openCertificate": "Sertifikatı aç",
     "fullscreen": "Tam ekran",
+    "exitFullscreen": "Tam ekrandan çıx",
     "close": "Bağla",
     "previousCertificate": "Əvvəlki sertifikat",
     "nextCertificate": "Növbəti sertifikat"

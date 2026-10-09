@@ -53,6 +53,7 @@
     ,"verifyCertificate": "Verify Certificate",
     "openCertificate": "Open certificate",
     "fullscreen": "Full screen",
+    "exitFullscreen": "Exit full screen",
     "close": "Close",
     "previousCertificate": "Previous certificate",
     "nextCertificate": "Next certificate"
