@@ -6,7 +6,7 @@ const Contact = () => {
     const { t } = useTranslation();
     const contactLinks = [
         { label: t('contact.emailLabel'), value: 'samirrhashimov@proton.me', href: 'mailto:samirrhashimov@proton.me', icon: FaEnvelope },
-        { label: 'LinkedIn', value: 'linkedin.com/in/samirrhashimov', href: 'https://www.linkedin.com/in/samirrhashimov/', icon: FaLinkedin },
+        { label: 'LinkedIn', value: '@samirrhashimov', href: 'https://www.linkedin.com/in/samirrhashimov/', icon: FaLinkedin },
         { label: 'Instagram', value: '@samirrhashimov', href: 'https://www.instagram.com/samirrhashimov/', icon: FaInstagram },
     ]
 

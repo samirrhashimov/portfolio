@@ -104,9 +104,10 @@ const About = () => {
                     </button>
                 )}
             </div>
-            <div className='grid grid-cols-4 gap-[18px] pb-[20px] max-md:grid-cols-2'>
-                {certificates.map((cert, index) => (
-                    <div key={cert.title} className={!showAllCertificates && index >= 2 ? 'max-md:hidden' : ''}>
+            {/* Desktop View */}
+            <div className='hidden md:grid grid-cols-4 gap-[18px] pb-[20px]'>
+                {certificates.map((cert) => (
+                    <div key={cert.title}>
                         <div className='overflow-hidden border border-card-border bg-card rounded-xl h-full'>
                             <a className='group block overflow-hidden bg-black/5' href={cert.image} target='_blank' rel='noreferrer' aria-label={`Open ${cert.title} certificate image`}>
                                 <img className='block w-full aspect-[7/5] object-cover object-center transition-transform duration-200 ease-out group-hover:scale-[1.02]' src={cert.image} alt={cert.alt} loading='lazy'></img>
@@ -120,6 +121,44 @@ const About = () => {
                         </div>
                     </div>
                 ))}
+            </div>
+
+            {/* Mobile View */}
+            <div className='md:hidden pb-[20px]'>
+                <div className='grid grid-cols-2 gap-[18px]'>
+                    {certificates.slice(0, 2).map((cert) => (
+                        <div key={cert.title}>
+                            <div className='overflow-hidden border border-card-border bg-card rounded-xl h-full'>
+                                <a className='group block overflow-hidden bg-black/5' href={cert.image} target='_blank' rel='noreferrer' aria-label={`Open ${cert.title} certificate image`}>
+                                    <img className='block w-full aspect-[7/5] object-cover object-center transition-transform duration-200 ease-out group-hover:scale-[1.02]' src={cert.image} alt={cert.alt} loading='lazy'></img>
+                                </a>
+                                <a className='block no-underline text-inherit' href={cert.link} target='_blank' rel='noreferrer'>
+                                <div className='flex min-h-[90px] flex-col justify-center p-[10px] text-center'>
+                                    <p className='text-[0.95rem] leading-tight font-[Inter] font-bold text-text mb-[3px]'>{cert.title}</p>
+                                    <p className='text-[0.75rem] leading-[1.35] font-[Inter] text-secondary'>{cert.subtitle}</p>
+                                </div>
+                                </a>
+                            </div>
+                        </div>
+                    ))}
+                </div>
+                <div className={`grid grid-cols-2 gap-[18px] overflow-hidden transition-[max-height,opacity,margin] duration-500 ease-in-out ${showAllCertificates ? 'max-h-[2000px] opacity-100 mt-[18px]' : 'pointer-events-none max-h-0 opacity-0 mt-0'}`}>
+                    {certificates.slice(2).map((cert) => (
+                        <div key={cert.title}>
+                            <div className='overflow-hidden border border-card-border bg-card rounded-xl h-full'>
+                                <a className='group block overflow-hidden bg-black/5' href={cert.image} target='_blank' rel='noreferrer' aria-label={`Open ${cert.title} certificate image`}>
+                                    <img className='block w-full aspect-[7/5] object-cover object-center transition-transform duration-200 ease-out group-hover:scale-[1.02]' src={cert.image} alt={cert.alt} loading='lazy'></img>
+                                </a>
+                                <a className='block no-underline text-inherit' href={cert.link} target='_blank' rel='noreferrer'>
+                                <div className='flex min-h-[90px] flex-col justify-center p-[10px] text-center'>
+                                    <p className='text-[0.95rem] leading-tight font-[Inter] font-bold text-text mb-[3px]'>{cert.title}</p>
+                                    <p className='text-[0.75rem] leading-[1.35] font-[Inter] text-secondary'>{cert.subtitle}</p>
+                                </div>
+                                </a>
+                            </div>
+                        </div>
+                    ))}
+                </div>
             </div>
             <h1 className='font-[Inter] text-[1.3rem] mt-[20px] mb-2.5 font-bold'>{t('about.technologiesTitle')}</h1>
             <div className='grid grid-cols-2 gap-[14px] pb-[20px] max-md:grid-cols-1'>

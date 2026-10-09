@@ -156,8 +156,10 @@ const Projects = () => {
     const [showAllProjects, setShowAllProjects] = useState(false)
     const [showAllBlogs, setShowAllBlogs] = useState(false)
     const [packages, setPackages] = useState([])
+    const [showAllPackages, setShowAllPackages] = useState(false)
     const [repos, setRepos] = useState([])
     const [reposError, setReposError] = useState(false)
+    const [showAllRepos, setShowAllRepos] = useState(false)
     const [blogs, setBlogs] = useState([])
     const [blogsLoading, setBlogsLoading] = useState(true)
     const [blogsError, setBlogsError] = useState(false)
@@ -283,14 +285,22 @@ const Projects = () => {
                 )}
             </div>
 
-            <h1 className='font-[Inter] text-[1.3rem] mt-[20px] mb-[10px] text-text font-bold'>{t('projects.packages')}</h1>
+            <div className='flex items-center justify-between gap-4 mt-[20px] mb-[10px]'>
+                <h1 className='font-[Inter] text-[1.3rem] text-text font-bold'>{t('projects.packages')}</h1>
+                {packages.length > 3 && (
+                    <button type='button' className='inline-flex items-center gap-[3px] border border-card-border bg-card text-text rounded-[6px] px-[12px] py-[8px] font-[Inter] text-[12px] cursor-pointer hover:border-border-hover hover:bg-hover-surface' onClick={() => setShowAllPackages(current => !current)}>
+                        {showAllPackages ? t('projects.showLess') : t('projects.showMore')}
+                        <span aria-hidden='true' className='ml-[6px]'>{showAllPackages ? <FaArrowLeft /> : <FaArrowRight />}</span>
+                    </button>
+                )}
+            </div>
             <div className='grid grid-cols-3 gap-[18px] pb-[20px] max-md:grid-cols-1'>
                 {packages.length === 0 ? (
                     <div className='border-[1.5px] border-card-border rounded-[10px_0] p-[15px] break-words relative min-h-[150px] bg-card transition-all duration-300 flex flex-col hover:border-border-hover max-md:min-h-0 max-md:pb-[60px]'>
                         <p>{t('projects.noResults')}</p>
                     </div>
                 ) : (
-                    packages.map(pkg => (
+                    packages.slice(0, 3).map(pkg => (
                         <a key={pkg.name} href={pkg.url} target='_blank' rel='noopener noreferrer' className='border-[1.5px] border-card-border rounded-[10px_0] p-[15px] break-words relative min-h-[150px] bg-card transition-all duration-300 flex flex-col hover:border-border-hover max-md:min-h-0 max-md:pb-[60px] no-underline text-inherit'>
                             <p className='font-[Inter] font-bold text-text'>{pkg.name}</p>
                             <p className='font-[Inter] text-[0.8rem] mt-[5px] mb-[10px] text-secondary'>{pkg.description}</p>
@@ -299,7 +309,26 @@ const Projects = () => {
                     ))
                 )}
             </div>
-            <h1 className='font-[Inter] text-[1.3rem] mt-[20px] mb-[10px] text-text font-bold'>{t('projects.githubRepos')}</h1>
+            {packages.length > 3 && (
+                <div className={`grid grid-cols-3 gap-[18px] overflow-hidden transition-[max-height,opacity] duration-500 ease-in-out max-md:grid-cols-1 ${showAllPackages ? 'max-h-[2000px] opacity-100' : 'pointer-events-none max-h-0 opacity-0'}`}>
+                    {packages.slice(3).map(pkg => (
+                        <a key={pkg.name} href={pkg.url} target='_blank' rel='noopener noreferrer' className='border-[1.5px] border-card-border rounded-[10px_0] p-[15px] break-words relative min-h-[150px] bg-card transition-all duration-300 flex flex-col hover:border-border-hover max-md:min-h-0 max-md:pb-[60px] no-underline text-inherit'>
+                            <p className='font-[Inter] font-bold text-text'>{pkg.name}</p>
+                            <p className='font-[Inter] text-[0.8rem] mt-[5px] mb-[10px] text-secondary'>{pkg.description}</p>
+                            <p className='inline-flex items-center gap-[6px] font-[Inter] py-[6px] px-[10px] bg-badge border border-badge-border text-text rounded-[4px] w-fit mt-auto absolute bottom-[15px] text-[0.75rem] font-semibold uppercase tracking-[0.5px] transition-all duration-200'>v{pkg.version}</p>
+                        </a>
+                    ))}
+                </div>
+            )}
+            <div className='flex items-center justify-between gap-4 mt-[20px] mb-[10px]'>
+                <h1 className='font-[Inter] text-[1.3rem] text-text font-bold'>{t('projects.githubRepos')}</h1>
+                {repos.length > 3 && (
+                    <button type='button' className='inline-flex items-center gap-[3px] border border-card-border bg-card text-text rounded-[6px] px-[12px] py-[8px] font-[Inter] text-[12px] cursor-pointer hover:border-border-hover hover:bg-hover-surface' onClick={() => setShowAllRepos(current => !current)}>
+                        {showAllRepos ? t('projects.showLess') : t('projects.showMore')}
+                        <span aria-hidden='true' className='ml-[6px]'>{showAllRepos ? <FaArrowLeft /> : <FaArrowRight />}</span>
+                    </button>
+                )}
+            </div>
             <div className='grid grid-cols-3 gap-[18px] pb-[15px] max-md:grid-cols-1'>
                 {reposError ? (
                     <div className='border-[1.5px] border-card-border rounded-[10px_0] p-[15px] break-words relative min-h-[150px] bg-card cursor-pointer transition-all duration-300 flex flex-col hover:border-border-hover max-md:min-h-0 max-md:pb-[60px]'>
@@ -310,7 +339,7 @@ const Projects = () => {
                         <p>{t('projects.loading')}</p>
                     </div>
                 ) : (
-                    repos.map(repo => (
+                    repos.slice(0, 3).map(repo => (
                         <a key={repo.name} href={repo.url} target='_blank' rel='noopener noreferrer' className='border-[1.5px] border-card-border rounded-[10px_0] p-[15px] break-words relative min-h-[150px] bg-card cursor-pointer transition-all duration-300 flex flex-col hover:border-border-hover max-md:min-h-0 max-md:pb-[60px] no-underline text-inherit'>
                             <p className='font-[Inter] font-bold m-0 text-text'>{repo.name}</p>
                             <p className='font-[Inter] text-[0.8rem] mt-[5px] mb-[10px] text-secondary'>{repo.description || 'No description'}</p>
@@ -319,6 +348,17 @@ const Projects = () => {
                     ))
                 )}
             </div>
+            {repos.length > 3 && (
+                <div className={`grid grid-cols-3 gap-[18px] overflow-hidden transition-[max-height,opacity] duration-500 ease-in-out max-md:grid-cols-1 ${showAllRepos ? 'max-h-[2000px] opacity-100' : 'pointer-events-none max-h-0 opacity-0'}`}>
+                    {repos.slice(3).map(repo => (
+                        <a key={repo.name} href={repo.url} target='_blank' rel='noopener noreferrer' className='border-[1.5px] border-card-border rounded-[10px_0] p-[15px] break-words relative min-h-[150px] bg-card cursor-pointer transition-all duration-300 flex flex-col hover:border-border-hover max-md:min-h-0 max-md:pb-[60px] no-underline text-inherit'>
+                            <p className='font-[Inter] font-bold m-0 text-text'>{repo.name}</p>
+                            <p className='font-[Inter] text-[0.8rem] mt-[5px] mb-[10px] text-secondary'>{repo.description || 'No description'}</p>
+                            <p className='inline-flex items-center gap-[6px] font-[Inter] py-[6px] px-[10px] bg-badge border border-badge-border text-text rounded-[4px] w-fit mt-auto absolute bottom-[15px] text-[0.75rem] font-semibold uppercase tracking-[0.5px] transition-all duration-200'>{repo.language}</p>
+                        </a>
+                    ))}
+                </div>
+            )}
         </div>
     )
 }

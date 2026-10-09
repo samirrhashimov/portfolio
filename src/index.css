@@ -71,11 +71,9 @@ body::before {
     z-index: 0;
     pointer-events: none;
     content: '';
-    background: radial-gradient(
-        circle 360px at var(--cursor-x) var(--cursor-y),
-        rgba(var(--cursor-glow-color), 0.018),
-        transparent 78%
-    );
+    background: radial-gradient(circle 360px at var(--cursor-x) var(--cursor-y),
+            rgba(var(--cursor-glow-color), 0.018),
+            transparent 78%);
     opacity: var(--cursor-glow-opacity);
     transition: opacity 180ms ease;
 }
@@ -94,5 +92,3 @@ body::before {
     background: var(--accent-color);
     color: #ffffff;
 }
-
-
