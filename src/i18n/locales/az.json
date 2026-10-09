@@ -2,7 +2,10 @@
   "navbar": {
     "home": "Əsas Səhifə",
     "blog": "Bloq",
-    "social": "Sosial Media"
+    "social": "Sosial Media",
+    "downloadCv": "CV-ni yüklə",
+    "lightMode": "İşıq rejiminə keç",
+    "darkMode": "Qaranlıq rejimə keç"
   },
   "sections": {
     "about": "Haqqımda",
@@ -15,6 +18,7 @@
     "emailLabel": "E-poçt"
   },
   "about": {
+    "role": "Junior Front-End Developer",
     "bioTitle": "Bioqrafiya",
     "bio": "Mən Samir Hashimov, Junior Front-End Developerəm. Öz app-lərimi yaradıram və yayımlayıram. Blink adlı link idarəetmə platformam artıq vebdə, Google Play-də və Firefox genişlənməsi kimi mövcuddur. Hal-hazırda React ekosistemi haqqında biliklərimi dərinləşdirirəm, TypeScript-i araşdırıram və Tailwind-ə keçirəm.",
     "certificatesTitle": "Sertifikatlar",
@@ -23,7 +27,35 @@
       "webDevelopment": "Front-End",
       "designTools": "Dizayn və Alətlər",
       "cloudDevOps": "Bulud və DevOps"
+    },
+    "certificates": {
+      "fullstack": {
+        "title": "Helsinki Universiteti",
+        "subtitle": "Full Stack Open - Müasir veb inkişafına dərin baxış (0-4-cü hissələr)",
+        "alt": "Full Stack Open sertifikatı"
+      },
+      "azure": {
+        "title": "Microsoft",
+        "subtitle": "Azure Fundamentals (AZ-900)",
+        "alt": "Microsoft Azure Fundamentals sertifikatı"
+      },
+      "education": {
+        "title": "Bakı Dövlət Peşə Tədris Mərkəzi",
+        "subtitle": "Front-End və Back-End Developer",
+        "alt": "Front-End və Back-End Developer sertifikatı"
+      },
+      "freecodecamp": {
+        "title": "freeCodeCamp",
+        "subtitle": "Responsive Web Design",
+        "alt": "freeCodeCamp Responsive Web Design sertifikatı"
+      }
     }
+    ,"verifyCertificate": "Sertifikatı yoxla",
+    "openCertificate": "Sertifikatı aç",
+    "fullscreen": "Tam ekran",
+    "close": "Bağla",
+    "previousCertificate": "Əvvəlki sertifikat",
+    "nextCertificate": "Növbəti sertifikat"
   },
   "projects": {
     "webApps": "Veb Proqramlar",
@@ -46,7 +78,8 @@
     "githubRepos": "Son Repozitoriyalar",
     "loading": "Yüklənir...",
     "error": "GitHub API limitinə çatılıb və ya şəbəkə xətası baş verib. Zəhmət olmasa bir az sonra yenidən yoxlayın.",
-    "noResults": "Nəticə tapılmadı."
+    "noResults": "Nəticə tapılmadı.",
+    "noDescription": "Açıqlama yoxdur"
   },
   "community": {
     "contact": {

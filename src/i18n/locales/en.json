@@ -2,7 +2,10 @@
   "navbar": {
     "home": "Home",
     "blog": "Blog",
-    "social": "Social Media"
+    "social": "Social Media",
+    "downloadCv": "Download CV",
+    "lightMode": "Switch to light mode",
+    "darkMode": "Switch to dark mode"
   },
   "sections": {
     "about": "About",
@@ -15,6 +18,7 @@
     "emailLabel": "Email"
   },
   "about": {
+    "role": "Junior Front-End Developer",
     "bioTitle": "Biography",
     "bio": "I am Samir Hashimov, a Junior Front-End Developer. I build and publish my own apps. My link management platform, Blink, is available on the web, Google Play, and as a Firefox extension. Currently, I am deepening my knowledge of the React ecosystem, exploring TypeScript, and transitioning to Tailwind.",
     "certificatesTitle": "Certificates",
@@ -23,7 +27,35 @@
       "webDevelopment": "Front-End",
       "designTools": "Design & Tools",
       "cloudDevOps": "Cloud & DevOps"
+    },
+    "certificates": {
+      "fullstack": {
+        "title": "University of Helsinki",
+        "subtitle": "Full Stack Open - Deep Dive Into Modern Web Development (Part 0-4)",
+        "alt": "Full Stack Open certificate"
+      },
+      "azure": {
+        "title": "Microsoft",
+        "subtitle": "Azure Fundamentals (AZ-900)",
+        "alt": "Microsoft Azure Fundamentals certificate"
+      },
+      "education": {
+        "title": "Baku State Vocational Training Center",
+        "subtitle": "Front-End & Back-End Developer",
+        "alt": "Front-End and Back-End Developer certificate"
+      },
+      "freecodecamp": {
+        "title": "freeCodeCamp",
+        "subtitle": "Responsive Web Design",
+        "alt": "freeCodeCamp Responsive Web Design certificate"
+      }
     }
+    ,"verifyCertificate": "Verify Certificate",
+    "openCertificate": "Open certificate",
+    "fullscreen": "Full screen",
+    "close": "Close",
+    "previousCertificate": "Previous certificate",
+    "nextCertificate": "Next certificate"
   },
   "projects": {
     "webApps": "Web Apps",
@@ -46,7 +78,8 @@
     "githubRepos": "Recent Repositories",
     "loading": "Loading...",
     "error": "GitHub API rate limit exceeded or network error. Please try again later.",
-    "noResults": "No results found."
+    "noResults": "No results found.",
+    "noDescription": "No description"
   },
   "community": {
     "contact": {

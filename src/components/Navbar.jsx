@@ -30,13 +30,13 @@ const Navbar = ({ toggleTheme, isDarkMode }) => {
                         <button className='max-[480px]:hidden bg-transparent border border-border text-text p-1.5 rounded-[5px] cursor-pointer flex items-center justify-center font-medium transition-all duration-200 h-[32px] hover:border-border-hover hover:bg-hover-surface text-[0.8rem] min-w-[38px] font-[Inter]' onClick={changeLanguage}>
                             {i18n.language === 'en' ? 'AZ' : 'EN'}
                         </button>
-                        <a href='/Samir_Hashimov_CV.pdf' download title="Download CV">
+                        <a href='/Samir_Hashimov_CV.pdf' download title={t('navbar.downloadCv')} aria-label={t('navbar.downloadCv')}>
                             <button className='gap-[5px] p-1.5 rounded-[5px] border border-border text-text w-[auto] h-[32px] cursor-pointer flex items-center justify-center hover:border-border-hover hover:bg-hover-surface transition-all duration-300'>
                                 <TbFileCvFilled className='w-[18px] h-[18px]' />
                             </button>
                         </a>
 
-                        <button className='max-[480px]:hidden bg-transparent border border-border text-text p-1.5 rounded-[5px] cursor-pointer flex items-center justify-center font-medium transition-all duration-200 h-[32px] hover:border-border-hover hover:bg-hover-surface text-[1.2rem]' onClick={toggleTheme}>
+                        <button aria-label={isDarkMode ? t('navbar.lightMode') : t('navbar.darkMode')} className='max-[480px]:hidden bg-transparent border border-border text-text p-1.5 rounded-[5px] cursor-pointer flex items-center justify-center font-medium transition-all duration-200 h-[32px] hover:border-border-hover hover:bg-hover-surface text-[1.2rem]' onClick={toggleTheme}>
                             {isDarkMode ? <FiSun className="w-[18px] h-[18px]" /> : <FiMoon className="w-[18px] h-[18px]" />}
                         </button>
                         <button className='hidden max-[480px]:flex bg-transparent border border-border text-text p-1.5 rounded-[5px] cursor-pointer items-center justify-center font-medium transition-all duration-200 h-[32px] hover:border-border-hover hover:bg-hover-surface text-[1.2rem]' onClick={() => setIsMenuOpen(!isMenuOpen)}>

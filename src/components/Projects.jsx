@@ -342,7 +342,7 @@ const Projects = () => {
                     repos.slice(0, 3).map(repo => (
                         <a key={repo.name} href={repo.url} target='_blank' rel='noopener noreferrer' className='border-[1.5px] border-card-border rounded-[10px_0] p-[15px] break-words relative min-h-[150px] bg-card cursor-pointer transition-all duration-300 flex flex-col hover:border-border-hover max-md:min-h-0 max-md:pb-[60px] no-underline text-inherit'>
                             <p className='font-[Inter] font-bold m-0 text-text'>{repo.name}</p>
-                            <p className='font-[Inter] text-[0.8rem] mt-[5px] mb-[10px] text-secondary'>{repo.description || 'No description'}</p>
+                            <p className='font-[Inter] text-[0.8rem] mt-[5px] mb-[10px] text-secondary'>{repo.description || t('projects.noDescription')}</p>
                             <p className='inline-flex items-center gap-[6px] font-[Inter] py-[6px] px-[10px] bg-badge border border-badge-border text-text rounded-[4px] w-fit mt-auto absolute bottom-[15px] text-[0.75rem] font-semibold uppercase tracking-[0.5px] transition-all duration-200'>{repo.language}</p>
                         </a>
                     ))
@@ -353,7 +353,7 @@ const Projects = () => {
                     {repos.slice(3).map(repo => (
                         <a key={repo.name} href={repo.url} target='_blank' rel='noopener noreferrer' className='border-[1.5px] border-card-border rounded-[10px_0] p-[15px] break-words relative min-h-[150px] bg-card cursor-pointer transition-all duration-300 flex flex-col hover:border-border-hover max-md:min-h-0 max-md:pb-[60px] no-underline text-inherit'>
                             <p className='font-[Inter] font-bold m-0 text-text'>{repo.name}</p>
-                            <p className='font-[Inter] text-[0.8rem] mt-[5px] mb-[10px] text-secondary'>{repo.description || 'No description'}</p>
+                            <p className='font-[Inter] text-[0.8rem] mt-[5px] mb-[10px] text-secondary'>{repo.description || t('projects.noDescription')}</p>
                             <p className='inline-flex items-center gap-[6px] font-[Inter] py-[6px] px-[10px] bg-badge border border-badge-border text-text rounded-[4px] w-fit mt-auto absolute bottom-[15px] text-[0.75rem] font-semibold uppercase tracking-[0.5px] transition-all duration-200'>{repo.language}</p>
                         </a>
                     ))}

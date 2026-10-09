@@ -6,6 +6,7 @@ import {
 } from 'react-icons/fa6'
 import { SiBuymeacoffee, SiSubstack } from 'react-icons/si'
 import { FiGlobe, FiArrowUpRight } from 'react-icons/fi'
+import { useTranslation } from 'react-i18next'
 
 const links = [
 	{ label: 'Portfolio', href: '/', icon: FiGlobe },
@@ -17,12 +18,14 @@ const links = [
 	{ label: 'Buy Me a Coffee', href: 'https://buymeacoffee.com/samirrhashimov', icon: SiBuymeacoffee },
 ]
 
-const Links = () => (
-	<main className='mx-auto min-h-[calc(100vh-65px)] max-w-[1200px] px-12 py-10 font-[Inter]'>
+const Links = () => {
+	const { t } = useTranslation()
+	return (
+	<main className='mx-auto min-h-[calc(100vh-65px)] max-w-[1200px] px-5 py-8 sm:px-8 md:px-12 md:py-10 font-[Inter]'>
 		<div className='mx-auto w-full max-w-[680px]'>
 			<div className='mb-7 border-b border-border pb-5 text-center'>
 				<h1 className='text-[1.8rem] font-bold text-text'>Samir Hashimov</h1>
-				<p className='mt-1 text-sm text-secondary'>Junior Front-End Developer</p>
+				<p className='mt-1 text-sm text-secondary'>{t('about.role')}</p>
 			</div>
 
 			<div className='flex flex-col items-center gap-3'>
@@ -44,6 +47,7 @@ const Links = () => (
 			</div>
 		</div>
 	</main>
-)
+	)
+}
 
 export default Links

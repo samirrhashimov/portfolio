@@ -41,29 +41,33 @@ const technologyGroups = [
 
 const certificates = [
     {
-        title: 'University of Helsinki',
-        subtitle: 'Full Stack Open - Deep Dive Into Modern Web Development (Part 0-4)',
+        titleKey: 'about.certificates.fullstack.title',
+        subtitleKey: 'about.certificates.fullstack.subtitle',
+        altKey: 'about.certificates.fullstack.alt',
         image: fullstackopen,
         alt: 'Full Stack Open Deep Dive Into Modern Web Development certificate',
         link: 'https://studies.cs.helsinki.fi/stats/api/certificate/fullstackopen/en/1ed273d281b891477f8b82304bd05f0f'
     },
     {
-        title: 'Microsoft',
-        subtitle: 'Azure Fundamentals (AZ-900)',
+        titleKey: 'about.certificates.azure.title',
+        subtitleKey: 'about.certificates.azure.subtitle',
+        altKey: 'about.certificates.azure.alt',
         image: AZ900,
         alt: 'Microsoft Azure Fundamentals certificate',
         link: 'https://learn.microsoft.com/api/credentials/share/en-us/samirrhashimov/ACA552F1F434C6A8?sharingId=CF4D36DF8A903864'
     },
     {
-        title: 'Bakı Dövlət Peşə Tədris Mərkəzi',
-        subtitle: 'Front-End & Back-End Developer',
+        titleKey: 'about.certificates.education.title',
+        subtitleKey: 'about.certificates.education.subtitle',
+        altKey: 'about.certificates.education.alt',
         image: edugovazFrontBackend,
         alt: 'Front-End and Back-End Developer certificate',
         link: edugovazFrontBackend
     },
     {
-        title: 'freeCodeCamp',
-        subtitle: 'Responsive Web Design',
+        titleKey: 'about.certificates.freecodecamp.title',
+        subtitleKey: 'about.certificates.freecodecamp.subtitle',
+        altKey: 'about.certificates.freecodecamp.alt',
         image: freecodecampResponsiveWeb,
         alt: 'freeCodeCamp Responsive Web Design certificate',
         link: 'https://www.freecodecamp.org/certification/samirrhashimov/responsive-web-design'
@@ -134,13 +138,22 @@ const About = () => {
     const renderCertificateCard = (cert) => {
         const index = certificates.indexOf(cert);
         return (
-            <div key={cert.title}>
+            <div key={cert.titleKey}>
                 <div
+                    role='button'
+                    tabIndex={0}
+                    aria-label={`${t(cert.titleKey)}: ${t('about.openCertificate')}`}
                     className='overflow-hidden border border-card-border bg-card rounded-xl h-full cursor-pointer group transition-all duration-300 hover:border-accent/40 hover:shadow-lg'
                     onClick={() => openLightbox(index)}
+                    onKeyDown={event => {
+                        if (event.key === 'Enter' || event.key === ' ') {
+                            event.preventDefault();
+                            openLightbox(index);
+                        }
+                    }}
                 >
                     <div className='block overflow-hidden bg-black/5 relative'>
-                        <img className='block w-full aspect-[7/5] object-cover object-center transition-transform duration-300 ease-out group-hover:scale-105' src={cert.image} alt={cert.alt} loading='lazy' />
+                        <img className='block w-full aspect-[7/5] object-cover object-center transition-transform duration-300 ease-out group-hover:scale-105' src={cert.image} alt={t(cert.altKey)} loading='lazy' />
                         <div className='absolute inset-0 bg-black/0 group-hover:bg-black/25 transition-all duration-300 flex items-center justify-center'>
                             <div className='p-3 rounded-full bg-black/50 text-white opacity-0 group-hover:opacity-100 transition-all duration-300 transform scale-75 group-hover:scale-100 drop-shadow-lg backdrop-blur-sm'>
                                 <FaExpand className='text-xl' />
@@ -148,8 +161,8 @@ const About = () => {
                         </div>
                     </div>
                     <div className='flex min-h-[90px] flex-col justify-center p-[10px] text-center'>
-                        <p className='text-[0.95rem] leading-tight font-[Inter] font-bold text-text mb-[3px] group-hover:text-section-header transition-colors duration-200'>{cert.title}</p>
-                        <p className='text-[0.75rem] leading-[1.35] font-[Inter] text-secondary'>{cert.subtitle}</p>
+                        <p className='text-[0.95rem] leading-tight font-[Inter] font-bold text-text mb-[3px] group-hover:text-section-header transition-colors duration-200'>{t(cert.titleKey)}</p>
+                        <p className='text-[0.75rem] leading-[1.35] font-[Inter] text-secondary'>{t(cert.subtitleKey)}</p>
                     </div>
                 </div>
             </div>
@@ -163,7 +176,7 @@ const About = () => {
                 <div className='border border-card-border p-4 flex-1 rounded-xl bg-card'>
                     <img className='w-[130px] rounded-full' src={pp} alt='Samirr' />
                     <p className='font-[Outfit] text-[16px] my-[5px] text-secondary'>@samirrhashimov</p>
-                    <p className='font-[Inter] text-[14px]'>Junior Front-End Developer</p>
+                    <p className='font-[Inter] text-[14px]'>{t('about.role')}</p>
                 </div>
                 <div className='border border-card-border p-4 flex-1 text-text font-[Inter] rounded-xl bg-card'>
                     <div className='flex flex-col justify-between h-full'>
@@ -181,7 +194,7 @@ const About = () => {
             <div className='flex items-center justify-between gap-4 mt-[20px] mb-2.5'>
                 <h1 className='font-[Inter] text-[1.3rem] m-0 font-bold'>{t('about.certificatesTitle')}</h1>
                 {certificates.length > 2 && (
-                    <button type='button' className={`inline-flex items-center gap-[3px] border border-card-border bg-card text-text rounded-[6px] px-[12px] py-[8px] font-[Inter] text-[12px] cursor-pointer hover:border-border-hover hover:bg-hover-surface ${certificates.length <= 4 ? 'max-md:inline-flex md:hidden' : ''}`} onClick={() => setShowAllCertificates(current => !current)}>
+                    <button type='button' className={`inline-flex min-w-[104px] justify-center items-center gap-[3px] border border-card-border bg-card text-text rounded-[6px] px-[12px] py-[8px] font-[Inter] text-[12px] cursor-pointer hover:border-border-hover hover:bg-hover-surface ${certificates.length <= 4 ? 'max-md:inline-flex md:hidden' : ''}`} onClick={() => setShowAllCertificates(current => !current)}>
                         {showAllCertificates ? t('projects.showLess') : t('projects.showMore')}
                         <span aria-hidden='true' className='ml-[6px]'>{showAllCertificates ? '←' : '→'}</span>
                     </button>
@@ -194,10 +207,10 @@ const About = () => {
 
             {/* Mobile View */}
             <div className='md:hidden pb-[20px]'>
-                <div className='grid grid-cols-2 gap-[18px]'>
+                <div className='grid grid-cols-2 gap-[10px] min-[480px]:gap-[18px]'>
                     {certificates.slice(0, 2).map(renderCertificateCard)}
                 </div>
-                <div className={`grid grid-cols-2 gap-[18px] overflow-hidden transition-[max-height,opacity,margin] duration-500 ease-in-out ${showAllCertificates ? 'max-h-[2000px] opacity-100 mt-[18px]' : 'pointer-events-none max-h-0 opacity-0 mt-0'}`}>
+                <div className={`grid grid-cols-2 gap-[10px] min-[480px]:gap-[18px] overflow-hidden transition-[max-height,opacity,margin] duration-500 ease-in-out ${showAllCertificates ? 'max-h-[2000px] opacity-100 mt-[10px] min-[480px]:mt-[18px]' : 'pointer-events-none max-h-0 opacity-0 mt-0'}`}>
                     {certificates.slice(2).map(renderCertificateCard)}
                 </div>
             </div>
@@ -230,27 +243,29 @@ const About = () => {
                     onClick={handleClose}
                 >
                     {/* Top Bar */}
-                    <div className='absolute top-6 left-6 right-6 flex justify-between items-center text-white z-10' onClick={e => e.stopPropagation()}>
-                        <div className='flex flex-col pr-4 animate-lightbox-zoom-in'>
-                            <p className='font-[Inter] font-bold text-lg max-md:text-base line-clamp-1'>{certificates[selectedCertIndex].title}</p>
-                            <p className='font-[Inter] text-sm text-gray-400 max-md:text-xs line-clamp-1'>{certificates[selectedCertIndex].subtitle}</p>
+                    <div className='absolute top-4 left-4 right-4 md:top-6 md:left-6 md:right-6 flex items-center gap-3 text-white z-10' onClick={e => e.stopPropagation()}>
+                        <div className='flex min-w-0 flex-1 flex-col overflow-hidden animate-lightbox-zoom-in'>
+                            <p className='overflow-hidden text-ellipsis whitespace-nowrap font-[Inter] font-bold text-lg max-md:text-base'>{t(certificates[selectedCertIndex].titleKey)}</p>
+                            <p className='overflow-hidden text-ellipsis whitespace-nowrap font-[Inter] text-sm text-gray-400 max-md:text-xs'>{t(certificates[selectedCertIndex].subtitleKey)}</p>
                         </div>
-                        <div className='flex items-center gap-2 md:gap-3 shrink-0'>
+                        <div className='flex shrink-0 items-center gap-2 md:gap-3'>
                             <a
                                 href={certificates[selectedCertIndex].link}
                                 target='_blank'
                                 rel='noreferrer'
                                 onClick={e => e.stopPropagation()}
-                                className='h-9 md:h-10 px-3.5 md:px-4.5 rounded-full inline-flex items-center gap-2 bg-section-header text-white font-[Inter] font-semibold text-xs md:text-sm shadow-lg transition-colors duration-200 hover:bg-accent-hover shrink-0'
+                                className='h-10 w-10 rounded-full inline-flex items-center justify-center bg-section-header text-white shadow-lg transition-colors duration-200 hover:bg-accent-hover shrink-0'
+                                title={t('about.verifyCertificate')}
+                                aria-label={t('about.verifyCertificate')}
                             >
-                                <FaExternalLinkAlt className='text-xs md:text-sm' /> 
-                                <span>{t('about.verifyCertificate', 'Verify Certificate')}</span>
+                                <FaExternalLinkAlt className='text-sm' />
                             </a>
                             <button
                                 type='button'
                                 onClick={(e) => { e.stopPropagation(); toggleFullScreen(); }}
                                 className='w-9 h-9 md:w-10 md:h-10 inline-flex items-center justify-center text-white hover:text-gray-200 transition-all duration-200 bg-white/10 hover:bg-white/20 rounded-full hover:scale-105 active:scale-95 shrink-0'
-                                title='Full Screen'
+                                title={t('about.fullscreen')}
+                                aria-label={t('about.fullscreen')}
                             >
                                 <FaExpand className='text-sm md:text-base' />
                             </button>
@@ -258,7 +273,8 @@ const About = () => {
                                 type='button'
                                 onClick={(e) => { e.stopPropagation(); handleClose(); }}
                                 className='w-9 h-9 md:w-10 md:h-10 inline-flex items-center justify-center text-white hover:text-gray-200 transition-all duration-200 bg-white/10 hover:bg-white/20 rounded-full hover:scale-105 active:scale-95 shrink-0'
-                                title='Close'
+                                title={t('about.close')}
+                                aria-label={t('about.close')}
                             >
                                 <FaTimes className='text-base md:text-lg' />
                             </button>
@@ -273,7 +289,7 @@ const About = () => {
                         <img
                             key={`${selectedCertIndex}-${slideKey}`}
                             src={certificates[selectedCertIndex].image}
-                            alt={certificates[selectedCertIndex].alt}
+                            alt={t(certificates[selectedCertIndex].altKey)}
                             className={`max-w-full max-h-[75vh] object-contain rounded-lg shadow-2xl ${slideDirection === 'next' ? 'animate-cert-slide-next' : 'animate-cert-slide-prev'}`}
                         />
 
@@ -283,7 +299,8 @@ const About = () => {
                                 type='button'
                                 className='absolute left-[-15px] md:left-[-60px] top-1/2 -translate-y-1/2 text-white hover:bg-white/20 transition-all duration-200 p-3 bg-black/60 rounded-full hover:scale-110 active:scale-95 shadow-xl backdrop-blur-sm'
                                 onClick={handlePrev}
-                                title='Previous Certificate'
+                                title={t('about.previousCertificate')}
+                                aria-label={t('about.previousCertificate')}
                             >
                                 <FaChevronLeft className='text-xl md:text-3xl' />
                             </button>
@@ -293,7 +310,8 @@ const About = () => {
                                 type='button'
                                 className='absolute right-[-15px] md:right-[-60px] top-1/2 -translate-y-1/2 text-white hover:bg-white/20 transition-all duration-200 p-3 bg-black/60 rounded-full hover:scale-110 active:scale-95 shadow-xl backdrop-blur-sm'
                                 onClick={handleNext}
-                                title='Next Certificate'
+                                title={t('about.nextCertificate')}
+                                aria-label={t('about.nextCertificate')}
                             >
                                 <FaChevronRight className='text-xl md:text-3xl' />
                             </button>
