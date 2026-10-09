@@ -92,3 +92,94 @@ body::before {
     background: var(--accent-color);
     color: #ffffff;
 }
+
+/* Lightbox Animations */
+@keyframes lightboxFadeIn {
+    from {
+        opacity: 0;
+        backdrop-filter: blur(0px);
+    }
+    to {
+        opacity: 1;
+        backdrop-filter: blur(12px);
+    }
+}
+
+@keyframes lightboxFadeOut {
+    from {
+        opacity: 1;
+        backdrop-filter: blur(12px);
+    }
+    to {
+        opacity: 0;
+        backdrop-filter: blur(0px);
+    }
+}
+
+@keyframes lightboxZoomIn {
+    from {
+        opacity: 0;
+        transform: scale(0.92);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+@keyframes lightboxZoomOut {
+    from {
+        opacity: 1;
+        transform: scale(1);
+    }
+    to {
+        opacity: 0;
+        transform: scale(0.92);
+    }
+}
+
+@keyframes certSlideNext {
+    from {
+        opacity: 0.2;
+        transform: translateX(45px) scale(0.97);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0) scale(1);
+    }
+}
+
+@keyframes certSlidePrev {
+    from {
+        opacity: 0.2;
+        transform: translateX(-45px) scale(0.97);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0) scale(1);
+    }
+}
+
+.animate-lightbox-fade-in {
+    animation: lightboxFadeIn 0.25s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.animate-lightbox-fade-out {
+    animation: lightboxFadeOut 0.2s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.animate-lightbox-zoom-in {
+    animation: lightboxZoomIn 0.25s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.animate-lightbox-zoom-out {
+    animation: lightboxZoomOut 0.2s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.animate-cert-slide-next {
+    animation: certSlideNext 0.3s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.animate-cert-slide-prev {
+    animation: certSlidePrev 0.3s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
