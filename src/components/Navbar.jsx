@@ -27,19 +27,19 @@ const Navbar = ({ toggleTheme, isDarkMode }) => {
                         <a className='no-underline text-text font-[Inter] text-[0.8rem] border-b border-text py-[3px] transition-colors duration-200 hover:border-section-header hover:text-section-header max-[480px]:text-[0.75rem]' href='/links'>{t('navbar.social')}</a>
                     </div>
                     <div className='flex gap-2.5 items-center'>
-                        <button className='max-[480px]:hidden bg-transparent border border-border text-text p-1.5 rounded-[5px] cursor-pointer flex items-center justify-center font-medium transition-all duration-200 h-[32px] hover:border-border-hover hover:bg-hover-surface text-[0.8rem] min-w-[38px] font-[Inter]' onClick={changeLanguage}>
+                        <button className='max-[480px]:hidden h-[32px] w-[38px] bg-transparent border border-border text-text p-1.5 rounded-[5px] cursor-pointer flex items-center justify-center font-medium transition-all duration-200 hover:border-border-hover hover:bg-hover-surface text-[0.8rem] font-[Inter]' onClick={changeLanguage}>
                             {i18n.language === 'en' ? 'AZ' : 'EN'}
                         </button>
                         <a href='/Samir_Hashimov_CV.pdf' download title={t('navbar.downloadCv')} aria-label={t('navbar.downloadCv')}>
-                            <button className='gap-[5px] p-1.5 rounded-[5px] border border-border text-text w-[auto] h-[32px] cursor-pointer flex items-center justify-center hover:border-border-hover hover:bg-hover-surface transition-all duration-300'>
+                            <button className='h-[32px] w-[38px] gap-[5px] p-1.5 rounded-[5px] border border-border text-text cursor-pointer flex items-center justify-center hover:border-border-hover hover:bg-hover-surface transition-all duration-300'>
                                 <TbFileCvFilled className='w-[18px] h-[18px]' />
                             </button>
                         </a>
 
-                        <button aria-label={isDarkMode ? t('navbar.lightMode') : t('navbar.darkMode')} className='max-[480px]:hidden bg-transparent border border-border text-text p-1.5 rounded-[5px] cursor-pointer flex items-center justify-center font-medium transition-all duration-200 h-[32px] hover:border-border-hover hover:bg-hover-surface text-[1.2rem]' onClick={toggleTheme}>
+                        <button aria-label={isDarkMode ? t('navbar.lightMode') : t('navbar.darkMode')} className='max-[480px]:hidden h-[32px] w-[38px] bg-transparent border border-border text-text p-1.5 rounded-[5px] cursor-pointer flex items-center justify-center font-medium transition-all duration-200 hover:border-border-hover hover:bg-hover-surface text-[1.2rem]' onClick={toggleTheme}>
                             {isDarkMode ? <FiSun className="w-[18px] h-[18px]" /> : <FiMoon className="w-[18px] h-[18px]" />}
                         </button>
-                        <button className='hidden max-[480px]:flex bg-transparent border border-border text-text p-1.5 rounded-[5px] cursor-pointer items-center justify-center font-medium transition-all duration-200 h-[32px] hover:border-border-hover hover:bg-hover-surface text-[1.2rem]' onClick={() => setIsMenuOpen(!isMenuOpen)}>
+                        <button className='hidden max-[480px]:flex h-[32px] w-[38px] bg-transparent border border-border text-text p-1.5 rounded-[5px] cursor-pointer items-center justify-center font-medium transition-all duration-200 hover:border-border-hover hover:bg-hover-surface text-[1.2rem]' onClick={() => setIsMenuOpen(!isMenuOpen)}>
                             {isMenuOpen ? <FiX className="w-[18px] h-[18px]" /> : <FiMenu className="w-[18px] h-[18px]" />}
                         </button>
                     </div>
@@ -53,10 +53,10 @@ const Navbar = ({ toggleTheme, isDarkMode }) => {
                 </div>
                 
                 <div className='flex gap-4 mt-auto mb-8 w-full justify-end border-t-[1.2px] border-border pt-6'>
-                    <button className='bg-transparent border border-border text-text p-2 rounded-[5px] cursor-pointer flex items-center justify-center font-medium transition-all duration-200 h-[38px] hover:border-border-hover hover:bg-hover-surface text-[1rem] min-w-[45px] font-[Inter]' onClick={() => {changeLanguage(); setIsMenuOpen(false);}}>
+                    <button className='h-[38px] w-[45px] bg-transparent border border-border text-text p-2 rounded-[5px] cursor-pointer flex items-center justify-center font-medium transition-all duration-200 hover:border-border-hover hover:bg-hover-surface text-[1rem] font-[Inter]' onClick={() => {changeLanguage(); setIsMenuOpen(false);}}>
                         {i18n.language === 'en' ? 'AZ' : 'EN'}
                     </button>
-                    <button className='bg-transparent border border-border text-text p-2 rounded-[5px] cursor-pointer flex items-center justify-center font-medium transition-all duration-200 h-[38px] hover:border-border-hover hover:bg-hover-surface text-[1.4rem]' onClick={() => {toggleTheme(); setIsMenuOpen(false);}}>
+                    <button className='h-[38px] w-[45px] bg-transparent border border-border text-text p-2 rounded-[5px] cursor-pointer flex items-center justify-center font-medium transition-all duration-200 hover:border-border-hover hover:bg-hover-surface text-[1.4rem]' onClick={() => {toggleTheme(); setIsMenuOpen(false);}}>
                         {isDarkMode ? <FiSun className="w-[20px] h-[20px]" /> : <FiMoon className="w-[20px] h-[20px]" />}
                     </button>
                 </div>
