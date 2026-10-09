@@ -49,8 +49,8 @@
         "subtitle": "Responsive Web Design",
         "alt": "freeCodeCamp Responsive Web Design certificate"
       }
-    }
-    ,"verifyCertificate": "Verify Certificate",
+    },
+    "seeCertificate": "See",
     "openCertificate": "Open certificate",
     "fullscreen": "Full screen",
     "exitFullscreen": "Exit full screen",

@@ -49,8 +49,8 @@
         "subtitle": "Responsive Web Design",
         "alt": "freeCodeCamp Responsive Web Design sertifikatı"
       }
-    }
-    ,"verifyCertificate": "Sertifikatı yoxla",
+    },
+    "seeCertificate": "Bax",
     "openCertificate": "Sertifikatı aç",
     "fullscreen": "Tam ekran",
     "exitFullscreen": "Tam ekrandan çıx",

@@ -129,6 +129,17 @@ const About = () => {
     }, [selectedCertIndex]);
 
     React.useEffect(() => {
+        if (selectedCertIndex === null) return undefined;
+
+        const previousOverflow = document.body.style.overflow;
+        document.body.style.overflow = 'hidden';
+
+        return () => {
+            document.body.style.overflow = previousOverflow;
+        };
+    }, [selectedCertIndex]);
+
+    React.useEffect(() => {
         const handleFullscreenChange = () => {
             setIsFullscreen(document.fullscreenElement === lightboxRef.current);
         };
@@ -265,22 +276,22 @@ const About = () => {
                                 target='_blank'
                                 rel='noreferrer'
                                 onClick={e => e.stopPropagation()}
-                                title={t('about.verifyCertificate')}
-                                aria-label={t('about.verifyCertificate')}
+                                title={t('about.seeCertificate')}
+                                aria-label={t('about.seeCertificate')}
                             >
                                 <FaExternalLinkAlt className='text-sm' />
                             </a>
                             <button
-                                className='certificate-lightbox-fullscreen w-9 h-9 md:w-10 md:h-10 inline-flex items-center justify-center text-white hover:text-gray-200 transition-all duration-200 bg-white/10 hover:bg-white/20 rounded-full hover:scale-105 active:scale-95 shrink-0'
+                                className='certificate-lightbox-fullscreen h-10 w-10 inline-flex items-center justify-center rounded-full bg-white/10 text-white transition-colors duration-200 hover:bg-white/20 hover:text-gray-200 shrink-0'
                                 type='button'
                                 onClick={(e) => { e.stopPropagation(); toggleFullScreen(); }}
                                 title={t(isFullscreen ? 'about.exitFullscreen' : 'about.fullscreen')}
                                 aria-label={t(isFullscreen ? 'about.exitFullscreen' : 'about.fullscreen')}
                             >
-                                {isFullscreen ? <FaCompress className='text-sm md:text-base' /> : <FaExpand className='text-sm md:text-base' />}
+                                {isFullscreen ? <FaCompress className='text-base' /> : <FaExpand className='text-base' />}
                             </button>
                             <button
-                                className='certificate-lightbox-close w-9 h-9 md:w-10 md:h-10 inline-flex items-center justify-center text-white hover:text-gray-200 transition-all duration-200 bg-white/10 hover:bg-white/20 rounded-full hover:scale-105 active:scale-95 shrink-0'
+                                className='certificate-lightbox-close h-10 w-10 inline-flex items-center justify-center rounded-full bg-white/10 text-white transition-colors duration-200 hover:bg-white/20 hover:text-gray-200 shrink-0'
                                 type='button'
                                 onClick={(e) => { e.stopPropagation(); handleClose(); }}
                                 title={t('about.close')}
