@@ -84,7 +84,7 @@ const Projects = () => {
     const [blogsError, setBlogsError] = useState(false)
 
     useEffect(() => {
-        fetchArticles(5)
+        fetchArticles(20)
             .then(data => {
                 setBlogs(data)
                 setBlogsError(false)
@@ -111,23 +111,7 @@ const Projects = () => {
     }, [])
 
     const handleShowAllBlogs = () => {
-        if (showAllBlogs) {
-            setShowAllBlogs(false)
-            return
-        }
-
-        setBlogsLoading(true)
-        fetchArticles(20)
-            .then(data => {
-                setBlogs(data)
-                setBlogsError(false)
-                setShowAllBlogs(true)
-            })
-            .catch(err => {
-                console.error('Substack RSS feed unreachable', err)
-                setBlogsError(true)
-            })
-            .finally(() => setBlogsLoading(false))
+        setShowAllBlogs(current => !current)
     }
 
     useEffect(() => {
@@ -184,7 +168,7 @@ const Projects = () => {
             <div className='flex items-center justify-between gap-4 mt-[20px] mb-[10px]'>
                 <h1 className='font-[Inter] text-[1.3rem] text-text font-bold'>{t('projects.blogs')}</h1>
                 {blogs.length > 2 && (
-                    <button type='button' className={`inline-flex items-center gap-[3px] border border-card-border bg-card text-text rounded-[6px] px-[12px] py-[8px] font-[Inter] text-[12px] cursor-pointer hover:border-border-hover hover:bg-hover-surface ${blogs.length <= 4 ? 'max-md:inline-flex md:hidden' : ''}`} onClick={handleShowAllBlogs} disabled={blogsLoading && blogs.length > 0}>
+                    <button type='button' className={`inline-flex items-center gap-[3px] border border-card-border bg-card text-text rounded-[6px] px-[12px] py-[8px] font-[Inter] text-[12px] cursor-pointer hover:border-border-hover hover:bg-hover-surface ${blogs.length <= 4 ? 'max-md:inline-flex md:hidden' : ''}`} onClick={handleShowAllBlogs}>
                         {showAllBlogs ? t('projects.showLess') : t('projects.showMore')}
                         <span aria-hidden='true' className='ml-[6px]'>{showAllBlogs ? <FaArrowLeft /> : <FaArrowRight />}</span>
                     </button>
@@ -198,12 +182,19 @@ const Projects = () => {
                 ) : blogs.length === 0 ? (
                     <p className='font-[Inter] text-[0.8rem] text-secondary'>{t('projects.blogsError')}</p>
                 ) : (
-                    (showAllBlogs ? blogs : blogs.slice(0, 4)).map((blog, index) => (
+                    blogs.slice(0, 4).map((blog, index) => (
                         <div key={blog.id} className={!showAllBlogs && index >= 2 ? 'max-md:hidden' : ''}>
                             <BlogCard blog={blog} language={i18n.language} />
                         </div>
                     ))
                 )}
+            </div>
+            <div className={`grid grid-cols-4 gap-[18px] overflow-hidden transition-[max-height,opacity] duration-500 ease-in-out max-md:grid-cols-2 ${showAllBlogs ? 'max-h-[2000px] opacity-100' : 'pointer-events-none max-h-0 opacity-0'}`}>
+                {blogs.slice(4).map(blog => (
+                    <div key={blog.id}>
+                        <BlogCard blog={blog} language={i18n.language} />
+                    </div>
+                ))}
             </div>
 
             <div className='flex items-center justify-between gap-4 mt-[20px] mb-[10px]'>
