@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import { TbFileCvFilled } from "react-icons/tb";
 import { FiSun, FiMoon, FiMenu, FiX } from "react-icons/fi";
 import { useTranslation } from 'react-i18next';
-import pp from '../assets/images/samirr.jpg'
+import pp from '../assets/images/samirr.png'
 
 const Navbar = ({ toggleTheme, isDarkMode }) => {
     const { t, i18n } = useTranslation();

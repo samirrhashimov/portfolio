@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import { createPortal } from 'react-dom'
-import pp from '../assets/images/samirr.jpg'
+import pp from '../assets/images/samirr.png'
 import { FaGithub, FaLinkedin, FaInstagram, FaMicrosoft, FaTimes, FaExpand, FaCompress, FaChevronLeft, FaChevronRight, FaExternalLinkAlt } from "react-icons/fa";
 import { FaXTwitter } from "react-icons/fa6";
 import { SiMedium, SiBuymeacoffee, SiHtml5, SiCss, SiJavascript, SiReact, SiVite, SiFigma, SiFirebase, SiVercel, SiNetlify, SiGit } from "react-icons/si";
