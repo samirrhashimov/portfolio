@@ -11,91 +11,10 @@ import blog101Img from '../assets/images/projects/blog101.png'
 import snapImg from '../assets/images/projects/snap.png'
 import { useTranslation } from 'react-i18next';
 import { FaArrowLeft, FaArrowRight } from 'react-icons/fa';
+import { fetchArticles } from '../lib/articles';
 
 const npmPackages = ["brandkitjs"]
 const GITHUB_USERNAME = "samirrhashimov"
-const SUBSTACK_FEED_URL = 'https://samirrhashimov.substack.com/feed/'
-const SUBSTACK_ARCHIVE_URL = 'https://samirrhashimov.substack.com/api/v1/archive?sort=new&search='
-
-const normalizeBlog = (item, description, link, image) => ({
-    id: item.guid || item.id || link,
-    title: item.title,
-    description,
-    post_date: item.pubDate || item.post_date,
-    canonical_url: link || item.link || item.canonical_url,
-    cover_image: image || item.cover_image
-})
-
-const parseXMLFeed = (xmlText, limit) => {
-    const xml = new DOMParser().parseFromString(xmlText, 'application/xml')
-    const items = Array.from(xml.querySelectorAll('item'))
-    if (items.length === 0) throw new Error('Invalid Substack feed')
-
-    return items.slice(0, limit).map(item => {
-        const rawDescription = item.querySelector('description')?.textContent || ''
-        const descriptionDocument = new DOMParser().parseFromString(rawDescription, 'text/html')
-        const image = item.querySelector('enclosure')?.getAttribute('url') || descriptionDocument.querySelector('img')?.src
-
-        return normalizeBlog(
-            { guid: item.querySelector('guid')?.textContent, title: item.querySelector('title')?.textContent, pubDate: item.querySelector('pubDate')?.textContent },
-            descriptionDocument.body.textContent.trim(),
-            item.querySelector('link')?.textContent,
-            image
-        )
-    })
-}
-
-const fetchBlogsFromCodetabs = (limit) => fetch(`https://api.codetabs.com/v1/proxy?quest=${encodeURIComponent(SUBSTACK_FEED_URL)}`)
-    .then(res => {
-        if (!res.ok) throw new Error('Codetabs proxy error')
-        return res.text()
-    })
-    .then(xmlText => parseXMLFeed(xmlText, limit))
-
-const fetchBlogsFromAllOrigins = (limit) => fetch(`https://api.allorigins.win/get?url=${encodeURIComponent(SUBSTACK_FEED_URL)}`)
-    .then(res => {
-        if (!res.ok) throw new Error('AllOrigins proxy error')
-        return res.json()
-    })
-    .then(data => {
-        if (!data.contents) throw new Error('Invalid AllOrigins response')
-        return parseXMLFeed(data.contents, limit)
-    })
-
-const fetchBlogsFromProxy = (limit) => fetch(`https://api.rss2json.com/v1/api.json?rss_url=${encodeURIComponent(SUBSTACK_FEED_URL)}`)
-    .then(res => {
-        if (!res.ok) throw new Error('RSS proxy error')
-        return res.json()
-    })
-    .then(data => {
-        if (data.status !== 'ok' || !Array.isArray(data.items)) throw new Error('Invalid RSS proxy response')
-
-        return data.items.slice(0, limit).map(item => normalizeBlog(
-            { guid: item.guid, title: item.title, pubDate: item.pubDate },
-            new DOMParser().parseFromString(item.description || '', 'text/html').body.textContent.trim(),
-            item.link,
-            item.thumbnail || item.enclosure?.link
-        ))
-    })
-
-const fetchBlogs = (limit) => 
-    fetchBlogsFromProxy(limit)
-        .catch(() => fetchBlogsFromCodetabs(limit))
-        .catch(() => fetchBlogsFromAllOrigins(limit))
-        .catch(() =>
-            fetch(`https://api.allorigins.win/get?url=${encodeURIComponent(SUBSTACK_ARCHIVE_URL + '&limit=' + limit)}`)
-                .then(res => {
-                    if (!res.ok) throw new Error('Substack archive error')
-                    return res.json()
-                })
-                .then(data => {
-                    if (!data.contents) throw new Error('Invalid Substack archive')
-                    const items = JSON.parse(data.contents)
-                    if (!Array.isArray(items)) throw new Error('Invalid Substack archive format')
-                    return items.slice(0, limit).map(item => normalizeBlog(item, item.description || item.subtitle, item.canonical_url, item.cover_image))
-                })
-        )
-
 const projects = [
     { id: 'blink', name: 'Blink', descriptionKey: 'projects.descriptions.blink', repository: 'blink', image: blinkImg, alt: 'Blink Project' },
     { id: 'ipekchi', name: 'Ipekchi', descriptionKey: 'projects.descriptions.ipekchi', repository: 'ipekchi', image: ipekchiImg, alt: 'Ipekchi Project' },
@@ -165,7 +84,7 @@ const Projects = () => {
     const [blogsError, setBlogsError] = useState(false)
 
     useEffect(() => {
-        fetchBlogs(5)
+        fetchArticles(5)
             .then(data => {
                 setBlogs(data)
                 setBlogsError(false)
@@ -198,7 +117,7 @@ const Projects = () => {
         }
 
         setBlogsLoading(true)
-        fetchBlogs(20)
+        fetchArticles(20)
             .then(data => {
                 setBlogs(data)
                 setBlogsError(false)
@@ -276,6 +195,8 @@ const Projects = () => {
                     <p className='font-[Inter] text-[0.8rem] text-secondary'>{t('projects.blogsError')}</p>
                 ) : blogsLoading && blogs.length === 0 ? (
                     <p className='font-[Inter] text-[0.8rem] text-secondary'>{t('projects.loading')}</p>
+                ) : blogs.length === 0 ? (
+                    <p className='font-[Inter] text-[0.8rem] text-secondary'>{t('projects.blogsError')}</p>
                 ) : (
                     (showAllBlogs ? blogs : blogs.slice(0, 4)).map((blog, index) => (
                         <div key={blog.id} className={!showAllBlogs && index >= 2 ? 'max-md:hidden' : ''}>
